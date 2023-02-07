@@ -3,7 +3,13 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
-const { title, description } = Astro.props;
+interface BaseLayoutProps {
+  title: string;
+  description: string;
+  classes: string;
+}
+
+const { title, description, classes } = Astro.props as BaseLayoutProps;
 ---
 
 <html lang="en">
@@ -12,7 +18,7 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <Header />
-    <main>
+    <main class:list={["mx-auto px-4 sm:px-6 max-w-7xl", classes]}>
       <slot />
     </main>
     <Footer />
