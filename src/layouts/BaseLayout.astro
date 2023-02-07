@@ -3,13 +3,12 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 
-interface BaseLayoutProps {
+interface BaseLayoutProps extends astroHTML.JSX.HTMLAttributes {
   title: string;
   description: string;
-  classes: string;
 }
 
-const { title, description, classes } = Astro.props as BaseLayoutProps;
+const { title, class: className, description } = Astro.props as BaseLayoutProps;
 ---
 
 <html lang="en">
@@ -18,7 +17,7 @@ const { title, description, classes } = Astro.props as BaseLayoutProps;
   </head>
   <body>
     <Header />
-    <main class:list={["mx-auto px-4 sm:px-6 max-w-7xl", classes]}>
+    <main class:list={["mx-auto px-4 sm:px-6 max-w-7xl", className]}>
       <slot />
     </main>
     <Footer />
