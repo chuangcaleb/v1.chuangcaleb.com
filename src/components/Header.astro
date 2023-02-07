@@ -1,23 +1,24 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
 ---
 
 <header class="mb-6">
   <nav class="mx-auto px-4 sm:px-6 max-w-7xl my-2 flex justify-between">
-    <h2 class="inline">
-      {SITE_TITLE}
-    </h2>
-    <div class="flex gap-6">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
-      <HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">
-        Twitter
-      </HeaderLink>
-      <HeaderLink href="https://github.com/withastro/astro" target="_blank">
-        GitHub
-      </HeaderLink>
-    </div>
+    <!-- <HeaderLink href="/">
+        <h2 class="text-3xl">
+          <span class="font-light">Chuang</span>
+          <span class="font-extrabold">Caleb</span>
+        </h2>
+      </HeaderLink> -->
+    <a href="/" class="hover:opacity-30 duration-300">
+      <h2 class="text-3xl">
+        <span class="font-light">Chuang</span>
+        <span class="font-extrabold">Caleb</span>
+      </h2>
+    </a>
+    <ul class="flex gap-6 my-auto">
+      <HeaderLink href="/blog">blog</HeaderLink>
+      <HeaderLink href="/about">about</HeaderLink>
+    </ul>
   </nav>
 </header>
