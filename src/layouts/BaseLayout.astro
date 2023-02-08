@@ -7,6 +7,7 @@ interface BaseLayoutProps extends astroHTML.JSX.HTMLAttributes {
   title: string;
   description: string;
   notProse: boolean;
+  fullWidth: boolean;
 }
 
 const {
@@ -14,6 +15,7 @@ const {
   class: className,
   description,
   notProse,
+  fullWidth,
 } = Astro.props as BaseLayoutProps;
 ---
 
@@ -25,7 +27,8 @@ const {
     <Header />
     <main
       class:list={[
-        "mx-auto px-4 sm:px-6 max-w-3xl",
+        "mx-auto px-4 sm:px-6",
+        { "max-w-none": fullWidth },
         { "prose prose-zinc dark:prose-invert": !notProse },
         className,
       ]}

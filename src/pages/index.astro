@@ -3,7 +3,12 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION} class="text-xl">
+<BaseLayout
+  title={SITE_TITLE}
+  description={SITE_DESCRIPTION}
+  class="text-xl"
+  fullWidth
+>
   <h1>🧑‍🚀 Hello, Astronaut!</h1>
   <p>
     Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
