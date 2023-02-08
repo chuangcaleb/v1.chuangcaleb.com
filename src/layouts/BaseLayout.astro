@@ -17,7 +17,7 @@ const { title, class: className, description } = Astro.props as BaseLayoutProps;
   </head>
   <body>
     <Header />
-    <main class:list={["mx-auto px-4 sm:px-6 max-w-7xl", className]}>
+    <main class:list={["mx-auto px-4 sm:px-6 max-w-7xl prose", className]}>
       <slot />
     </main>
     <Footer />
