@@ -6,9 +6,15 @@ import Header from "../components/Header.astro";
 interface BaseLayoutProps extends astroHTML.JSX.HTMLAttributes {
   title: string;
   description: string;
+  notProse: boolean;
 }
 
-const { title, class: className, description } = Astro.props as BaseLayoutProps;
+const {
+  title,
+  class: className,
+  description,
+  notProse,
+} = Astro.props as BaseLayoutProps;
 ---
 
 <html lang="en">
@@ -19,7 +25,8 @@ const { title, class: className, description } = Astro.props as BaseLayoutProps;
     <Header />
     <main
       class:list={[
-        "mx-auto px-4 sm:px-6 max-w-3xl prose dark:prose-invert",
+        "mx-auto px-4 sm:px-6 max-w-3xl",
+        { "prose dark:prose-invert": !notProse },
         className,
       ]}
     >

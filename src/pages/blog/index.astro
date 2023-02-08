@@ -10,11 +10,14 @@ const posts = (await getCollection("blog")).sort(
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <section>
-    <ul>
+    <ul class="list-none p-0">
       {
         posts.map((post) => (
-          <li>
-            <time datetime={post.data.pubDate.toISOString()}>
+          <li class="flex">
+            <time
+              class="italic text-gray-400 basis-1/4"
+              datetime={post.data.pubDate.toISOString()}
+            >
               {post.data.pubDate.toLocaleDateString("en-us", {
                 year: "numeric",
                 month: "short",
@@ -28,21 +31,3 @@ const posts = (await getCollection("blog")).sort(
     </ul>
   </section>
 </BaseLayout>
-
-<style>
-  ul {
-    list-style-type: none;
-    padding: unset;
-  }
-  ul li {
-    display: flex;
-  }
-  ul li time {
-    flex: 0 0 130px;
-    font-style: italic;
-    color: #595959;
-  }
-  ul li a:visited {
-    color: #8e32dc;
-  }
-</style>
