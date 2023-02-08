@@ -11,17 +11,12 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
   href={href}
   class:list={[
     className,
-    "group transition duration-300 inline-block",
-    { "font-bold pointer-events-none": isActive },
+    "hover:underline inline-block",
+    // { underline: isActive },
   ]}
   {...props}
   aria-current={isActive && "page"}
   aria-disabled={isActive}
 >
   <slot />
-  {
-    !isActive && (
-      <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black top-[-0.3em] relative" />
-    )
-  }
 </a>

@@ -15,9 +15,14 @@ const { title, class: className, description } = Astro.props as BaseLayoutProps;
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body>
+  <body class="dark:bg-darkBackground dark:text-zinc-200">
     <Header />
-    <main class:list={["mx-auto px-4 sm:px-6 max-w-7xl prose", className]}>
+    <main
+      class:list={[
+        "mx-auto px-4 sm:px-6 max-w-3xl prose dark:prose-invert",
+        className,
+      ]}
+    >
       <slot />
     </main>
     <Footer />
