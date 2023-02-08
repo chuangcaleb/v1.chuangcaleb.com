@@ -21,12 +21,12 @@ const {
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body class="dark:bg-darkBackground dark:text-zinc-200">
+  <body class="dark:bg-invert-bg text-zinc-700 dark:text-zinc-300">
     <Header />
     <main
       class:list={[
         "mx-auto px-4 sm:px-6 max-w-3xl",
-        { "prose dark:prose-invert": !notProse },
+        { "prose prose-zinc dark:prose-invert": !notProse },
         className,
       ]}
     >
