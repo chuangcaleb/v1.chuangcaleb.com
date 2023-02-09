@@ -46,7 +46,7 @@ module.exports = {
             "--tw-prose-invert-code": theme("colors.zinc[300]"),
             // "--tw-prose-invert-bold": theme("colors.white"),
             // "--tw-prose-invert-counters": theme("colors.pink[400]"),
-            // "--tw-prose-invert-bullets": theme("colors.pink[600]"),
+            "--tw-prose-invert-bullets": theme("colors.zinc[500]"),
             // "--tw-prose-invert-hr": theme("colors.pink[700]"),
             // "--tw-prose-invert-quotes": theme("colors.pink[100]"),
             // "--tw-prose-invert-quote-borders": theme("colors.pink[700]"),
@@ -61,5 +61,5 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/typography")],
-  darkMode: "class",
+  // darkMode: "class",
 };
