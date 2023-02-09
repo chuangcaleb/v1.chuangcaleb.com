@@ -23,14 +23,14 @@ const {
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body class="dark:bg-invert-bg text-zinc-700 dark:text-zinc-300">
+  <body class="dark:bg-invert-bgPrimary text-zinc-700 dark:text-zinc-300">
     <Header />
     <main>
       <div
         class:list={[
-          "mx-auto px-5",
+          "mx-auto",
           { "max-w-screen-xl": fullWidth },
-          { "prose prose-zinc dark:prose-invert": !notProse },
+          { "prose dark:prose-invert": !notProse },
           className,
         ]}
       >

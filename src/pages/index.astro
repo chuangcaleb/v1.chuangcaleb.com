@@ -1,6 +1,7 @@
 ---
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "../layouts/Section.astro";
 ---
 
 <BaseLayout
@@ -9,7 +10,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   class="text-xl"
   fullWidth
 >
-  <!-- <div class="h-screen bg-white">hello</div> -->
+  <Section fullWidth class="h-screen bg-black dark:bg-invert-bgSecondary">
+    hello
+  </Section>
   <h1>🧑‍🚀 Hello, Astronaut!</h1>
   <p>
     Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
