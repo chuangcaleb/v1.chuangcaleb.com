@@ -25,16 +25,18 @@ const {
   </head>
   <body class="dark:bg-invert-bg text-zinc-700 dark:text-zinc-300">
     <Header />
-    <main
-      class:list={[
-        "mx-auto px-4 sm:px-6",
-        { "max-w-none": fullWidth },
-        { "prose prose-zinc dark:prose-invert": !notProse },
-        className,
-      ]}
-    >
-      <slot />
+    <main>
+      <div
+        class:list={[
+          "mx-auto px-5",
+          { "max-w-screen-xl": fullWidth },
+          { "prose prose-zinc dark:prose-invert": !notProse },
+          className,
+        ]}
+      >
+        <slot />
+      </div>
+      <Footer />
     </main>
-    <Footer />
   </body>
 </html>
