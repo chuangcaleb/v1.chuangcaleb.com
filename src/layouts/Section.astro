@@ -1,10 +1,16 @@
 ---
 interface SectionProps extends astroHTML.JSX.HTMLAttributes {
   fullWidth: boolean;
+  forehead: boolean;
 }
-const { fullWidth, class: className } = Astro.props as SectionProps;
+const { fullWidth, forehead, class: className } = Astro.props as SectionProps;
 ---
 
-<section class:list={[{ "px-5": fullWidth }, className]}>
+<section
+  class:list={[
+    { "max-w-screen-xl mx-auto": !fullWidth, "pt-12": forehead },
+    className,
+  ]}
+>
   <slot />
 </section>
