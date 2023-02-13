@@ -10,18 +10,16 @@ const { iconName, title, ...props } = Astro.props as Props;
 // https://icones.js.org/collection/logos
 ---
 
-<div
-  class="w-36 h-48 border border-zinc-500 rounded-xl relative ml-3 inline-block grid"
->
-  <div
-    class="bg-white dark:bg-invert-bgPrimary rounded-xl border border-zinc-500"
-  >
-    <Icon name={iconName} class="h-12 rounded-xl p-1" />
-  </div>
-
+<div class="w-36 h-48 border border-zinc-500 rounded-xl relative ml-3 grid">
   <div
     class="w-full absolute bottom-0 -rotate-90 origin-top-left text-end translate-y-full pr-1 border-b border-zinc-500"
   >
     <span>{title}</span>
+  </div>
+
+  <div
+    class="bg-white dark:bg-invert-bgPrimary rounded-xl border border-zinc-500 -top-2"
+  >
+    <Icon name={iconName} class="h-12 rounded-xl p-1" />
   </div>
 </div>
