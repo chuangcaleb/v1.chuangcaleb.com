@@ -4,7 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        invert: { bgPrimary: "#1c1f2b", bgSecondary: "#1e293b" },
+        invert: {
+          bgPrimary: "#1c1f2b",
+          bgSecondary: "#292d3a",
+          primary: "#8644ff",
+          secondary: "#9c6bff",
+          tertiary: "#9c6bff",
+        },
       },
       typography: ({ theme }) => ({
         DEFAULT: {
@@ -15,8 +21,8 @@ module.exports = {
             "code::after": {
               content: '""',
             },
-            "--tw-prose-body": theme("colors.zinc[600]"),
-            "--tw-prose-headings": theme("colors.zinc[700]"),
+            "--tw-prose-body": theme("colors.zinc[700]"),
+            "--tw-prose-headings": theme("colors.zinc[900]"),
             "--tw-prose-lead": theme("colors.zinc[600]"),
             "--tw-prose-links": theme("colors.zinc[600]"),
             "--tw-prose-code": theme("colors.zinc[600]"),
