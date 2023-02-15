@@ -1,5 +1,4 @@
 ---
-import { Icon } from "astro-icon";
 import Card from "../components/Card/Card.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -33,9 +32,11 @@ import Section from "../layouts/Section.astro";
       > to add tools like Tailwind, React, or Vue to your project.
     </p>
     <p>Here are a few ideas on how to get started with the template:</p>
-    <Card iconName="logos:typescript-icon" title="Typescript" />
-    <Card iconName="logos:javascript" title="Javascript" />
-    <Card iconName="logos:typescript-icon" title="Typescript" />
-    <Card iconName="logos:typescript-icon" title="Typescript" />
+    <div class="flex flex-row">
+      <Card iconName="logos:typescript-icon" title="Typescript" />
+      <Card iconName="logos:javascript" title="Javascript" />
+      <Card iconName="logos:typescript-icon" title="Typescript" />
+      <Card iconName="logos:typescript-icon" title="Typescript" />
+    </div>
   </Section>
 </BaseLayout>

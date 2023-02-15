@@ -1,5 +1,3 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -41,11 +39,11 @@ module.exports = {
             // "--tw-prose-td-borders": theme("colors.pink[200]"),
 
             // * Invert
-            "--tw-prose-invert-body": theme("colors.zinc[300]"),
-            "--tw-prose-invert-headings": theme("colors.zinc[300]"),
-            "--tw-prose-invert-lead": theme("colors.zinc[300]"),
-            "--tw-prose-invert-links": theme("colors.zinc[300]"),
-            "--tw-prose-invert-code": theme("colors.zinc[300]"),
+            "--tw-prose-invert-body": theme("colors.zinc[00]"),
+            "--tw-prose-invert-headings": theme("colors.zinc[200]"),
+            "--tw-prose-invert-lead": theme("colors.zinc[200]"),
+            "--tw-prose-invert-links": theme("colors.zinc[200]"),
+            "--tw-prose-invert-code": theme("colors.zinc[200]"),
             // "--tw-prose-invert-bold": theme("colors.white"),
             // "--tw-prose-invert-counters": theme("colors.pink[400]"),
             "--tw-prose-invert-bullets": theme("colors.zinc[500]"),
@@ -63,5 +61,5 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/typography")],
-  darkMode: "class",
+  // darkMode: "class",
 };

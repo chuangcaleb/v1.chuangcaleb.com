@@ -1,24 +1,26 @@
 ---
-interface Anc extends astroHTML.JSX.AnchorHTMLAttributes {}
 import { Icon } from "astro-icon";
 
 interface Props {
   iconName: string;
   title: string;
 }
-const { iconName, title, ...props } = Astro.props as Props;
+const { iconName, title } = Astro.props as Props;
 // https://icones.js.org/collection/logos
 ---
 
-<div class="w-36 h-48 border border-zinc-500 rounded-xl relative ml-3 grid">
+<div
+  class="w-36 h-48 border border-zinc-500 rounded-xl relative ml-3 grid grid-cols-5 grid-rows-6"
+>
   <div
-    class="w-full absolute bottom-0 -rotate-90 origin-top-left text-end translate-y-full pr-1 border-b border-zinc-500"
+    class="w-full pb-3 border-b border-zinc-500 row-span-5 row-start-2 col-span-1 text-end"
+    style={{ writingMode: "vertical-lr", transform: "rotate(180deg)" }}
   >
     <span>{title}</span>
   </div>
 
   <div
-    class="bg-white dark:bg-invert-bgPrimary rounded-xl border border-zinc-500 -top-2"
+    class="bg-white dark:bg-invert-bgPrimary rounded-xl border border-zinc-500 absolute -top-3 -left-3"
   >
     <Icon name={iconName} class="h-12 rounded-xl p-1" />
   </div>
