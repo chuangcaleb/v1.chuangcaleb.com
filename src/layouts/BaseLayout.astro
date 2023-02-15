@@ -8,6 +8,7 @@ interface BaseLayoutProps extends astroHTML.JSX.HTMLAttributes {
   description: string;
   notProse: boolean;
   fullWidth: boolean;
+  noLogo: boolean;
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   description,
   notProse,
   fullWidth,
+  noLogo,
 } = Astro.props as BaseLayoutProps;
 ---
 
@@ -24,7 +26,7 @@ const {
     <BaseHead title={title} description={description} />
   </head>
   <body class="dark:bg-invert-bgPrimary text-zinc-700 dark:text-zinc-300">
-    <Header />
+    <Header logo={!noLogo} />
     <main>
       <div
         class:list={[

@@ -1,15 +1,26 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+const { logo } = Astro.props as { logo: boolean };
 ---
 
 <header class="max-w-screen-xl mx-auto px-4">
-  <nav class="py-2 flex justify-between">
-    <a href="/" class="hover:underline">
-      <h2 class="text-2xl xl:text-3xl">
-        <span class="font-light">Chuang</span>
-        <span class="font-extrabold">Caleb</span>
-      </h2>
-    </a>
+  <nav
+    class:list={[
+      "py-2 flex",
+      { "justify-end": !logo },
+      { "justify-between": logo },
+    ]}
+  >
+    {
+      logo && (
+        <a href="/" class="hover:underline">
+          <h2 class="text-2xl xl:text-3xl">
+            <span class="font-light">Chuang</span>
+            <span class="font-extrabold">Caleb</span>
+          </h2>
+        </a>
+      )
+    }
     <ul class="flex gap-6 my-auto">
       <HeaderLink href="/blog">blog</HeaderLink>
       <HeaderLink href="/about">about</HeaderLink>
