@@ -12,7 +12,7 @@ const { iconName, title } = Astro.props as Props;
 <div class="w-36 h-48 border border-zinc-500 rounded-xl relative ml-3 flex">
   <!-- Title -->
   <div
-    class="pb-10 border-l border-zinc-500 row text-end w-min h-full"
+    class="pb-11 border-l border-zinc-500 row text-end w-min h-full"
     style={{ writingMode: "vertical-lr", transform: "rotate(180deg)" }}
   >
     <span class="tracking-wide" style={{ fontFamily: "bit" }}>{title}</span>
@@ -25,17 +25,16 @@ const { iconName, title } = Astro.props as Props;
     <div class="p-1">
       <Icon
         name={iconName}
-        class="h-10 w-10 rounded-md bg-zinc-100 dark:bg-zinc-800"
+        class="h-10 w-10 rounded-lg bg-zinc-100 dark:bg-zinc-800"
       />
     </div>
   </div>
 
   <!-- Body -->
-  <div class="w-full flex">
+  <div class="basis-full flex">
     <div
-      class="flex-grow border border-zinc-500 border-spacing-8 rounded-t-xl rounded-r-xl mt-1 mr-1 mb-1"
+      class="basis-full border-t border-r border-b border-zinc-500 border-spacing-8 rounded-t-xl rounded-r-xl mt-1 mr-1 mb-1"
     >
-      sadasd
     </div>
   </div>
 </div>

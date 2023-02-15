@@ -1,18 +1,23 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-const { logo } = Astro.props as { logo: boolean };
+const { index } = Astro.props as { index: boolean };
 ---
 
-<header class="max-w-screen-xl mx-auto px-4">
+<header
+  class:list={[
+    "xl:w-[1280px] mx-auto px-4 xl:px-0",
+    { "absolute z-10 left-0 right-0": index },
+  ]}
+>
   <nav
     class:list={[
-      "py-2 flex",
-      { "justify-end": !logo },
-      { "justify-between": logo },
+      "py-2 flex h-12",
+      { "justify-end": index },
+      { "justify-between": !index },
     ]}
   >
     {
-      logo && (
+      !index && (
         <a href="/" class="hover:underline">
           <h2 class="text-2xl xl:text-3xl">
             <span class="font-light">Chuang</span>

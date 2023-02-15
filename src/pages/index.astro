@@ -10,10 +10,18 @@ import Section from "../layouts/Section.astro";
   description={SITE_DESCRIPTION}
   class="text-xl"
   fullWidth
-  noLogo
+  index
 >
-  <Section fullWidth class="h-screen">
-    <h1 class="text-7xl md:text-8xl text-center">Chuang<br />Caleb</h1>
+  <Section fullWidth class="h-screen grid xl:grid-cols-2">
+    <div class="grid grid-rows-3 lg:px-12 text-center lg:text-left">
+      <div class="row-start-2 flex flex-col gap-4">
+        <h1 class="text-7xl xl:text-8xl m-0">Chuang Caleb</h1>
+        <h2 class="text-4xl xl:text-5xl m-0 font-normal">
+          Frontend Software Engineer
+        </h2>
+      </div>
+    </div>
+    <div class=""></div>
   </Section>
   <Section verticalPadding invert>
     <h1>🧑‍🚀 Hello, Astronaut!</h1>

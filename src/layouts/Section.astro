@@ -1,11 +1,13 @@
 ---
 interface SectionProps extends astroHTML.JSX.HTMLAttributes {
   fullWidth: boolean;
+  noHorizontalMobilePadding: boolean;
   verticalPadding: boolean;
   invert: boolean;
 }
 const {
   fullWidth,
+  noHorizontalMobilePadding,
   verticalPadding,
   invert,
   class: className,
@@ -15,7 +17,7 @@ const {
 <section
   class:list={[
     {
-      "px-4 xl:px-0 ": !fullWidth,
+      "px-4 xl:px-0": fullWidth && !noHorizontalMobilePadding,
       "py-12": verticalPadding,
       "prose-p:text-zinc-300 bg-zinc-800 dark:bg-invert-bgSecondary prose-invert":
         invert,
@@ -25,7 +27,12 @@ const {
 >
   {
     !fullWidth ? (
-      <div class="xl:max-w-screen-xl mx-auto">
+      <div
+        class:list={[
+          "xl:max-w-screen-xl mx-auto",
+          { "px-4 xl:px-0": !noHorizontalMobilePadding },
+        ]}
+      >
         <slot />
       </div>
     ) : (
