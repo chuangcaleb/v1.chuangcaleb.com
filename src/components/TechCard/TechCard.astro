@@ -12,17 +12,22 @@ const { iconName, title } = Astro.props as Props;
 <div class="w-36 h-48 border border-zinc-500 rounded-xl relative ml-3 flex">
   <!-- Title -->
   <div
-    class="pb-11 border-l border-zinc-500 row text-end w-min h-full"
+    class="pb-10 border-l border-zinc-500 row text-end w-min h-full"
     style={{ writingMode: "vertical-lr", transform: "rotate(180deg)" }}
   >
-    <span>{title}</span>
+    <span class="tracking-wide" style={{ fontFamily: "bit" }}>{title}</span>
   </div>
 
   <!-- Icon -->
   <div
     class="bg-white dark:bg-invert-bgPrimary rounded-xl border border-zinc-500 absolute -top-3 -left-3"
   >
-    <Icon name={iconName} class="h-12 rounded-xl p-1" />
+    <div class="p-1">
+      <Icon
+        name={iconName}
+        class="h-10 w-10 rounded-md bg-zinc-100 dark:bg-zinc-800"
+      />
+    </div>
   </div>
 
   <!-- Body -->
@@ -34,3 +39,10 @@ const { iconName, title } = Astro.props as Props;
     </div>
   </div>
 </div>
+
+<style>
+  @font-face {
+    font-family: "bit";
+    src: url("/8Bit-44Pl.ttf");
+  }
+</style>
