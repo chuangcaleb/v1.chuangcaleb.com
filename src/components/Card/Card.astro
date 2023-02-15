@@ -9,19 +9,28 @@ const { iconName, title } = Astro.props as Props;
 // https://icones.js.org/collection/logos
 ---
 
-<div
-  class="w-36 h-48 border border-zinc-500 rounded-xl relative ml-3 grid grid-cols-5 grid-rows-6"
->
+<div class="w-36 h-48 border border-zinc-500 rounded-xl relative ml-3 flex">
+  <!-- Title -->
   <div
-    class="w-full pb-3 border-b border-zinc-500 row-span-5 row-start-2 col-span-1 text-end"
+    class="pb-11 border-l border-zinc-500 row text-end w-min h-full"
     style={{ writingMode: "vertical-lr", transform: "rotate(180deg)" }}
   >
     <span>{title}</span>
   </div>
 
+  <!-- Icon -->
   <div
     class="bg-white dark:bg-invert-bgPrimary rounded-xl border border-zinc-500 absolute -top-3 -left-3"
   >
     <Icon name={iconName} class="h-12 rounded-xl p-1" />
+  </div>
+
+  <!-- Body -->
+  <div class="w-full flex">
+    <div
+      class="flex-grow border border-zinc-500 border-spacing-8 rounded-t-xl rounded-r-xl mt-1 mr-1 mb-1"
+    >
+      sadasd
+    </div>
   </div>
 </div>
