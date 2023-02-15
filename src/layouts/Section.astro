@@ -2,12 +2,12 @@
 interface SectionProps extends astroHTML.JSX.HTMLAttributes {
   fullWidth: boolean;
   verticalPadding: boolean;
-  secondaryBg: boolean;
+  invert: boolean;
 }
 const {
   fullWidth,
   verticalPadding,
-  secondaryBg,
+  invert,
   class: className,
 } = Astro.props as SectionProps;
 ---
@@ -17,8 +17,8 @@ const {
     {
       "px-4 xl:px-0 ": !fullWidth,
       "py-12": verticalPadding,
-      "bg-zinc-900 dark:text-zinc-300 dark:bg-invert-bgSecondary prose-invert":
-        secondaryBg,
+      "prose-p:text-zinc-300 bg-zinc-800 dark:bg-invert-bgSecondary prose-invert":
+        invert,
     },
     className,
   ]}

@@ -21,8 +21,8 @@ module.exports = {
             "code::after": {
               content: '""',
             },
-            "--tw-prose-body": theme("colors.zinc[700]"),
-            "--tw-prose-headings": theme("colors.zinc[900]"),
+            "--tw-prose-body": theme("colors.zinc[600]"),
+            "--tw-prose-headings": theme("colors.zinc[700]"),
             "--tw-prose-lead": theme("colors.zinc[600]"),
             "--tw-prose-links": theme("colors.zinc[600]"),
             "--tw-prose-code": theme("colors.zinc[600]"),
