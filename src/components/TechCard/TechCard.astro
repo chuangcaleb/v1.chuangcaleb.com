@@ -1,11 +1,13 @@
 ---
 import { Icon } from "astro-icon";
+import TechStack from "../../data/TechStack";
+import type { TechTitle } from "../../data/TechStack";
 
 interface Props {
-  iconName: string;
-  title: string;
+  title: TechTitle;
 }
-const { iconName, title } = Astro.props as Props;
+const { title } = Astro.props as Props;
+const techCard = TechStack[title];
 // https://icones.js.org/collection/logos
 ---
 
@@ -26,7 +28,7 @@ const { iconName, title } = Astro.props as Props;
   >
     <div class="p-1">
       <Icon
-        name={iconName}
+        name={techCard.icon}
         class="h-10 w-10 rounded-lg bg-zinc-100 dark:bg-zinc-800"
       />
     </div>
