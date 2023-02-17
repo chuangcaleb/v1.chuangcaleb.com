@@ -15,7 +15,7 @@ module.exports = {
         // ccIndigo: { DEFAULT: "#08090c", fade: colors.zinc[600] },
         // ccCambridge: { DEFAULT: "#73a29b", fade: "#B2C9AB" },
         // },
-        ccTimberwolf: { DEFAULT: "#D6CBC1", fade: "#CDD6D0" },
+        // ccTimberwolf: { DEFAULT: "#D6CBC1", fade: "#CDD6D0" },
       },
       screens: {
         xlPadded: { raw: "(min-width: calc(1280px + 3rem))" },

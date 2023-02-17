@@ -16,7 +16,7 @@ const techCard = TechStack[title];
 >
   <!-- Title -->
   <div
-    class="pb-11 border-l border-zinc-500 row text-end w-min h-full [writingMode:vertical-lr] [transform:rotate(180deg)]"
+    class="pb-11 row text-end w-min h-full [writingMode:vertical-lr] [transform:rotate(180deg)]"
   >
     <span class="tracking-wide [fontFamily:bit]">{title}</span>
   </div>
@@ -28,7 +28,7 @@ const techCard = TechStack[title];
     <div class="p-1">
       <Icon
         name={techCard.icon}
-        class="h-10 w-10 rounded-lg bg-zinc-100 dark:bg-zinc-800"
+        class="h-10 w-10 rounded-lg bg-ccWhite dark:bg-zinc-800"
       />
     </div>
   </div>
@@ -36,8 +36,11 @@ const techCard = TechStack[title];
   <!-- Body -->
   <div class="basis-full flex">
     <div
-      class="basis-full bg-ccWhite-fade dark:bg-ccSlate border-t border-r border-b border-zinc-500 border-spacing-8 rounded-t-xl rounded-r-xl mt-1 mr-1 mb-1"
+      class="basis-full bg-ccWhite-fade dark:bg-ccSlate border border-zinc-500 border-spacing-8 rounded-t-xl rounded-r-xl mt-1 mr-1 mb-1 grid grid-rows-2"
     >
+      <div></div>
+      <!-- Stats -->
+      <div class="">ad</div>
     </div>
   </div>
 </div>
