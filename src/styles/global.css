@@ -22,26 +22,26 @@
   }
   /* Colors */
   .ld-bg-rSixty {
-    @apply bg-ccWhite dark:bg-invert-ccSlate;
+    @apply bg-ccWhite dark:bg-ccSlate-fade;
   }
   .ld-bg-rThirty {
-    @apply bg-ccSlate dark:bg-invert-ccIndigo;
+    @apply bg-ccSlate dark:bg-ccIndigo;
   }
   .ld-bg-rTen {
-    @apply bg-ccCambridge dark:bg-invert-ccCambridge;
+    @apply bg-ccCambridge dark:bg-ccCambridge;
   }
   .ld-text-rSixty {
     /* @apply dark:text-ccWhite; */
-    @apply dark:text-ccWhite text-invert-ccIndigo;
+    @apply dark:text-ccWhite text-ccIndigo;
   }
   .ld-text-rSixty-fade {
-    @apply text-ccWhite-fade dark:text-invert-ccIndigo-fade;
+    @apply text-ccWhite-fade dark:text-ccIndigo-fade;
   }
   .ld-text-rThirty {
-    @apply text-ccSlate dark:text-invert-ccSlate;
+    @apply text-ccSlate dark:text-ccSlate-fade;
   }
   .ld-text-rTen {
-    @apply text-ccCambridge dark:text-invert-ccCambridge;
+    @apply text-ccCambridge dark:text-ccCambridge;
   }
 }
 

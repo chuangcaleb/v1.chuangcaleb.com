@@ -5,16 +5,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ccWhite: { DEFAULT: colors.zinc[50], fade: colors.zinc[500] },
-        ccSlate: "#30354a",
-        ccCambridge: { DEFAULT: "#507972", fade: "#73a29b" },
-        invert: {
-          // ccIndigo: { DEFAULT: "#08090c", fade: colors.zinc[600] },
-          ccIndigo: { DEFAULT: "#12141c", fade: colors.zinc[500] },
-          ccSlate: "#292d3a",
-          ccCambridge: { DEFAULT: "#92B6B1", fade: "#B2C9AB" },
-          // #E8DDB5
-        },
+        ccWhite: { DEFAULT: colors.zinc[50], fade: colors.zinc[100] },
+        // ccWhite: { DEFAULT: colors.zinc[50], fade: colors.zinc[300] },
+        ccSlate: { DEFAULT: "#30354a", fade: "#1e212b" },
+        ccCambridge: { DEFAULT: "#507972", fade: "#92B6B1" },
+        ccIndigo: { DEFAULT: "#12141c", fade: colors.zinc[800] },
+        ccDutch: { DEFAULT: "#dccb8e", fade: "#E8DDB5" },
+        // invert: {
+        // ccIndigo: { DEFAULT: "#08090c", fade: colors.zinc[600] },
+        // ccCambridge: { DEFAULT: "#73a29b", fade: "#B2C9AB" },
+        // },
+        ccTimberwolf: { DEFAULT: "#D6CBC1", fade: "#CDD6D0" },
       },
       screens: {
         xlPadded: { raw: "(min-width: calc(1280px + 3rem))" },
@@ -68,5 +69,5 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/typography")],
-  // darkMode: "class",
+  darkMode: "class",
 };
