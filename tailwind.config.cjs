@@ -4,17 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bgPrimary: "#fefefe",
-        bgSecondary: "#292d3a",
-        primary: "#8644ff",
-        secondary: "#9c6bff",
-        tertiary: "#9c6bff",
+        rSixty: "#fefefe",
+        rThirty: "#30354a",
+        rTen: { DEFAULT: "#8644ff", lighter: "#9c6bff" },
         invert: {
-          bgPrimary: "#1c1f2b",
-          bgSecondary: "#292d3a",
-          primary: "#8644ff",
-          secondary: "#9c6bff",
-          tertiary: "#9c6bff",
+          rSixty: "#1c1f2b",
+          rThirty: "#292d3a",
+          rTen: { DEFAULT: "#8644ff", lighter: "#9c6bff" },
         },
       },
       typography: ({ theme }) => ({
