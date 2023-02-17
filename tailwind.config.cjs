@@ -4,6 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        bgPrimary: "#fefefe",
+        bgSecondary: "#292d3a",
+        primary: "#8644ff",
+        secondary: "#9c6bff",
+        tertiary: "#9c6bff",
         invert: {
           bgPrimary: "#1c1f2b",
           bgSecondary: "#292d3a",
@@ -39,7 +44,7 @@ module.exports = {
             // "--tw-prose-td-borders": theme("colors.pink[200]"),
 
             // * Invert
-            "--tw-prose-invert-body": theme("colors.zinc[00]"),
+            "--tw-prose-invert-body": theme("colors.zinc[200]"),
             "--tw-prose-invert-headings": theme("colors.zinc[200]"),
             "--tw-prose-invert-lead": theme("colors.zinc[200]"),
             "--tw-prose-invert-links": theme("colors.zinc[200]"),
@@ -61,5 +66,5 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/typography")],
-  // darkMode: "class",
+  darkMode: "class",
 };
