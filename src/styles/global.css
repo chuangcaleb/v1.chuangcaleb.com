@@ -15,7 +15,8 @@
     @apply bg-ccPurple dark:bg-invert-ccPurple;
   }
   .ld-text-rSixty {
-    @apply text-ccWhite dark:text-invert-ccIndigo;
+    /* @apply dark:text-ccWhite; */
+    @apply dark:text-ccWhite text-invert-ccIndigo;
   }
   .ld-text-rSixty-fade {
     @apply text-ccWhite-fade dark:text-invert-ccIndigo-fade;

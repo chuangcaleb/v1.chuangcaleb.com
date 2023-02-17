@@ -9,7 +9,7 @@ module.exports = {
         ccBlueishGray: "#30354a",
         ccPurple: { DEFAULT: "#8644ff", fade: "#9c6bff" },
         invert: {
-          // rSixty: "#08090c",
+          // ccIndigo: { DEFAULT: "#08090c", fade: colors.zinc[600] },
           ccIndigo: { DEFAULT: "#12141c", fade: colors.zinc[600] },
           ccBlueishGray: "#292d3a",
           ccPurple: { DEFAULT: "#8644ff", fade: "#9c6bff" },
@@ -64,5 +64,5 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/typography")],
-  // darkMode: "class",
+  darkMode: "class",
 };
