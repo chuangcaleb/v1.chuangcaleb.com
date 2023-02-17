@@ -5,14 +5,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        rSixty: { DEFAULT: "#fefefe", fade: colors.zinc[500] },
-        rThirty: "#30354a",
-        rTen: { DEFAULT: "#8644ff", fade: "#9c6bff" },
+        ccWhite: { DEFAULT: "#fefefe", fade: colors.zinc[500] },
+        ccBlueishGray: "#30354a",
+        ccPurple: { DEFAULT: "#8644ff", fade: "#9c6bff" },
         invert: {
           // rSixty: "#08090c",
-          rSixty: { DEFAULT: "#12141c", fade: colors.zinc[600] },
-          rThirty: "#292d3a",
-          rTen: { DEFAULT: "#8644ff", fade: "#9c6bff" },
+          ccIndigo: { DEFAULT: "#12141c", fade: colors.zinc[600] },
+          ccBlueishGray: "#292d3a",
+          ccPurple: { DEFAULT: "#8644ff", fade: "#9c6bff" },
         },
       },
       typography: ({ theme }) => ({

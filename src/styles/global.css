@@ -6,25 +6,25 @@
   }
 
   .ld-bg-rSixty {
-    @apply bg-rSixty dark:bg-invert-rSixty;
+    @apply bg-ccWhite dark:bg-invert-ccIndigo;
   }
   .ld-bg-rThirty {
-    @apply bg-rThirty dark:bg-invert-rThirty;
+    @apply bg-ccBlueishGray dark:bg-invert-ccBlueishGray;
   }
   .ld-bg-rTen {
-    @apply bg-rTen dark:bg-invert-rTen;
+    @apply bg-ccPurple dark:bg-invert-ccPurple;
   }
   .ld-text-rSixty {
-    @apply text-rSixty dark:text-invert-rSixty;
+    @apply text-ccWhite dark:text-invert-ccIndigo;
   }
   .ld-text-rSixty-fade {
-    @apply text-rSixty-fade dark:text-invert-rSixty-fade;
+    @apply text-ccWhite-fade dark:text-invert-ccIndigo-fade;
   }
   .ld-text-rThirty {
-    @apply text-rThirty dark:text-invert-rThirty;
+    @apply text-ccBlueishGray dark:text-invert-ccBlueishGray;
   }
   .ld-text-rTen {
-    @apply text-rTen dark:text-invert-rTen;
+    @apply text-ccPurple dark:text-invert-ccPurple;
   }
 }
 /*
