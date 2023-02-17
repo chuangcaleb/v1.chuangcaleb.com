@@ -5,14 +5,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ccWhite: { DEFAULT: "#fefefe", fade: colors.zinc[500] },
-        ccBlueishGray: "#30354a",
-        ccPurple: { DEFAULT: "#8644ff", fade: "#9c6bff" },
+        ccWhite: { DEFAULT: colors.zinc[50], fade: colors.zinc[500] },
+        ccSlate: "#30354a",
+        ccCambridge: { DEFAULT: "#507972", fade: "#73a29b" },
         invert: {
           // ccIndigo: { DEFAULT: "#08090c", fade: colors.zinc[600] },
           ccIndigo: { DEFAULT: "#12141c", fade: colors.zinc[600] },
-          ccBlueishGray: "#292d3a",
-          ccPurple: { DEFAULT: "#8644ff", fade: "#9c6bff" },
+          ccSlate: "#292d3a",
+          ccCambridge: { DEFAULT: "#92B6B1", fade: "#B2C9AB" },
+          // #E8DDB5
         },
       },
       screens: {
