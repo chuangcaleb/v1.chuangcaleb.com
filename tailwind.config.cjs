@@ -8,7 +8,8 @@ module.exports = {
         rThirty: "#30354a",
         rTen: { DEFAULT: "#8644ff", lighter: "#9c6bff" },
         invert: {
-          rSixty: "#1c1f2b",
+          // rSixty: "#08090c",
+          rSixty: "#12141c",
           rThirty: "#292d3a",
           rTen: { DEFAULT: "#8644ff", lighter: "#9c6bff" },
         },

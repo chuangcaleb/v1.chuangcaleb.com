@@ -1,9 +1,20 @@
 @tailwind base;
 
-.prose :where(p):not(:where([class~="not-prose"] *)) {
-  color: var(--tw-prose-body);
-}
+@layer base {
+  .prose :where(p):not(:where([class~="not-prose"] *)) {
+    color: var(--tw-prose-body);
+  }
 
+  .ld-bg-rSixty {
+    @apply bg-rSixty dark:bg-invert-rSixty;
+  }
+  .ld-bg-rThirty {
+    @apply bg-rThirty dark:bg-invert-rThirty;
+  }
+  .ld-bg-rTen {
+    @apply bg-rTen dark:bg-invert-rTen;
+  }
+}
 /*
 * {
   outline: 1px solid #f00 !important;
