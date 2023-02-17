@@ -15,7 +15,7 @@ const posts = (await getCollection("blog")).sort(
         posts.map((post) => (
           <li class="flex">
             <time
-              class="italic text-gray-400 basis-1/4"
+              class="italic text-rSixty-fade basis-1/4"
               datetime={post.data.pubDate.toISOString()}
             >
               {post.data.pubDate.toLocaleDateString("en-us", {

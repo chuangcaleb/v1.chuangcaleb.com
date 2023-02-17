@@ -1,17 +1,18 @@
+const colors = require("tailwindcss/colors");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
       colors: {
-        rSixty: "#fefefe",
+        rSixty: { DEFAULT: "#fefefe", fade: colors.zinc[500] },
         rThirty: "#30354a",
-        rTen: { DEFAULT: "#8644ff", lighter: "#9c6bff" },
+        rTen: { DEFAULT: "#8644ff", fade: "#9c6bff" },
         invert: {
           // rSixty: "#08090c",
-          rSixty: "#12141c",
+          rSixty: { DEFAULT: "#12141c", fade: colors.zinc[600] },
           rThirty: "#292d3a",
-          rTen: { DEFAULT: "#8644ff", lighter: "#9c6bff" },
+          rTen: { DEFAULT: "#8644ff", fade: "#9c6bff" },
         },
       },
       typography: ({ theme }) => ({
@@ -41,11 +42,11 @@ module.exports = {
             // "--tw-prose-td-borders": theme("colors.pink[200]"),
 
             // * Invert
-            "--tw-prose-invert-body": theme("colors.zinc[200]"),
-            "--tw-prose-invert-headings": theme("colors.zinc[200]"),
-            "--tw-prose-invert-lead": theme("colors.zinc[200]"),
-            "--tw-prose-invert-links": theme("colors.zinc[200]"),
-            "--tw-prose-invert-code": theme("colors.zinc[200]"),
+            "--tw-prose-invert-body": theme("colors.zinc[300]"),
+            "--tw-prose-invert-headings": theme("colors.zinc[300]"),
+            "--tw-prose-invert-lead": theme("colors.zinc[300]"),
+            "--tw-prose-invert-links": theme("colors.zinc[300]"),
+            "--tw-prose-invert-code": theme("colors.zinc[300]"),
             // "--tw-prose-invert-bold": theme("colors.white"),
             // "--tw-prose-invert-counters": theme("colors.pink[400]"),
             "--tw-prose-invert-bullets": theme("colors.zinc[500]"),
@@ -63,5 +64,5 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/typography")],
-  darkMode: "class",
+  // darkMode: "class",
 };

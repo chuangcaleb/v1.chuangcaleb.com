@@ -14,6 +14,18 @@
   .ld-bg-rTen {
     @apply bg-rTen dark:bg-invert-rTen;
   }
+  .ld-text-rSixty {
+    @apply text-rSixty dark:text-invert-rSixty;
+  }
+  .ld-text-rSixty-fade {
+    @apply text-rSixty-fade dark:text-invert-rSixty-fade;
+  }
+  .ld-text-rThirty {
+    @apply text-rThirty dark:text-invert-rThirty;
+  }
+  .ld-text-rTen {
+    @apply text-rTen dark:text-invert-rTen;
+  }
 }
 /*
 * {
