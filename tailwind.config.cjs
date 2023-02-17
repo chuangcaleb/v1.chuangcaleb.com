@@ -15,6 +15,9 @@ module.exports = {
           ccPurple: { DEFAULT: "#8644ff", fade: "#9c6bff" },
         },
       },
+      screens: {
+        xlPadded: { raw: "(min-width: calc(1280px + 3rem))" },
+      },
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {
@@ -64,5 +67,5 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/typography")],
-  darkMode: "class",
+  // darkMode: "class",
 };
