@@ -1,0 +1,24 @@
+---
+import { Icon } from "astro-iconify";
+import type { Scale, TechCardStatsTitles } from "../../data/TechStack/types";
+
+interface Props {
+  title: TechCardStatsTitles;
+  value: Scale;
+}
+
+const { title, value } = Astro.props as Props;
+
+// console.log("🚀 ~ file: Rating.astro:11 ~ value", value);
+---
+
+<!-- <div class="grid grid-cols-[max-content,1fr] justify-around"> -->
+<span class="">{title}</span>
+<div class="grid grid-cols-5">
+  {
+    [...Array(value)].map((i) => (
+      <Icon key={i} name="bi:wrench-adjustable-circle" class="w-full" />
+    ))
+  }
+</div>
+<!-- </div> -->

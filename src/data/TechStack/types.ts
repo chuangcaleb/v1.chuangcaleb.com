@@ -5,14 +5,11 @@ export type TechCardIcon = {
   invert?: boolean;
 };
 
-type Scale = 0 | 1 | 2 | 3 | 4 | 5;
+export type TechCardStatsTitles = "pro" | "exp" | "frs" | "int";
 
-export type TechCardStats = {
-  pro?: Scale;
-  exp?: Scale;
-  frs?: Scale;
-  int?: Scale;
-};
+export type Scale = 0 | 1 | 2 | 3 | 4 | 5;
+
+export type TechCardStats = Record<TechCardStatsTitles, Scale>;
 
 export type TechCard = {
   icon: TechCardIcon;
