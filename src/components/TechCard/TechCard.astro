@@ -2,6 +2,7 @@
 import TechStack from "../../data/TechStack";
 import type { TechTitle } from "../../data/TechStack";
 import CardIcon from "./CardIcon.astro";
+import CardBody from "./CardBody.astro";
 
 interface Props {
   title: TechTitle;
@@ -24,15 +25,7 @@ const techCard = TechStack[title];
   <CardIcon icon={techCard.icon} />
 
   <!-- Body -->
-  <div class="basis-full flex">
-    <div
-      class="basis-full bg-ccWhite-fade dark:bg-ccSlate border border-zinc-500 dark:border-zinc-600 border-spacing-8 rounded-t-xl rounded-r-xl mt-1 mr-1 mb-1 grid grid-rows-2"
-    >
-      <div></div>
-      <!-- Stats -->
-      <div class="">ad</div>
-    </div>
-  </div>
+  <CardBody stats={techCard.stats} />
 </div>
 
 <style>

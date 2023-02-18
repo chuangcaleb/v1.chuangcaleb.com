@@ -1,0 +1,21 @@
+---
+import type { TechCard } from "../../data/TechStack/types";
+
+const { stats } = Astro.props as TechCard;
+const { pro = 0, exp = 0, frs = 0, int = 0 } = stats || {};
+---
+
+<div class="basis-full flex">
+  <div
+    class="basis-full bg-ccWhite-fade dark:bg-ccSlate border border-zinc-500 dark:border-zinc-600 border-spacing-8 rounded-t-xl rounded-r-xl mt-1 mr-1 mb-1 grid grid-rows-2"
+  >
+    <div></div>
+    <!-- Stats -->
+    <div>
+      <div class="">{pro}</div>
+      <div class="">{exp}</div>
+      <div class="">{frs}</div>
+      <div class="">{int}</div>
+    </div>
+  </div>
+</div>
