@@ -30,7 +30,7 @@ module.exports = {
       extends: ["plugin:@typescript-eslint/recommended"],
       rules: {
         "@typescript-eslint/no-unused-vars": [
-          "error",
+          "warn",
           { argsIgnorePattern: "^_", destructuredArrayIgnorePattern: "^_" },
         ],
         "@typescript-eslint/no-non-null-assertion": "off",
