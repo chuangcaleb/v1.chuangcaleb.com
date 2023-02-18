@@ -8,8 +8,18 @@ interface Props {
 }
 const { title } = Astro.props as Props;
 const techCard = TechStack[title];
-const { icon, iconBgColor } = techCard;
+const { icon, iconBgColor, iconColor } = techCard;
 // https://icones.js.org/collection/logos
+
+const iconBgColorLiteral =
+  (iconBgColor &&
+    iconBgColor !== "responsive" && { backgroundColor: iconBgColor }) ||
+  {};
+const iconColorLiteral = (iconColor && { color: iconColor }) || {};
+let iconStyles: any = Object.assign(iconBgColorLiteral, iconColorLiteral);
+if (Object.keys(iconStyles).length === 0) {
+  iconStyles = undefined;
+}
 ---
 
 <div
@@ -33,8 +43,7 @@ const { icon, iconBgColor } = techCard;
           "h-10 w-10 rounded-lg",
           { "bg-ccWhite dark:bg-zinc-800": iconBgColor === "responsive" },
         ]}
-        style={iconBgColor &&
-          iconBgColor !== "responsive" && { backgroundColor: iconBgColor }}
+        style={iconStyles}
       />
     </div>
   </div>

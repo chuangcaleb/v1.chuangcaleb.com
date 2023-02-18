@@ -1,6 +1,7 @@
 export type TechCard = {
-  iconBgColor?: string;
   icon: string;
+  iconBgColor?: string;
+  iconColor?: string;
 };
 
 export type TechDeck = { [key: string]: TechCard };
