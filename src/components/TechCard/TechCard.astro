@@ -1,25 +1,13 @@
 ---
-import { Icon } from "astro-icon";
 import TechStack from "../../data/TechStack";
 import type { TechTitle } from "../../data/TechStack";
+import CardIcon from "./CardIcon.astro";
 
 interface Props {
   title: TechTitle;
 }
 const { title } = Astro.props as Props;
 const techCard = TechStack[title];
-const { icon, iconBgColor, iconColor, invert } = techCard;
-// https://icones.js.org/collection/logos
-
-const iconBgColorLiteral =
-  (iconBgColor &&
-    iconBgColor !== "responsive" && { backgroundColor: iconBgColor }) ||
-  {};
-const iconColorLiteral = (iconColor && { color: iconColor }) || {};
-let iconStyles: any = Object.assign(iconBgColorLiteral, iconColorLiteral);
-if (Object.keys(iconStyles).length === 0) {
-  iconStyles = undefined;
-}
 ---
 
 <div
@@ -33,24 +21,7 @@ if (Object.keys(iconStyles).length === 0) {
   </div>
 
   <!-- Icon -->
-  <div
-    class="bg-ccCambridge-fade dark:bg-ccIndigo rounded-xl border border-zinc-500 dark:border-zinc-600 absolute -top-3 -left-3"
-  >
-    <div class="p-1">
-      <div
-        class:list={[
-          "rounded-lg",
-          { "bg-ccWhite dark:bg-zinc-800": iconBgColor === "responsive" },
-        ]}
-      >
-        <Icon
-          name={icon}
-          class:list={["h-10 w-10 rounded-lg", { "dark:invert": invert }]}
-          style={iconStyles}
-        />
-      </div>
-    </div>
-  </div>
+  <CardIcon icon={techCard.icon} />
 
   <!-- Body -->
   <div class="basis-full flex">

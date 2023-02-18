@@ -3,11 +3,13 @@
 import type { TechDeck } from "../types";
 
 const frameworks = {
-  React: { iconBgColor: "responsive", icon: "logos:react" },
-  Astro: { iconBgColor: "black", icon: "astro" },
-  CRA: { iconBgColor: "responsive", icon: "logos:create-react-app" },
-  Next: { iconBgColor: "responsive", icon: "logos:nextjs-icon", invert: true },
-  Django: { icon: "logos:django-icon" },
+  React: { icon: { bgColor: "responsive", name: "logos:react" } },
+  Astro: { icon: { bgColor: "black", name: "astro" } },
+  CRA: { icon: { bgColor: "responsive", name: "logos:create-react-app" } },
+  Next: {
+    icon: { bgColor: "responsive", name: "logos:nextjs-icon", invert: true },
+  },
+  Django: { icon: { name: "logos:django-icon" } },
 } satisfies TechDeck;
 
 export default frameworks;

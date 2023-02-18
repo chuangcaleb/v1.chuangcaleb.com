@@ -1,8 +1,12 @@
-export type TechCard = {
-  icon: string;
-  iconBgColor?: string;
-  iconColor?: string;
+export type TechCardIcon = {
+  name: string;
+  bgColor?: string;
+  color?: string;
   invert?: boolean;
+};
+
+export type TechCard = {
+  icon: TechCardIcon;
 };
 
 export type TechDeck = { [key: string]: TechCard };

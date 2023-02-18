@@ -1,0 +1,34 @@
+---
+import { Icon } from "astro-icon";
+import type { TechCard } from "../../data/TechStack/types";
+
+const {
+  icon: { name, bgColor, color, invert },
+} = Astro.props as TechCard;
+// https://icones.js.org/collection/logos
+
+const bgColorLiteral =
+  (bgColor && bgColor !== "responsive" && { backgroundColor: bgColor }) || {};
+const colorLiteral = (color && { color: color }) || {};
+let iconStyles: any = Object.assign(bgColorLiteral, colorLiteral);
+if (Object.keys(iconStyles).length === 0) {
+  iconStyles = undefined;
+}
+---
+
+<div
+  class="bg-ccCambridge-fade dark:bg-ccIndigo rounded-xl border border-zinc-500 dark:border-zinc-600 absolute -top-3 -left-3 p-1"
+>
+  <div
+    class:list={[
+      "rounded-lg",
+      { "bg-ccWhite dark:bg-zinc-800": bgColor === "responsive" },
+    ]}
+  >
+    <Icon
+      name={name}
+      class:list={["h-10 w-10 rounded-lg", { "dark:invert": invert }]}
+      style={iconStyles}
+    />
+  </div>
+</div>
