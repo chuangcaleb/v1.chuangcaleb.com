@@ -3,7 +3,7 @@
 import type { TechDeck } from "../types";
 
 const frameworks = {
-  React: { iconBgColor: "white", icon: "logos:react" },
+  React: { iconBgColor: "responsive", icon: "logos:react" },
   Astro: { iconBgColor: "black", icon: "astro" },
   CRA: { iconBgColor: "responsive", icon: "logos:create-react-app" },
   Next: { iconBgColor: "white", icon: "logos:nextjs-icon" },
