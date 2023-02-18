@@ -1,5 +1,5 @@
 export type TechCard = {
-  color: string;
+  iconBgColor?: string;
   icon: string;
 };
 
