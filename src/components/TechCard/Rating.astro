@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-iconify";
+import { Icon, Sprite } from "astro-iconify";
 import colors from "tailwindcss/colors";
 import type { Scale, TechCardStatsTitles } from "../../data/TechStack/types";
 
@@ -41,6 +41,7 @@ darkColor;
 // exp bi:card-list mdi:book-education
 // fresh ic:round-event-repeat ic:baseline-refresh ic:baseline-timer
 // int mdi:heart mdi:heart-plus mdi:heart-circle
+//  https://css-tricks.com/five-methods-for-five-star-ratings/
 ---
 
 <!-- <div class="grid grid-cols-[max-content,1fr] justify-around"> -->
@@ -48,10 +49,10 @@ darkColor;
 <div class="grid grid-cols-5" style={{ color: color }}>
   {
     [...Array(value)].map((i) => (
-      <Icon key={i} name={iconName} class="w-full" />
+      <>
+        <Sprite key={i} name={iconName} class="h-4 w-4" />
+      </>
     ))
   }
 </div>
 <!-- </div> -->
-
-<!-- https://css-tricks.com/five-methods-for-five-star-ratings/ -->
