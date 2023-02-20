@@ -1,9 +1,8 @@
-// import type { TechDeck } from "../types";
-
-import type { TechDeck } from "../types";
+import type { TechDeckOptionalType } from "../types";
+import { appendType } from "../util";
 
 const ui = {
   "Material UI": { icon: { bgColor: "responsive", name: "logos:material-ui" } },
-} satisfies TechDeck;
+} satisfies TechDeckOptionalType;
 
-export default ui;
+export default appendType(ui, "ui");

@@ -1,4 +1,5 @@
-import type { TechDeck } from "../types";
+import type { TechDeckOptionalType } from "../types";
+import { appendType } from "../util";
 
 const languages = {
   Javascript: {
@@ -10,6 +11,6 @@ const languages = {
     stats: { pro: 2, exp: 3, frs: 5, int: 5 },
   },
   // Python: { color: "sad" },
-} satisfies TechDeck;
+} satisfies TechDeckOptionalType;
 
-export default languages;
+export default appendType(languages, "lang");

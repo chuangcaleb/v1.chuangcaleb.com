@@ -2,7 +2,7 @@
 import type { TechCard } from "../../data/TechStack/types";
 import Rating from "./Rating.astro";
 
-const { stats } = Astro.props as TechCard;
+const { stats, type } = Astro.props as TechCard;
 const { pro = 0, exp = 0, frs = 0, int = 0 } = stats || {};
 ---
 
@@ -10,6 +10,10 @@ const { pro = 0, exp = 0, frs = 0, int = 0 } = stats || {};
   <div
     class="basis-full bg-ccSlate border border-zinc-500 dark:border-zinc-600 border-spacing-8 rounded-t-xl rounded-r-xl mt-1 mr-1 mb-1 flex"
   >
+    <span
+      class="absolute top-0 right-1 rounded-tr-lg rounded-bl-lg text-sm pl-2 bg-ccCambridge-fade dark:bg-ccIndigo [fontFamily:bit]"
+      >{type}</span
+    >
     <div></div>
     <!-- Stats -->
     <div
