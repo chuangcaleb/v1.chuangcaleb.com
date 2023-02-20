@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-iconify";
+import colors from "tailwindcss/colors";
 import type { Scale, TechCardStatsTitles } from "../../data/TechStack/types";
 
 interface Props {
@@ -9,16 +10,48 @@ interface Props {
 
 const { title, value } = Astro.props as Props;
 
-// console.log("🚀 ~ file: Rating.astro:11 ~ value", value);
+let color = "";
+let darkColor = "";
+let iconName = "";
+switch (title) {
+  case "pro":
+    color = colors.red[500];
+    darkColor = colors.red[300];
+    iconName = "ic:baseline-speed";
+    break;
+  case "exp":
+    color = colors.blue[500];
+    darkColor = colors.red[300];
+    iconName = "mdi:book-education";
+    break;
+  case "frs":
+    color = colors.green[500];
+    darkColor = colors.red[300];
+    iconName = "ic:baseline-timer";
+    break;
+  case "int":
+    color = colors.yellow[500];
+    darkColor = colors.red[300];
+    iconName = "mdi:heart";
+    break;
+}
+darkColor;
+
+// pro mdi:clipboard-check mdi:clipboard-check-multiple ic:baseline-library-add-check ic:baseline-speed
+// exp bi:card-list mdi:book-education
+// fresh ic:round-event-repeat ic:baseline-refresh ic:baseline-timer
+// int mdi:heart mdi:heart-plus mdi:heart-circle
 ---
 
 <!-- <div class="grid grid-cols-[max-content,1fr] justify-around"> -->
-<span class="">{title}</span>
-<div class="grid grid-cols-5">
+<span class="" style={{ color: color }}>{title}</span>
+<div class="grid grid-cols-5" style={{ color: color }}>
   {
     [...Array(value)].map((i) => (
-      <Icon key={i} name="bi:wrench-adjustable-circle" class="w-full" />
+      <Icon key={i} name={iconName} class="w-full" />
     ))
   }
 </div>
 <!-- </div> -->
+
+<!-- https://css-tricks.com/five-methods-for-five-star-ratings/ -->

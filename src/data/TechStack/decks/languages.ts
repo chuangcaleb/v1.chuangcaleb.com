@@ -7,7 +7,7 @@ const languages = {
   },
   Typescript: {
     icon: { name: "logos:typescript-icon" },
-    stats: { pro: 3, exp: 3, frs: 5, int: 5 },
+    stats: { pro: 2, exp: 3, frs: 5, int: 5 },
   },
   // Python: { color: "sad" },
 } satisfies TechDeck;
