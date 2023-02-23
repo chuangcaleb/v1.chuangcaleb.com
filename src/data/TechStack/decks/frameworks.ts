@@ -1,6 +1,6 @@
-import type { TechDeckOptionalType } from "./../types";
+import type { TechRawDeck } from "./../types";
 
-import { appendType } from "../util";
+import { processDeck } from "../util";
 
 const frameworks = {
   React: { icon: { bgColor: "responsive", name: "logos:react" } },
@@ -10,6 +10,6 @@ const frameworks = {
     icon: { bgColor: "responsive", name: "logos:nextjs-icon", invert: true },
   },
   Django: { icon: { name: "logos:django-icon" } },
-} satisfies TechDeckOptionalType;
+} satisfies TechRawDeck;
 
-export default appendType(frameworks, "meta");
+export default processDeck(frameworks, "meta");
