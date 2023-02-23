@@ -5,8 +5,8 @@ const { index } = Astro.props as { index: boolean };
 
 <header
   class:list={[
-    "max-w-screen-xl mx-auto px-4 xlPadded:px-0",
-    { "absolute z-10 left-0 right-0": index },
+    "max-w-screen-xl mx-auto px-4 xlPadded:px-0 min-h-fit",
+    { "absolute z-10 inset-0": index },
   ]}
 >
   <nav

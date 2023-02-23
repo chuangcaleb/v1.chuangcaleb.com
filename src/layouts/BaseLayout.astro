@@ -10,6 +10,7 @@ interface BaseLayoutProps extends astroHTML.JSX.HTMLAttributes {
   notProse: boolean;
   fullWidth: boolean;
   index: boolean;
+  hasSpriteProvider: boolean;
 }
 
 const {
@@ -19,6 +20,7 @@ const {
   notProse,
   fullWidth,
   index,
+  hasSpriteProvider,
 } = Astro.props as BaseLayoutProps;
 ---
 
@@ -38,9 +40,15 @@ const {
           className,
         ]}
       >
-        <Sprite.Provider>
-          <slot />
-        </Sprite.Provider>
+        {
+          hasSpriteProvider ? (
+            <Sprite.Provider>
+              <slot />
+            </Sprite.Provider>
+          ) : (
+            <slot />
+          )
+        }
       </div>
     </main>
     <Footer />
