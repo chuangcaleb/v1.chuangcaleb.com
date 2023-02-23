@@ -15,10 +15,16 @@ const techCard = TechStack[title];
   class="w-36 h-48 border border-zinc-500 dark:border-zinc-600 rounded-xl relative ml-3 mt-3 flex bg-ccCambridge-fade dark:bg-ccIndigo text-ccIndigo dark:text-ccWhite"
 >
   <!-- Title -->
-  <div
-    class="pb-11 row text-end w-min h-full [writingMode:vertical-lr] [transform:rotate(180deg)]"
-  >
-    <span class="tracking-wide [fontFamily:bit]">{title}</span>
+  <div class="relative w-min h-full [fontFamily:bit]">
+    <span
+      class="tracking-wide [writingMode:vertical-lr] [transform:rotate(180deg)] mt-11"
+      >{title}</span
+    >
+    <span
+      class="block w-full absolute bottom-1 text-center text-zinc-200 text-sm"
+    >
+      {techCard.grade?.tier}
+    </span>
   </div>
 
   <!-- Icon -->
