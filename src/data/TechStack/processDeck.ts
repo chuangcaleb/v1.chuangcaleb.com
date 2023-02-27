@@ -1,4 +1,10 @@
-import type { Score, TechCardType, TechRawDeck, Tier } from "./types";
+import type {
+  Score,
+  TechCardType,
+  GenericTechRawDeck,
+  Tier,
+  TechDeck,
+} from "./types";
 
 const MIN_THRESHOLD: Record<Tier, Score> = {
   S: 90,
@@ -9,7 +15,10 @@ const MIN_THRESHOLD: Record<Tier, Score> = {
   U: 0,
 };
 
-export function processDeck(deck: TechRawDeck, type: TechCardType) {
+export default function processDeck<T>(
+  deck: GenericTechRawDeck,
+  type: TechCardType
+) {
   Object.keys(deck).forEach((title) => {
     const card = deck[title];
     card["type"] = type;
@@ -34,5 +43,5 @@ export function processDeck(deck: TechRawDeck, type: TechCardType) {
       Object.assign(card, { grade: { score: score, tier: tier } });
     }
   });
-  return deck;
+  return deck as TechDeck<T>;
 }

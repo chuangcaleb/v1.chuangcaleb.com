@@ -1,5 +1,5 @@
-import type { TechRawDeck } from "../types";
-import { processDeck } from "../util";
+import type { GenericTechRawDeck } from "../types";
+import processDeck from "../processDeck";
 
 const languages = {
   Javascript: {
@@ -11,6 +11,6 @@ const languages = {
     stats: { pro: 2, exp: 3, frs: 5, int: 5 },
   },
   // Python: { color: "sad" },
-} satisfies TechRawDeck;
+} satisfies GenericTechRawDeck;
 
-export default processDeck(languages, "lang");
+export default processDeck<typeof languages>(languages, "lang");

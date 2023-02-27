@@ -21,8 +21,9 @@ export type TechCard = {
   type: TechCardType;
   grade: TechCardGrade;
 };
-export type TechDeck = Record<string, TechCard>;
 
 type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
-type TechRawCard = PartialBy<PartialBy<TechCard, "type">, "grade">;
-export type TechRawDeck = Record<string, TechRawCard>;
+export type TechRawCard = PartialBy<PartialBy<TechCard, "type">, "grade">;
+export type GenericTechRawDeck = Record<string, TechRawCard>;
+
+export type TechDeck<T> = Record<keyof T, TechCard>;

@@ -1,6 +1,5 @@
-import type { TechRawDeck } from "./../types";
-
-import { processDeck } from "../util";
+import processDeck from "../processDeck";
+import type { GenericTechRawDeck } from "./../types";
 
 const frameworks = {
   Astro: {
@@ -15,6 +14,6 @@ const frameworks = {
     icon: { name: "logos:django-icon" },
     stats: { pro: 3, exp: 3, frs: 3, int: 3 },
   },
-} satisfies TechRawDeck;
+} satisfies GenericTechRawDeck;
 
-export default processDeck(frameworks, "meta");
+export default processDeck<typeof frameworks>(frameworks, "meta");
