@@ -1,19 +1,40 @@
 ---
+import { Sprite } from "astro-iconify";
 import type { TechCard } from "../../data/TechStack/types";
 import Rating from "./Rating.astro";
 
 const { stats, type } = Astro.props as TechCard;
 const { pro = 0, exp = 0, frs = 0, int = 0 } = stats || {};
+let iconName = "";
+switch (type) {
+  case "lang":
+    iconName = "ic:baseline-language";
+    // iconName = "ic:outline-abc";
+    break;
+  case "lib":
+    iconName = "ph:package";
+    // iconName = "tabler:packages";
+    break;
+  case "meta":
+    iconName = "iconoir:frame-alt";
+    // iconName = "fluent-mdl2:process-meta-task"; //too big
+    break;
+  case "style":
+    iconName = "ph:paint-brush-broad";
+    // iconName = "fluent:text-edit-style-20-filled";
+    break;
+}
 ---
 
 <div class="basis-full flex">
   <div
     class="basis-full bg-ccSlate border border-zinc-500 dark:border-zinc-600 border-spacing-8 rounded-t-xl rounded-r-xl mt-1 mr-1 mb-1 flex"
   >
-    <span
-      class="absolute top-0 right-1 rounded-tr-lg rounded-bl-lg text-sm pl-1 bg-ccCambridge-fade dark:bg-ccIndigo [fontFamily:bit]"
-      >{type}</span
+    <div
+      class="absolute top-0 right-0 rounded-tr-lg rounded-bl-lg text-sm p-[0.4em] bg-ccCambridge-fade dark:bg-ccIndigo"
     >
+      <Sprite name={iconName} class="h-4 w-4" />
+    </div>
     <div></div>
     <!-- Stats -->
     <div

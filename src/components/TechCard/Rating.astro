@@ -44,8 +44,7 @@ darkColor;
 //  https://css-tricks.com/five-methods-for-five-star-ratings/
 ---
 
-<!-- <div class="grid grid-cols-[max-content,1fr] justify-around"> -->
-<span class="" style={{ color: color }}>{title}</span>
+<span style={{ color: color }}>{title}</span>
 <div class="grid grid-cols-5" style={{ color: color }}>
   {
     [...Array(value)].map((i) => (
@@ -55,4 +54,3 @@ darkColor;
     ))
   }
 </div>
-<!-- </div> -->
