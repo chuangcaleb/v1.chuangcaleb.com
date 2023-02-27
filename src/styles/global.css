@@ -12,36 +12,13 @@
   /* ::-webkit-scrollbar-track {;
   } */
   ::-webkit-scrollbar-thumb {
-    @apply ld-bg-rTen;
+    @apply text-ccTeal dark:text-ccTeal;
   }
   /* ::-webkit-scrollbar-thumb:hover {
      */
   /* Prose */
   .prose :where(p):not(:where([class~="not-prose"] *)) {
     color: var(--tw-prose-body);
-  }
-  /* Colors */
-  .ld-bg-rSixty {
-    @apply bg-ccWhite dark:bg-ccSlate-fade;
-  }
-  .ld-bg-rThirty {
-    @apply bg-ccSlate dark:bg-ccIndigo;
-  }
-  .ld-bg-rTen {
-    @apply bg-ccCambridge dark:bg-ccCambridge;
-  }
-  .ld-text-rSixty {
-    /* @apply dark:text-ccWhite; */
-    @apply dark:text-ccWhite text-ccIndigo;
-  }
-  .ld-text-rSixty-fade {
-    @apply text-ccWhite-fade dark:text-ccIndigo-fade;
-  }
-  .ld-text-rThirty {
-    @apply text-ccSlate dark:text-ccSlate-fade;
-  }
-  .ld-text-rTen {
-    @apply text-ccCambridge dark:text-ccCambridge;
   }
 }
 

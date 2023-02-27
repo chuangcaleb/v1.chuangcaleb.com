@@ -3,7 +3,7 @@ import type { GenericTechRawDeck } from "./../types";
 
 const frameworks = {
   Astro: {
-    icon: { bgColor: "black", name: "astro" },
+    icon: { bgColor: "responsive", name: "astro" },
     stats: { pro: 3, exp: 2, frs: 5, int: 5 },
   },
   Next: {
@@ -12,7 +12,7 @@ const frameworks = {
   },
   Django: {
     icon: { name: "logos:django-icon" },
-    stats: { pro: 3, exp: 3, frs: 3, int: 3 },
+    stats: { pro: 3, exp: 3, frs: 3, int: 2 },
   },
 } satisfies GenericTechRawDeck;
 

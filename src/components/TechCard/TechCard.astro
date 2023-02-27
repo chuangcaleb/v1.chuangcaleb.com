@@ -14,15 +14,10 @@ const { grade, icon, stats, type } = techCard;
 ---
 
 <div
-  class="min-w-36 h-48 border border-zinc-500 dark:border-zinc-600 rounded-xl relative ml-3 mt-3 flex bg-ccCambridge-fade dark:bg-ccIndigo text-ccIndigo dark:text-ccWhite"
+  class="max-w-fit h-48 border border-zinc-500 dark:border-zinc-600 rounded-xl relative ml-3 mt-3 flex bg-ccTeal-300 dark:bg-ccIndigo-900 text-ccTeal-on dark:text-ccIndigo-on"
 >
-  <!-- Title -->
   <CardHeader title={title} grade={grade} />
-
-  <!-- Icon -->
   <CardIcon icon={icon} />
-
-  <!-- Body -->
   <CardBody stats={stats} type={type} />
 </div>
 
