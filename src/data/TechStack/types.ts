@@ -6,7 +6,7 @@ export type TechCardIcon = {
 };
 
 export type TechCardStatsTitle = "pro" | "exp" | "frs" | "int";
-export type TechCardType = "lang" | "lib" | "meta" | "ui" | "tool";
+export type TechCardType = "lang" | "lib" | "meta" | "style" | "tool";
 
 export type Scale = 0 | 1 | 2 | 3 | 4 | 5;
 export type Tier = "S" | "A" | "B" | "C" | "D" | "U";
@@ -16,7 +16,7 @@ export type TechCardStats = Record<TechCardStatsTitle, Scale>;
 
 export type TechCard = {
   icon: TechCardIcon;
-  stats?: TechCardStats;
+  stats: TechCardStats;
   type: TechCardType;
   grade: { tier: Tier; score: Score };
 };

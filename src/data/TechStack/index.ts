@@ -1,9 +1,10 @@
 import frameworks from "./decks/frameworks";
 import languages from "./decks/languages";
-import ui from "./decks/ui";
+import lib from "./decks/lib";
+import style from "./decks/style";
 import type { TechCard } from "./types";
 
-const TechStack = Object.assign({}, languages, frameworks, ui);
+const TechStack = Object.assign({}, languages, frameworks, style, lib);
 
 export type TechTitle = keyof typeof TechStack;
 

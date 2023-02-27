@@ -1,9 +1,4 @@
-import type {
-  Score,
-  TechCardType,
-  TechRawDeck as TechRawDeck,
-  Tier,
-} from "./types";
+import type { Score, TechCardType, TechRawDeck, Tier } from "./types";
 
 const MIN_THRESHOLD: Record<Tier, Score> = {
   S: 90,

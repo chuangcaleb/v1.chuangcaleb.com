@@ -3,13 +3,18 @@ import type { TechRawDeck } from "./../types";
 import { processDeck } from "../util";
 
 const frameworks = {
-  React: { icon: { bgColor: "responsive", name: "logos:react" } },
-  Astro: { icon: { bgColor: "black", name: "astro" } },
-  CRA: { icon: { bgColor: "responsive", name: "logos:create-react-app" } },
+  Astro: {
+    icon: { bgColor: "black", name: "astro" },
+    stats: { pro: 3, exp: 2, frs: 5, int: 5 },
+  },
   Next: {
     icon: { bgColor: "responsive", name: "logos:nextjs-icon", invert: true },
+    stats: { pro: 3, exp: 2, frs: 4, int: 5 },
   },
-  Django: { icon: { name: "logos:django-icon" } },
+  Django: {
+    icon: { name: "logos:django-icon" },
+    stats: { pro: 3, exp: 3, frs: 3, int: 3 },
+  },
 } satisfies TechRawDeck;
 
 export default processDeck(frameworks, "meta");
