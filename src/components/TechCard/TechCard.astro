@@ -3,35 +3,27 @@ import TechStack from "../../data/TechStack";
 import type { TechTitle } from "../../data/TechStack";
 import CardIcon from "./CardIcon.astro";
 import CardBody from "./CardBody.astro";
+import CardHeader from "./CardHeader.astro";
 
 interface Props {
   title: TechTitle;
 }
 const { title } = Astro.props as Props;
 const techCard = TechStack[title];
+const { grade, icon, stats, type } = techCard;
 ---
 
 <div
   class="w-36 h-48 border border-zinc-500 dark:border-zinc-600 rounded-xl relative ml-3 mt-3 flex bg-ccCambridge-fade dark:bg-ccIndigo text-ccIndigo dark:text-ccWhite"
 >
   <!-- Title -->
-  <div class="relative w-min h-full">
-    <span
-      class="tracking-wide [writingMode:vertical-lr] [transform:rotate(180deg)] mt-11 [fontFamily:bit]"
-      >{title}</span
-    >
-    <span
-      class="block w-full absolute bottom-1 text-center text-zinc-200 text-sm"
-    >
-      {techCard.grade?.tier}
-    </span>
-  </div>
+  <CardHeader title={title} grade={grade} />
 
   <!-- Icon -->
-  <CardIcon icon={techCard.icon} />
+  <CardIcon icon={icon} />
 
   <!-- Body -->
-  <CardBody stats={techCard.stats} type={techCard.type} />
+  <CardBody stats={stats} type={type} />
 </div>
 
 <style>
