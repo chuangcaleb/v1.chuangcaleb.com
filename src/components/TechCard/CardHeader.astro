@@ -9,13 +9,13 @@ interface Props {
 const { title, grade } = Astro.props as Props;
 ---
 
-<div class="relative w-min h-full">
+<div class="relative h-full w-min">
   <span
     class="tracking-wide [writingMode:vertical-lr] [transform:rotate(180deg)] mt-11 [fontFamily:bit]"
   >
     {title}
   </span>
-  <div class="block w-full absolute bottom-1 text-center text-sm">
+  <div class="absolute block w-full text-sm text-center bottom-1">
     {grade.tier}
   </div>
 </div>
