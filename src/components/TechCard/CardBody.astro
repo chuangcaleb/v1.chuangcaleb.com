@@ -28,17 +28,17 @@ switch (type) {
 
 <div class="flex basis-full">
   <div
-    class="flex mt-1 mb-1 mr-1 border basis-full bg-ccIndigo border-zinc-500 dark:border-zinc-600 border-spacing-8 rounded-t-xl rounded-r-xl"
+    class="mt-1 mb-1 mr-1 flex basis-full border-spacing-8 rounded-t-xl rounded-r-xl border border-zinc-500 bg-ccIndigo dark:border-zinc-600"
   >
     <div
-      class="absolute top-0 right-0 rounded-tr-2xl rounded-bl-lg text-sm p-[0.4em] bg-ccTeal-300 dark:bg-ccIndigo-800"
+      class="absolute top-0 right-0 rounded-tr-2xl rounded-bl-lg bg-ccTeal-300 p-[0.4em] text-sm dark:bg-ccIndigo-800"
     >
       <Sprite name={iconName} class="w-4 h-4" />
     </div>
     <div></div>
     <!-- Stats -->
     <div
-      class="self-end grid grid-rows-4 grid-cols-[max-content,1fr] gap-x-1 text-xs [fontFamily:bit] tracking-wider uppercase mx-1"
+      class="mx-1 grid grid-cols-[max-content,1fr] grid-rows-4 gap-x-1 self-end text-xs uppercase tracking-wider [fontFamily:bit]"
     >
       <Rating title="pro" value={pro} />
       <Rating title="exp" value={exp} />

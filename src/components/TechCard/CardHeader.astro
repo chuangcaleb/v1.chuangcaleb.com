@@ -11,11 +11,11 @@ const { title, grade } = Astro.props as Props;
 
 <div class="relative h-full w-min">
   <span
-    class="tracking-wide [writingMode:vertical-lr] [transform:rotate(180deg)] mt-11 [fontFamily:bit]"
+    class="mt-11 tracking-wide [writingMode:vertical-lr] [transform:rotate(180deg)] [fontFamily:bit]"
   >
     {title}
   </span>
-  <div class="absolute block w-full text-sm text-center bottom-1">
+  <div class="absolute bottom-1 block w-full text-center text-sm">
     {grade.tier}
   </div>
 </div>

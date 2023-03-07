@@ -10,12 +10,12 @@ const posts = (await getCollection("blog")).sort(
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <section>
-    <ul class="p-0 list-none">
+    <ul class="list-none p-0">
       {
         posts.map((post) => (
           <li class="flex">
             <time
-              class="italic text-rSixty-fade basis-1/4"
+              class="text-rSixty-fade basis-1/4 italic"
               datetime={post.data.pubDate.toISOString()}
             >
               {post.data.pubDate.toLocaleDateString("en-us", {
