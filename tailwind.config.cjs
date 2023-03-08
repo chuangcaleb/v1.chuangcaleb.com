@@ -17,7 +17,7 @@ module.exports = {
         },
         ccTeal: {
           50: "#cdffff",
-          200: "##9cbdb6",
+          200: "#9cbdb6",
           300: "#7ea8a0",
           DEFAULT: "#507972",
           700: "#254d47",
