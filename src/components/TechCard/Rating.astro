@@ -11,31 +11,30 @@ interface Props {
 const { title, value } = Astro.props as Props;
 
 let color = "";
-let darkColor = "";
+// let darkColor = "";
 let iconName = "";
 switch (title) {
   case "pro":
     color = colors.red[500];
-    darkColor = colors.red[300];
+    // darkColor = colors.red[300];
     iconName = "ic:baseline-speed";
     break;
   case "exp":
     color = colors.blue[500];
-    darkColor = colors.red[300];
+    // darkColor = colors.red[300];
     iconName = "mdi:book-education";
     break;
   case "frs":
     color = colors.green[500];
-    darkColor = colors.red[300];
+    // darkColor = colors.red[300];
     iconName = "ic:baseline-timer";
     break;
   case "int":
     color = colors.yellow[500];
-    darkColor = colors.red[300];
-    iconName = "mdi:heart";
+    // darkColor = colors.red[300];
+    iconName = "mdi:cards-heart";
     break;
 }
-darkColor;
 
 // pro mdi:clipboard-check mdi:clipboard-check-multiple ic:baseline-library-add-check ic:baseline-speed
 // exp bi:card-list mdi:book-education
@@ -47,10 +46,12 @@ darkColor;
 <span style={{ color: color }}>{title}</span>
 <div class="grid grid-cols-5" style={{ color: color }}>
   {
-    [...Array(value)].map((i) => (
-      <>
-        <Sprite key={i} name={iconName} class="h-4 w-4" />
-      </>
+    Array.from({ length: 5 }, (_, i) => (
+      <Sprite
+        key={i}
+        name={iconName}
+        class:list={["h-4 w-4", { "opacity-30 grayscale": i >= value }]}
+      />
     ))
   }
 </div>
