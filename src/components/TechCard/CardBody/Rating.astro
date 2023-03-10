@@ -1,6 +1,5 @@
 ---
 import { Sprite } from "astro-iconify";
-import colors from "tailwindcss/colors";
 import type { Scale, TechCardStatsTitle } from "../../../data/TechStack/types";
 
 interface Props {
@@ -10,26 +9,20 @@ interface Props {
 
 const { title, value } = Astro.props as Props;
 
-let color = "";
-let iconName = "";
-switch (title) {
-  case "pro":
-    color = "red";
-    iconName = "ic:baseline-speed";
-    break;
-  case "exp":
-    color = "blue";
-    iconName = "mdi:book-education";
-    break;
-  case "frs":
-    color = "green";
-    iconName = "ic:baseline-timer";
-    break;
-  case "int":
-    color = "yellow";
-    iconName = "mdi:cards-heart";
-    break;
+function getRatingConfig(title: TechCardStatsTitle) {
+  switch (title) {
+    case "pro":
+      return { color: "red", iconName: "ic:baseline-speed" };
+    case "exp":
+      return { color: "blue", iconName: "mdi:book-education" };
+    case "frs":
+      return { color: "green", iconName: "ic:baseline-timer" };
+    case "int":
+      return { color: "yellow", iconName: "mdi:cards-heart" };
+  }
 }
+
+const { color, iconName } = getRatingConfig(title);
 
 // pro mdi:clipboard-check mdi:clipboard-check-multiple ic:baseline-library-add-check ic:baseline-speed
 // exp bi:card-list mdi:book-education
