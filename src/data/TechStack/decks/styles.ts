@@ -4,6 +4,7 @@ import processDeck from "../processDeck";
 const style = {
   "Material UI": {
     icon: { bgColor: "responsive", name: "logos:material-ui" },
+    deps: ["logos:javascript", "logos:react"],
     stats: { pro: 3, exp: 3, frs: 5, int: 1 },
   },
 } satisfies GenericTechRawDeck;

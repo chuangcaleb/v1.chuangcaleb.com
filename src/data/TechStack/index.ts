@@ -1,7 +1,7 @@
 import frameworks from "./decks/frameworks";
 import languages from "./decks/languages";
 import lib from "./decks/lib";
-import style from "./decks/style";
+import style from "./decks/styles";
 import type { TechCard } from "./types";
 
 const TechStack = Object.assign(languages, frameworks, style, lib);

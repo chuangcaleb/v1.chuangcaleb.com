@@ -1,11 +1,6 @@
 import type { GenericTechRawDeck } from "../types";
 import processDeck from "../processDeck";
 
-const lib = {
-  React: {
-    icon: { bgColor: "transparent", name: "logos:react" },
-    stats: { pro: 3, exp: 3, frs: 5, int: 5 },
-  },
-} satisfies GenericTechRawDeck;
+const lib = {} satisfies GenericTechRawDeck;
 
 export default processDeck<typeof lib>(lib, "lib");

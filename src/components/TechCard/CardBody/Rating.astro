@@ -1,7 +1,7 @@
 ---
 import { Sprite } from "astro-iconify";
 import colors from "tailwindcss/colors";
-import type { Scale, TechCardStatsTitle } from "../../data/TechStack/types";
+import type { Scale, TechCardStatsTitle } from "../../../data/TechStack/types";
 
 interface Props {
   title: TechCardStatsTitle;
@@ -36,7 +36,6 @@ switch (title) {
 // fresh ic:round-event-repeat ic:baseline-refresh ic:baseline-timer
 // int mdi:heart mdi:heart-plus mdi:heart-circle
 //  https://css-tricks.com/five-methods-for-five-star-ratings/
-colors.yellow[400];
 ---
 
 <span style={{ color: `var(--${color})` }}>{title}</span>

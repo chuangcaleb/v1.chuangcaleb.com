@@ -17,6 +17,7 @@ export type TechCardStats = Record<TechCardStatsTitle, Scale>;
 
 export type TechCard = {
   icon: TechCardIcon;
+  deps?: string[];
   stats: TechCardStats;
   type: TechCardType;
   grade: TechCardGrade;

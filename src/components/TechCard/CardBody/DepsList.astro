@@ -1,0 +1,9 @@
+---
+import { Sprite } from "astro-iconify";
+
+const { deps } = Astro.props as { deps: string[] };
+---
+
+<div class="flex gap-1 p-1 pl-3 opacity-50">
+  {deps.map((dep) => <Sprite name={dep} class="h-5 w-5" />)}
+</div>

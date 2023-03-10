@@ -2,7 +2,7 @@
 import TechStack from "../../data/TechStack";
 import type { TechTitle } from "../../data/TechStack";
 import CardIcon from "./CardIcon.astro";
-import CardBody from "./CardBody.astro";
+import CardBody from "./CardBody/CardBody.astro";
 import CardHeader from "./CardHeader.astro";
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 }
 const { title } = Astro.props as Props;
 const techCard = TechStack[title];
-const { grade, icon, stats, type } = techCard;
+const { grade, icon } = techCard;
 ---
 
 <div
@@ -18,7 +18,7 @@ const { grade, icon, stats, type } = techCard;
 >
   <CardHeader title={title} grade={grade} />
   <CardIcon icon={icon} />
-  <CardBody stats={stats} type={type} />
+  <CardBody {...techCard} />
 </div>
 
 <style>

@@ -8,8 +8,12 @@
     overscroll-behavior-y: none;
     /* overflow: overlay; */
   }
+  ::-webkit-scrollbar-corner {
+    display: none;
+  }
   ::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
   }
   /* ::-webkit-scrollbar-track {;
   } */
