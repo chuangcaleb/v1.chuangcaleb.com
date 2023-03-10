@@ -11,27 +11,22 @@ interface Props {
 const { title, value } = Astro.props as Props;
 
 let color = "";
-// let darkColor = "";
 let iconName = "";
 switch (title) {
   case "pro":
-    color = colors.red[500];
-    // darkColor = colors.red[300];
+    color = "red";
     iconName = "ic:baseline-speed";
     break;
   case "exp":
-    color = colors.blue[500];
-    // darkColor = colors.red[300];
+    color = "blue";
     iconName = "mdi:book-education";
     break;
   case "frs":
-    color = colors.green[500];
-    // darkColor = colors.red[300];
+    color = "green";
     iconName = "ic:baseline-timer";
     break;
   case "int":
-    color = colors.yellow[500];
-    // darkColor = colors.red[300];
+    color = "yellow";
     iconName = "mdi:cards-heart";
     break;
 }
@@ -41,10 +36,11 @@ switch (title) {
 // fresh ic:round-event-repeat ic:baseline-refresh ic:baseline-timer
 // int mdi:heart mdi:heart-plus mdi:heart-circle
 //  https://css-tricks.com/five-methods-for-five-star-ratings/
+colors.yellow[400];
 ---
 
-<span style={{ color: color }}>{title}</span>
-<div class="grid grid-cols-5" style={{ color: color }}>
+<span style={{ color: `var(--${color})` }}>{title}</span>
+<div class="grid grid-cols-5" style={{ color: `var(--${color})` }}>
   {
     Array.from({ length: 5 }, (_, i) => (
       <Sprite
@@ -55,3 +51,27 @@ switch (title) {
     ))
   }
 </div>
+<style>
+  :root {
+    /* --red: #f87171;
+    --blue: #60a5fa;
+    --green: #4ade80;
+    --yellow: #facc15; */
+    /* --red: #dc2626;
+    --blue: #2563eb;
+    --green: #16a34a;
+    --yellow: #ca8a04; */
+    /* --red: #b91c1c;
+    --blue: #1d4ed8;
+    --green: #15803d;
+    --yellow: #a16207; */
+  }
+  /* @media (prefers-color-scheme: dark) { */
+  :root {
+    --red: #ef4444;
+    --blue: #3b82f6;
+    --green: #22c55e;
+    --yellow: #eab308;
+  }
+  /* } */
+</style>

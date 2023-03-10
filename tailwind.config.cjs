@@ -64,7 +64,7 @@ module.exports = {
           secondary: "#7ea8a0",
           accent: "#bc9ca2",
           neutral: colors.zinc[200],
-          "base-100": colors.zinc[100],
+          "base-100": colors.zinc[50],
           info: "#7dd3fc",
           success: "#4ade80",
           warning: "#fde047",
