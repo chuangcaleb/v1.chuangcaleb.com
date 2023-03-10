@@ -7,7 +7,7 @@ const frameworks = {
     stats: { pro: 3, exp: 2, frs: 5, int: 5 },
   },
   Next: {
-    icon: { bgColor: "responsive", name: "logos:nextjs-icon", invert: true },
+    icon: { bgColor: "transparent", name: "logos:nextjs-icon", invert: true },
     stats: { pro: 3, exp: 2, frs: 4, int: 5 },
   },
   Django: {

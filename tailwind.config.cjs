@@ -59,10 +59,10 @@ module.exports = {
     logs: false,
     themes: [
       {
-        mytheme: {
-          primary: "#EC9192",
-          secondary: "#7ea8a0",
-          accent: "#bc9ca2",
+        light: {
+          primary: "#7ea8a0",
+          secondary: "#484f70",
+          accent: "#EC9192",
           neutral: colors.zinc[200],
           "base-100": colors.zinc[50],
           info: "#7dd3fc",
@@ -75,9 +75,10 @@ module.exports = {
           // primary: "#1143b3",
           secondary: "#484f70",
           accent: "#b38111",
-          // "base-100": "#262a3b",
-          neutral: "#202332",
-          "base-100": "#343951",
+          // neutral: "#202332",
+          neutral: "#161822",
+          "base-100": "#262a3b",
+          // "base-100": "#343951",
           info: "#7dd3fc",
           success: "#4ade80",
           warning: "#fde047",

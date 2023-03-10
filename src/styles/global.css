@@ -6,10 +6,10 @@
   /* Scroll */
   body {
     overscroll-behavior-y: none;
-    overflow: overlay;
+    /* overflow: overlay; */
   }
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 5px;
   }
   /* ::-webkit-scrollbar-track {;
   } */

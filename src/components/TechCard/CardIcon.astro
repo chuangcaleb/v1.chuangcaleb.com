@@ -8,7 +8,10 @@ const {
 // https://icones.js.org/collection/logos
 
 const bgColorLiteral =
-  (bgColor && bgColor !== "responsive" && { backgroundColor: bgColor }) || {};
+  (bgColor &&
+    bgColor !== "responsive" &&
+    bgColor !== "transparent" && { backgroundColor: bgColor }) ||
+  {};
 const colorLiteral = (color && { color: color }) || {};
 let iconStyles: any = Object.assign(bgColorLiteral, colorLiteral);
 if (Object.keys(iconStyles).length === 0) {
@@ -22,7 +25,7 @@ if (Object.keys(iconStyles).length === 0) {
   <div
     class:list={[
       "rounded-lg",
-      { "bg-zinc-100 dark:bg-neutral": bgColor === "responsive" },
+      { "bg-base-200 dark:bg-neutral-700": bgColor === "responsive" },
     ]}
   >
     <Sprite
