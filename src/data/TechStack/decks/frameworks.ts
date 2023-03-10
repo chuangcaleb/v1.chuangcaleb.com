@@ -3,7 +3,7 @@ import type { GenericTechRawDeck } from "./../types";
 
 const frameworks = {
   Astro: {
-    icon: { bgColor: "responsive", name: "astro" },
+    icon: { bgColor: "black", name: "astro" },
     stats: { pro: 3, exp: 2, frs: 5, int: 5 },
   },
   Next: {

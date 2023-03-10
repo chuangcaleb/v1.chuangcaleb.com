@@ -17,12 +17,12 @@ if (Object.keys(iconStyles).length === 0) {
 ---
 
 <div
-  class="absolute -top-3 -left-3 rounded-xl border border-zinc-500 bg-ccTeal-300 p-1 dark:border-zinc-600 dark:bg-ccIndigo-900"
+  class="absolute -top-3 -left-3 rounded-xl border border-secondary-focus bg-secondary p-1"
 >
   <div
     class:list={[
       "rounded-lg",
-      { "bg-zinc-100 dark:bg-ccIndigo-900": bgColor === "responsive" },
+      { "bg-zinc-100 dark:bg-neutral": bgColor === "responsive" },
     ]}
   >
     <Sprite

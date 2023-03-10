@@ -7,15 +7,17 @@
     overflow: overlay;
   }
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 4px;
   }
   /* ::-webkit-scrollbar-track {;
   } */
   ::-webkit-scrollbar-thumb {
-    @apply text-ccTeal dark:text-ccTeal;
+    @apply bg-primary;
   }
-  /* ::-webkit-scrollbar-thumb:hover {
-     */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-focus;
+  }
+
   /* Prose */
   .prose :where(p):not(:where([class~="not-prose"] *)) {
     color: var(--tw-prose-body);
