@@ -4,36 +4,6 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
-      colors: {
-        ccIndigo: {
-          300: "#5a5f76",
-          DEFAULT: "#30354a",
-          700: "#262a3b",
-          800: "#1e212b",
-          // 700: "#090f22",
-          900: "#12141c",
-          fade: "#1e212b",
-          on: colors.zinc[50],
-        },
-        ccTeal: {
-          50: "#cdffff",
-          200: "#9cbdb6",
-          300: "#7ea8a0",
-          DEFAULT: "#507972",
-          700: "#254d47",
-          800: "#18312e",
-          900: "#10201e",
-          on: colors.zinc[900],
-        },
-        // ccTeal: { DEFAULT: "#507972", fade: "#92B6B1" },
-        // ccIndigo: { DEFAULT: "#12141c", fade: colors.zinc[800] },
-        // ccDutch: { DEFAULT: "#dccb8e", fade: "#E8DDB5" },
-        // invert: {
-        // ccIndigo: { DEFAULT: "#08090c", fade: colors.zinc[600] },
-        // ccTeal: { DEFAULT: "#73a29b", fade: "#B2C9AB" },
-        // },
-        // ccTimberwolf: { DEFAULT: "#D6CBC1", fade: "#CDD6D0" },
-      },
       screens: {
         xlPadded: { raw: "(min-width: calc(1280px + 3rem))" },
       },
@@ -90,9 +60,9 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: "#67597A",
+          primary: "#EC9192",
           secondary: "#7ea8a0",
-          accent: "#EC9192",
+          accent: "#bc9ca2",
           neutral: colors.zinc[200],
           "base-100": colors.zinc[100],
           info: "#7dd3fc",
@@ -102,10 +72,12 @@ module.exports = {
         },
         dark: {
           primary: "#2563eb",
+          // primary: "#1143b3",
           secondary: "#484f70",
-          accent: "#fb923c",
-          "base-100": "#262a3b",
+          accent: "#b38111",
+          // "base-100": "#262a3b",
           neutral: "#202332",
+          "base-100": "#343951",
           info: "#7dd3fc",
           success: "#4ade80",
           warning: "#fde047",
