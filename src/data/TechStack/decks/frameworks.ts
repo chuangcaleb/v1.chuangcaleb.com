@@ -21,7 +21,7 @@ const frameworks = {
   Astro: {
     icon: { bgColor: "black", name: "astro" },
     deps: ["logos:javascript"],
-    tags: ["stack/front", "arch/MPA"],
+    tags: ["stack/back", "arch/MPA"],
     stats: { pro: 3, exp: 2, frs: 5, int: 5 },
   },
   Next: {

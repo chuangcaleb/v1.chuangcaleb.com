@@ -13,7 +13,7 @@ const { cards, isStacked, hasGap, class: extraClass, ...props } = Astro.props;
 
 <div
   class:list={[
-    "flex overflow-scroll pb-2",
+    "flex overflow-scroll pb-2 snap-normal snap-x",
     { "-space-x-26": isStacked },
     { "gap-4 ": hasGap },
     extraClass,

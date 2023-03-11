@@ -44,12 +44,12 @@ import Section from "../layouts/Section.astro";
       <TechCard title="Typescript" />
     </div>
   </Section>
-  <Section fullWidth id="projects">
+  <Section id="projects">
     <h2 class="mt-0 text-center text-4xl">My Projects</h2>
-    <div class="not-prose flex flex-wrap justify-center gap-8">
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
+    <div class="not-prose flex flex-wrap justify-center gap-8 xl:flex-nowrap">
+      <ProjectCard title="PowerKids Kindergarten Company Website" />
+      <ProjectCard title="PowerKids Kindergarten Company" />
+      <ProjectCard title="PowerKids Kindergarten Company Website" />
     </div>
   </Section>
   <Section>
@@ -77,8 +77,9 @@ import Section from "../layouts/Section.astro";
     </p>
     <p>Here are a few ideas on how to get started with the template:</p>
   </Section>
-  <Section noVerticalPadding class="flex justify-center">
+  <Section noVerticalPadding class="flex xl:justify-center">
     <TechDeck
+      hasGap
       cards={[
         "Javascript",
         "Typescript",
