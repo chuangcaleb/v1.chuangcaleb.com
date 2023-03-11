@@ -1,9 +1,9 @@
 ---
-interface SectionProps extends astroHTML.JSX.HTMLAttributes {
-  fullWidth: boolean;
-  noHorizontalMobilePadding: boolean;
-  verticalPadding: boolean;
-  invert: boolean;
+interface Props extends astroHTML.JSX.HTMLAttributes {
+  fullWidth?: boolean;
+  noHorizontalMobilePadding?: boolean;
+  verticalPadding?: boolean;
+  invert?: boolean;
 }
 const {
   fullWidth,
@@ -11,7 +11,7 @@ const {
   verticalPadding,
   invert,
   class: className,
-} = Astro.props as SectionProps;
+} = Astro.props;
 ---
 
 <section

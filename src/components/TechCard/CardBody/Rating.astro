@@ -7,7 +7,7 @@ interface Props {
   value: Scale;
 }
 
-const { title, value } = Astro.props as Props;
+const { title, value } = Astro.props;
 
 const ratingMap: Record<TechCardStatsTitle, [string, string]> = {
   pro: ["red", "ic:baseline-speed"],

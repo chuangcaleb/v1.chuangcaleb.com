@@ -1,6 +1,9 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-const { index } = Astro.props as { index: boolean };
+interface Props {
+  index?: boolean;
+}
+const { index } = Astro.props;
 ---
 
 <header
