@@ -7,7 +7,6 @@ import Header from "../components/Header/Header.astro";
 interface Props extends astroHTML.JSX.HTMLAttributes {
   title: string;
   description: string;
-  notProse?: boolean;
   fullWidth?: boolean;
   index?: boolean;
   hasSpriteProvider: boolean;
@@ -17,7 +16,6 @@ const {
   title,
   class: extraClass,
   description,
-  notProse,
   fullWidth,
   index,
   hasSpriteProvider,
@@ -33,10 +31,9 @@ const {
     <main>
       <div
         class:list={[
-          "mx-auto",
+          "mx-auto prose dark:prose-dark",
           { "px-4": !fullWidth },
           { "max-w-full": fullWidth },
-          { "prose dark:prose-invert": !notProse },
           extraClass,
         ]}
       >

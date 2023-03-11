@@ -15,8 +15,9 @@ module.exports = {
         secondary: {
           css: {
             // This is configured to daisyUI's `secondary-content` in hsl()
-            "--bc": "230 100% 87.3%",
-            "--tw-prose-body": "hsla(var(--bc)/.8)",
+            "--bc": "230 100% 93%",
+            "--text-opacity": 1,
+            "--tw-prose-body": "hsla(var(--bc)/.2)",
             "--tw-prose-headings": "hsl(var(--bc))",
             "--tw-prose-lead": "hsl(var(--bc))",
             "--tw-prose-links": "hsl(var(--bc))",
@@ -28,8 +29,31 @@ module.exports = {
             "--tw-prose-quote-borders": "hsla(var(--bc)/.2)",
             "--tw-prose-captions": "hsla(var(--bc)/.5)",
             "--tw-prose-code": "hsl(var(--bc))",
-            "--tw-prose-pre-code": "hsl(var(--nc))",
-            "--tw-prose-pre-bg": "hsl(var(--n))",
+            "--tw-prose-th-borders": "hsla(var(--bc)/.5)",
+            "--tw-prose-td-borders": "hsla(var(--bc)/.2)",
+          },
+        },
+        dark: {
+          css: {
+            "code::before": {
+              content: '""',
+            },
+            "code::after": {
+              content: '""',
+            },
+            "--bc": "230 100% 97%",
+            "--tw-prose-body": "hsla(var(--bc)/.2)",
+            "--tw-prose-headings": "hsl(var(--bc))",
+            "--tw-prose-lead": "hsl(var(--bc))",
+            "--tw-prose-links": "hsl(var(--bc))",
+            "--tw-prose-bold": "hsl(var(--bc))",
+            "--tw-prose-counters": "hsl(var(--bc))",
+            "--tw-prose-bullets": "hsla(var(--bc)/.5)",
+            "--tw-prose-hr": "hsla(var(--bc)/.2)",
+            "--tw-prose-quotes": "hsl(var(--bc))",
+            "--tw-prose-quote-borders": "hsla(var(--bc)/.2)",
+            "--tw-prose-captions": "hsla(var(--bc)/.5)",
+            "--tw-prose-code": "hsl(var(--bc))",
             "--tw-prose-th-borders": "hsla(var(--bc)/.5)",
             "--tw-prose-td-borders": "hsla(var(--bc)/.2)",
           },
@@ -42,6 +66,7 @@ module.exports = {
             "code::after": {
               content: '""',
             },
+            "--text-opacity": 1,
           },
         },
       }),

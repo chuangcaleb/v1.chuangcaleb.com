@@ -46,7 +46,7 @@ import Section from "../layouts/Section.astro";
   </Section>
   <Section id="projects">
     <h2 class="mt-0 text-center text-4xl">🌱 My Projects</h2>
-    <div class="not-prose flex flex-wrap justify-center gap-8 xl:flex-nowrap">
+    <div class="flex flex-wrap justify-center gap-8 xl:flex-nowrap">
       <ProjectCard title="PowerKids Kindergarten" />
       <ProjectCard title="PowerKids Kindergarten" />
       <ProjectCard title="PowerKids Kindergarten" />
@@ -82,13 +82,12 @@ import Section from "../layouts/Section.astro";
       <button class="btn">Action!</button>
       <button class="btn-secondary btn">Action!</button>
       <button class="btn-primary btn">Connect with me</button>
-      <button class="btn-ghost-invert btn">About me</button>
+      <button class="btn-ghost btn">About me</button>
     </div>
   </Section>
 
-  <Section noVerticalPadding class="flex xl:justify-center">
+  <Section noVerticalPadding class="">
     <TechDeck
-      hasGap
       cards={[
         "Javascript",
         "Typescript",
