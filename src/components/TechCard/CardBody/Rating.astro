@@ -9,20 +9,14 @@ interface Props {
 
 const { title, value } = Astro.props as Props;
 
-function getRatingConfig(title: TechCardStatsTitle) {
-  switch (title) {
-    case "pro":
-      return { color: "red", iconName: "ic:baseline-speed" };
-    case "exp":
-      return { color: "blue", iconName: "mdi:book-education" };
-    case "frs":
-      return { color: "green", iconName: "ic:baseline-timer" };
-    case "int":
-      return { color: "yellow", iconName: "mdi:cards-heart" };
-  }
-}
+const ratingMap: Record<TechCardStatsTitle, [string, string]> = {
+  pro: ["red", "ic:baseline-speed"],
+  exp: ["blue", "mdi:book-education"],
+  frs: ["green", "ic:baseline-timer"],
+  int: ["yellow", "mdi:cards-heart"],
+};
 
-const { color, iconName } = getRatingConfig(title);
+const [color, iconName] = ratingMap[title];
 
 // pro mdi:clipboard-check mdi:clipboard-check-multiple ic:baseline-library-add-check ic:baseline-speed
 // exp bi:card-list mdi:book-education

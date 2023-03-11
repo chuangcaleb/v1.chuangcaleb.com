@@ -1,32 +1,25 @@
 ---
 import { Sprite } from "astro-iconify";
 import TagsList from "../../../data/TechStack/TagsList.astro";
-import type { TechCard } from "../../../data/TechStack/types";
+import type { TechCard, TechCardType } from "../../../data/TechStack/types";
 import DepsList from "./DepsList.astro";
 import Rating from "./Rating.astro";
 
 const { stats, type, deps, tags } = Astro.props as TechCard;
 const { pro = 0, exp = 0, frs = 0, int = 0 } = stats || {};
-let iconName = "";
-switch (type) {
-  case "lang":
-    iconName = "ic:baseline-language";
-    // iconName = "clarity:language-line";
-    // iconName = "la:language";
-    break;
-  case "lib":
-    iconName = "ph:package";
-    // iconName = "tabler:packages";
-    break;
-  case "meta":
-    iconName = "iconoir:frame-alt";
-    // iconName = "fluent-mdl2:process-meta-task"; //too big
-    break;
-  case "style":
-    iconName = "ph:paint-brush-broad";
-    // iconName = "fluent:text-edit-style-20-filled";
-    break;
-}
+
+const iconMap: Record<TechCardType, string> = {
+  lang: "ic:baseline-language",
+  // iconName = "clarity:language-line";
+  // iconName = "la:language";
+  lib: "ph:package",
+  // iconName = "tabler:packages";
+  meta: "iconoir:frame-alt",
+  style: "ph:paint-brush-broad",
+  tool: "",
+};
+
+const iconName = iconMap[type];
 ---
 
 <div class="flex min-w-max basis-full">
