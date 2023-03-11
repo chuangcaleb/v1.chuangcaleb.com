@@ -1,6 +1,5 @@
-import type { GenericTechRawDeck } from "../types";
 import processDeck from "../processDeck";
-import type { TagsType } from "../buildTags";
+import type { GenericTechRawDeck } from "../types";
 
 const tags = [
   "platform/web",
@@ -27,6 +26,6 @@ const languages = {
     tags: ["typed/opt-in"],
     stats: { pro: 2, exp: 3, frs: 3, int: 4 },
   },
-} satisfies GenericTechRawDeck<TagsType<typeof tags>>;
+} satisfies GenericTechRawDeck<typeof tags>;
 
 export default processDeck<typeof languages>(languages, "lang");

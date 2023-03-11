@@ -1,4 +1,3 @@
-import type { TagsType } from "../buildTags";
 import processDeck from "../processDeck";
 import type { GenericTechRawDeck } from "./../types";
 
@@ -37,6 +36,6 @@ const frameworks = {
     tags: ["stack/full", "arch/MPA", "ORM"],
     stats: { pro: 3, exp: 3, frs: 3, int: 2 },
   },
-} satisfies GenericTechRawDeck<TagsType<typeof tags>>;
+} satisfies GenericTechRawDeck<typeof tags>;
 
 export default processDeck<typeof frameworks>(frameworks, "meta");

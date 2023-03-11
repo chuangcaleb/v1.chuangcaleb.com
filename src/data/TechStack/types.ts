@@ -1,3 +1,5 @@
+import type { TagsType } from "./buildTags";
+
 export type TechCardIcon = {
   name: string;
   bgColor?: string;
@@ -26,6 +28,9 @@ export type TechCard<T = string[]> = {
 
 type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
 export type TechRawCard<T> = PartialBy<PartialBy<TechCard<T>, "type">, "grade">;
-export type GenericTechRawDeck<T> = Record<string, TechRawCard<T>>;
+export type GenericTechRawDeck<T extends readonly string[]> = Record<
+  string,
+  TechRawCard<TagsType<T>>
+>;
 
 export type TechDeck<T> = Record<keyof T, TechCard>;
