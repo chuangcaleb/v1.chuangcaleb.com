@@ -1,16 +1,18 @@
 ---
 import { Sprite } from "astro-iconify";
+import TagsList from "../../../data/TechStack/TagsList.astro";
 import type { TechCard } from "../../../data/TechStack/types";
 import DepsList from "./DepsList.astro";
 import Rating from "./Rating.astro";
 
-const { stats, type, deps } = Astro.props as TechCard;
+const { stats, type, deps, tags } = Astro.props as TechCard;
 const { pro = 0, exp = 0, frs = 0, int = 0 } = stats || {};
 let iconName = "";
 switch (type) {
   case "lang":
     iconName = "ic:baseline-language";
-    // iconName = "ic:outline-abc";
+    // iconName = "clarity:language-line";
+    // iconName = "la:language";
     break;
   case "lib":
     iconName = "ph:package";
@@ -39,7 +41,9 @@ switch (type) {
     </div>
     <!-- Deps -->
     {(<DepsList deps={deps} />)}
-    a
+    <!-- Tags -->
+    {(<TagsList tags={tags} />)}
+
     <!-- Stats -->
     <div
       class="mx-1 grid grid-cols-[max-content,1fr] grid-rows-4 gap-x-1 text-xs uppercase tracking-wider [fontFamily:bit]"

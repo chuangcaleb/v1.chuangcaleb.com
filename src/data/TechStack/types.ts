@@ -15,16 +15,17 @@ export type TechCardGrade = { tier: Tier; score: Score };
 
 export type TechCardStats = Record<TechCardStatsTitle, Scale>;
 
-export type TechCard = {
+export type TechCard<T = []> = {
   icon: TechCardIcon;
   deps?: string[];
+  tags?: T;
   stats: TechCardStats;
   type: TechCardType;
   grade: TechCardGrade;
 };
 
 type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
-export type TechRawCard = PartialBy<PartialBy<TechCard, "type">, "grade">;
-export type GenericTechRawDeck = Record<string, TechRawCard>;
+export type TechRawCard<T> = PartialBy<PartialBy<TechCard<T>, "type">, "grade">;
+export type GenericTechRawDeck<T> = Record<string, TechRawCard<T>>;
 
 export type TechDeck<T> = Record<keyof T, TechCard>;
