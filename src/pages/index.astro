@@ -13,7 +13,12 @@ import Section from "../layouts/Section.astro";
   index
   hasSpriteProvider
 >
-  <Section invert fullWidth class="grid h-screen min-h-fit xl:grid-cols-2">
+  <Section
+    invert
+    fullWidth
+    noVerticalPadding
+    class="grid h-screen min-h-fit xl:grid-cols-2"
+  >
     <div class="place-self-center text-center xl:text-left 2xl:px-12">
       <div class="grid justify-items-center gap-10 xl:justify-items-start">
         <div class="grid gap-4">
@@ -37,7 +42,7 @@ import Section from "../layouts/Section.astro";
       <TechCard title="Typescript" />
     </div>
   </Section>
-  <Section verticalPadding>
+  <Section>
     <h1>🧑‍🚀 Hello, Astronaut!</h1>
     <p>
       Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
@@ -52,7 +57,7 @@ import Section from "../layouts/Section.astro";
       <button class="btn-ghost btn">About me</button>
     </div>
   </Section>
-  <Section verticalPadding>
+  <Section>
     <p>
       This template comes with a few integrations already configured in your <code
         >astro.config.mjs</code

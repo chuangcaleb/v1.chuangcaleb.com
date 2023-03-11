@@ -2,13 +2,13 @@
 interface Props extends astroHTML.JSX.HTMLAttributes {
   fullWidth?: boolean;
   noHorizontalMobilePadding?: boolean;
-  verticalPadding?: boolean;
+  noVerticalPadding?: boolean;
   invert?: boolean;
 }
 const {
   fullWidth,
   noHorizontalMobilePadding,
-  verticalPadding,
+  noVerticalPadding,
   invert,
   class: className,
 } = Astro.props;
@@ -18,7 +18,7 @@ const {
   class:list={[
     {
       "px-4 xlPadded:px-0": fullWidth && !noHorizontalMobilePadding,
-      "pt-12 pb-8": verticalPadding,
+      "pt-12 pb-8": !noVerticalPadding,
       "bg-neutral-900 dark:bg-neutral prose-invert": invert,
     },
     className,
