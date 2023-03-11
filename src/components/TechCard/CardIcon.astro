@@ -1,10 +1,14 @@
 ---
 import { Sprite } from "astro-iconify";
-import type { TechCard } from "../../data/TechStack/types";
+import type { TechCardIcon } from "../../data/TechStack/types";
+
+interface Props {
+  icon: TechCardIcon;
+}
 
 const {
   icon: { name, bgColor, color, invert },
-} = Astro.props as TechCard;
+} = Astro.props;
 // https://icones.js.org/collection/logos
 
 const bgColorLiteral =

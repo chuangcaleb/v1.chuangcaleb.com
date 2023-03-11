@@ -1,7 +1,9 @@
 ---
 import { Sprite } from "astro-iconify";
-
-const { deps } = Astro.props as { deps: string[] };
+interface Props {
+  deps: string[];
+}
+const { deps } = Astro.props;
 ---
 
 <span class="flex h-4 gap-1 opacity-60">
