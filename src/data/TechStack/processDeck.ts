@@ -16,7 +16,7 @@ const MIN_THRESHOLD: Record<Tier, Score> = {
 };
 
 export default function processDeck<T>(
-  deck: GenericTechRawDeck,
+  deck: GenericTechRawDeck<string[]>,
   type: TechCardType
 ) {
   Object.keys(deck).forEach((title) => {

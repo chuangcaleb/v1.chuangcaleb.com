@@ -2,7 +2,7 @@ import type { TagsType } from "../buildTags";
 import processDeck from "../processDeck";
 import type { GenericTechRawDeck } from "./../types";
 
-const tags = ["fullstack", "frontend", "backend"] as const;
+const tags = ["fullstack", "frontend", "backend", "ORM"] as const;
 
 const frameworks = {
   React: {
@@ -26,7 +26,7 @@ const frameworks = {
   Django: {
     icon: { name: "logos:django-icon" },
     deps: ["logos:python"],
-    tags: ["fullstack"],
+    tags: ["fullstack", "ORM"],
     stats: { pro: 3, exp: 3, frs: 3, int: 2 },
   },
 } satisfies GenericTechRawDeck<TagsType<typeof tags>>;

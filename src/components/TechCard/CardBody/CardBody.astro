@@ -22,9 +22,9 @@ const iconMap: Record<TechCardType, string> = {
 const iconName = iconMap[type];
 ---
 
-<div class="flex min-w-max basis-full">
+<div class="flex w-32 basis-full">
   <div
-    class="mt-1 mb-1 mr-1 flex flex-col justify-between rounded-t-xl rounded-r-xl bg-secondary-focus"
+    class="mt-1 mb-1 mr-1 flex flex-col rounded-t-xl rounded-r-xl bg-secondary-focus"
   >
     <!-- Type -->
     <div
@@ -33,13 +33,16 @@ const iconName = iconMap[type];
       <Sprite name={iconName} class="h-5 w-5" />
     </div>
     <!-- Deps -->
-    {(<DepsList deps={deps} />)}
+    <div class="bg-secondary pb-1 pl-4">
+      {(<DepsList deps={deps} />)}
+    </div>
     <!-- Tags -->
+
     {(<TagsList tags={tags} />)}
 
     <!-- Stats -->
     <div
-      class="mx-1 grid grid-cols-[max-content,1fr] grid-rows-4 gap-x-1 text-xs uppercase tracking-wider [fontFamily:bit]"
+      class="mx-1 mt-auto grid grid-cols-[max-content,1fr] grid-rows-4 gap-x-1 text-xs uppercase tracking-wider [fontFamily:bit]"
     >
       <Rating title="pro" value={pro} />
       <Rating title="exp" value={exp} />

@@ -1,5 +1,8 @@
 import type { GenericTechRawDeck } from "../types";
 import processDeck from "../processDeck";
+import type { TagsType } from "../buildTags";
+
+const tags = [] as const;
 
 const languages = {
   Javascript: {
@@ -15,6 +18,6 @@ const languages = {
     icon: { name: "logos:python" },
     stats: { pro: 2, exp: 3, frs: 3, int: 4 },
   },
-} satisfies GenericTechRawDeck;
+} satisfies GenericTechRawDeck<TagsType<typeof tags>>;
 
 export default processDeck<typeof languages>(languages, "lang");

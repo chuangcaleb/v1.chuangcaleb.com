@@ -15,7 +15,7 @@ export type TechCardGrade = { tier: Tier; score: Score };
 
 export type TechCardStats = Record<TechCardStatsTitle, Scale>;
 
-export type TechCard<T = []> = {
+export type TechCard<T = string[]> = {
   icon: TechCardIcon;
   deps?: string[];
   tags?: T;

@@ -2,4 +2,11 @@
 const { tags } = Astro.props as { tags: string[] };
 ---
 
-{tags && tags.map((tag) => <span class=" badge badge-sm">{tag}</span>)}
+<div class="flex flex-wrap gap-y-1 p-1 tracking-wide [fontFamily:bit]">
+  {
+    tags &&
+      tags.map((tag) => (
+        <span class="badge-secondary badge badge-xs">{tag}</span>
+      ))
+  }
+</div>

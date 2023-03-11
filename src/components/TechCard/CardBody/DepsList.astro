@@ -4,8 +4,6 @@ import { Sprite } from "astro-iconify";
 const { deps } = Astro.props as { deps: string[] };
 ---
 
-<div class="bg-secondary pb-1 pl-4">
-  <span class="flex h-4 gap-1 opacity-80">
-    {deps && deps.map((dep) => <Sprite name={dep} class="aspect-square " />)}
-  </span>
-</div>
+<span class="flex h-4 gap-1 opacity-80">
+  {deps && deps.map((dep) => <Sprite name={dep} class="aspect-square " />)}
+</span>
