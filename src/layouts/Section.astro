@@ -11,6 +11,7 @@ const {
   noVerticalPadding,
   invert,
   class: className,
+  ...props
 } = Astro.props;
 ---
 
@@ -23,6 +24,7 @@ const {
     },
     className,
   ]}
+  {...props}
 >
   {
     !fullWidth ? (

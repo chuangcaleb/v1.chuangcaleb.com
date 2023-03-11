@@ -1,4 +1,5 @@
 ---
+import ProjectCard from "../components/projects/ProjectCard.astro";
 import TechCard from "../components/TechCard/TechCard.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -40,6 +41,14 @@ import Section from "../layouts/Section.astro";
     <div class="">
       <p>asds</p>
       <TechCard title="Typescript" />
+    </div>
+  </Section>
+  <Section fullWidth id="projects">
+    <h2 class="mt-0 text-center text-4xl">My Projects</h2>
+    <div class="not-prose flex flex-wrap justify-center gap-8">
+      <ProjectCard />
+      <ProjectCard />
+      <ProjectCard />
     </div>
   </Section>
   <Section>
