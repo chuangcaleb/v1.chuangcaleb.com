@@ -20,13 +20,5 @@ const { cards, isStacked, hasGap, class: extraClass, ...props } = Astro.props;
   ]}
   {...props}
 >
-  {
-    cards.map((card) => (
-      <TechCard
-        title={card}
-        class="overflow-visible shadow-xl"
-        fadeBody={isStacked}
-      />
-    ))
-  }
+  {cards.map((card) => <TechCard title={card} fadeBody={isStacked} />)}
 </div>
