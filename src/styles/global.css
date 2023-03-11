@@ -18,10 +18,10 @@
   /* ::-webkit-scrollbar-track {;
   } */
   ::-webkit-scrollbar-thumb {
-    @apply bg-primary;
+    @apply bg-secondary;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary-focus;
+    @apply bg-secondary-focus;
   }
 
   /* Prose */

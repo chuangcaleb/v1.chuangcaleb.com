@@ -29,16 +29,16 @@ switch (type) {
 
 <div class="flex min-w-max basis-full">
   <div
-    class="mt-1 mb-1 mr-1 flex flex-col justify-between rounded-t-xl rounded-r-xl bg-base-100"
+    class="mt-1 mb-1 mr-1 flex flex-col justify-between rounded-t-xl rounded-r-xl bg-secondary-focus"
   >
     <!-- Type -->
     <div
-      class="absolute top-0 right-0 rounded-tr-2xl rounded-bl-lg bg-secondary p-[0.4em] text-sm"
+      class="absolute top-0 right-0 rounded-tr-2xl rounded-bl-lg bg-secondary p-[0.5em] text-sm"
     >
-      <Sprite name={iconName} class="w-5 h-5" />
+      <Sprite name={iconName} class="h-5 w-5" />
     </div>
     <!-- Deps -->
-    {deps && <DepsList deps={deps} />}
+    {(<DepsList deps={deps} />)}
     a
     <!-- Stats -->
     <div
