@@ -47,12 +47,12 @@ import Section from "../layouts/Section.astro";
   <Section id="projects">
     <h2 class="mt-0 text-center text-4xl">🌱 My Projects</h2>
     <div class="not-prose flex flex-wrap justify-center gap-8 xl:flex-nowrap">
-      <ProjectCard title="PowerKids Kindergarten Company Website" />
-      <ProjectCard title="PowerKids Kindergarten Company" />
-      <ProjectCard title="PowerKids Kindergarten Company Website" />
+      <ProjectCard title="PowerKids Kindergarten" />
+      <ProjectCard title="PowerKids Kindergarten" />
+      <ProjectCard title="PowerKids Kindergarten" />
     </div>
   </Section>
-  <Section class="bg-secondary">
+  <Section class="prose-secondary bg-secondary">
     <div class="max-w-prose">
       <h1>🧑‍🚀 Hello, Astronaut!</h1>
       <p>
@@ -61,11 +61,11 @@ import Section from "../layouts/Section.astro";
         point for anyone looking to build a personal website, blog, or portfolio
         with Astro.
       </p>
-      <div class="flex gap-8">
+      <div class="flex flex-wrap gap-2">
         <button class="btn">Action!</button>
         <button class="btn-secondary btn">Action!</button>
         <button class="btn-primary btn">Connect with me</button>
-        <button class="btn-ghost btn">About me</button>
+        <button class="btn-ghost-invert btn">About me</button>
       </div>
     </div>
   </Section>
@@ -78,7 +78,14 @@ import Section from "../layouts/Section.astro";
       > to add tools like Tailwind, React, or Vue to your project.
     </p>
     <p>Here are a few ideas on how to get started with the template:</p>
+    <div class="flex flex-wrap gap-2">
+      <button class="btn">Action!</button>
+      <button class="btn-secondary btn">Action!</button>
+      <button class="btn-primary btn">Connect with me</button>
+      <button class="btn-ghost-invert btn">About me</button>
+    </div>
   </Section>
+
   <Section noVerticalPadding class="flex xl:justify-center">
     <TechDeck
       hasGap

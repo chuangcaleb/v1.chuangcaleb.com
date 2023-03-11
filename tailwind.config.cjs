@@ -11,7 +11,29 @@ module.exports = {
       space: {
         26: "6.5rem",
       },
-      typography: ({ theme }) => ({
+      typography: () => ({
+        secondary: {
+          css: {
+            // This is configured to daisyUI's `secondary-content` in hsl()
+            "--bc": "230 100% 87.3%",
+            "--tw-prose-body": "hsla(var(--bc)/.8)",
+            "--tw-prose-headings": "hsl(var(--bc))",
+            "--tw-prose-lead": "hsl(var(--bc))",
+            "--tw-prose-links": "hsl(var(--bc))",
+            "--tw-prose-bold": "hsl(var(--bc))",
+            "--tw-prose-counters": "hsl(var(--bc))",
+            "--tw-prose-bullets": "hsla(var(--bc)/.5)",
+            "--tw-prose-hr": "hsla(var(--bc)/.2)",
+            "--tw-prose-quotes": "hsl(var(--bc))",
+            "--tw-prose-quote-borders": "hsla(var(--bc)/.2)",
+            "--tw-prose-captions": "hsla(var(--bc)/.5)",
+            "--tw-prose-code": "hsl(var(--bc))",
+            "--tw-prose-pre-code": "hsl(var(--nc))",
+            "--tw-prose-pre-bg": "hsl(var(--n))",
+            "--tw-prose-th-borders": "hsla(var(--bc)/.5)",
+            "--tw-prose-td-borders": "hsla(var(--bc)/.2)",
+          },
+        },
         DEFAULT: {
           css: {
             "code::before": {
@@ -20,40 +42,6 @@ module.exports = {
             "code::after": {
               content: '""',
             },
-            "--tw-prose-body": theme("colors.zinc[600]"),
-            "--tw-prose-headings": theme("colors.zinc[600]"),
-            "--tw-prose-lead": theme("colors.zinc[500]"),
-            "--tw-prose-links": theme("colors.zinc[600]"),
-            "--tw-prose-code": theme("colors.zinc[500]"),
-            // "--tw-prose-bold": theme("colors.pink[900]"),
-            // "--tw-prose-counters": theme("colors.pink[600]"),
-            // "--tw-prose-bullets": theme("colors.pink[400]"),
-            // "--tw-prose-hr": theme("colors.pink[300]"),
-            // "--tw-prose-quotes": theme("colors.pink[900]"),
-            // "--tw-prose-quote-borders": theme("colors.pink[300]"),
-            // "--tw-prose-captions": theme("colors.pink[700]"),
-            // "--tw-prose-pre-code": theme("colors.pink[100]"),
-            // "--tw-prose-pre-bg": theme("colors.pink[900]"),
-            // "--tw-prose-th-borders": theme("colors.pink[300]"),
-            // "--tw-prose-td-borders": theme("colors.pink[200]"),
-
-            // * Invert
-            "--tw-prose-invert-body": theme("colors.zinc[300]"),
-            "--tw-prose-invert-headings": theme("colors.zinc[300]"),
-            "--tw-prose-invert-lead": theme("colors.zinc[300]"),
-            "--tw-prose-invert-links": theme("colors.zinc[300]"),
-            "--tw-prose-invert-code": theme("colors.zinc[300]"),
-            // "--tw-prose-invert-bold": theme("colors.white"),
-            // "--tw-prose-invert-counters": theme("colors.pink[400]"),
-            "--tw-prose-invert-bullets": theme("colors.zinc[500]"),
-            // "--tw-prose-invert-hr": theme("colors.pink[700]"),
-            // "--tw-prose-invert-quotes": theme("colors.pink[100]"),
-            // "--tw-prose-invert-quote-borders": theme("colors.pink[700]"),
-            // "--tw-prose-invert-captions": theme("colors.pink[400]"),
-            // "--tw-prose-invert-pre-code": theme("colors.pink[300]"),
-            // "--tw-prose-invert-pre-bg": "rgb(0 0 0 / 50%)",
-            // "--tw-prose-invert-th-borders": theme("colors.pink[600]"),
-            // "--tw-prose-invert-td-borders": theme("colors.pink[700]"),
           },
         },
       }),
