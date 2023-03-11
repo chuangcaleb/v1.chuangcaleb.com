@@ -1,0 +1,32 @@
+---
+import type { TechTitle } from "../data/TechStack";
+import TechCard from "./TechCard/TechCard.astro";
+
+interface Props extends astroHTML.JSX.HTMLAttributes {
+  cards: TechTitle[];
+  isStacked?: boolean;
+  hasGap?: boolean;
+}
+
+const { cards, isStacked, hasGap, class: extraClass, ...props } = Astro.props;
+---
+
+<div
+  class:list={[
+    "flex overflow-scroll pb-2",
+    { "-space-x-26": isStacked },
+    { "gap-4 ": hasGap },
+    extraClass,
+  ]}
+  {...props}
+>
+  {
+    cards.map((card) => (
+      <TechCard
+        title={card}
+        class="overflow-visible shadow-xl"
+        fadeBody={isStacked}
+      />
+    ))
+  }
+</div>

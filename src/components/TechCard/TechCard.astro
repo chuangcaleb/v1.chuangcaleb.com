@@ -5,20 +5,25 @@ import CardIcon from "./CardIcon.astro";
 import CardBody from "./CardBody/CardBody.astro";
 import CardHeader from "./CardHeader.astro";
 
-interface Props {
+interface Props extends astroHTML.JSX.HTMLAttributes {
   title: TechTitle;
+  fadeBody?: boolean;
 }
-const { title } = Astro.props;
+const { title, fadeBody, class: extraClass, ...props } = Astro.props;
 const techCard = TechStack[title];
 const { grade, icon } = techCard;
 ---
 
 <div
-  class="relative ml-3 mt-3 flex h-48 max-w-fit rounded-xl border border-secondary-focus bg-secondary text-secondary-content"
+  class:list={[
+    "relative ml-3 mt-3 flex h-48 max-w-fit rounded-xl border border-secondary-focus bg-secondary text-secondary-content",
+    extraClass,
+  ]}
+  {...props}
 >
   <CardHeader title={title} grade={grade} />
   <CardIcon icon={icon} />
-  <CardBody {...techCard} />
+  <CardBody {...techCard} fadeBody={fadeBody} />
 </div>
 
 <style>

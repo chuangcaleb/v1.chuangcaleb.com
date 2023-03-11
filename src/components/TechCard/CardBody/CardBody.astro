@@ -5,7 +5,11 @@ import type { TechCard, TechCardType } from "../../../data/TechStack/types";
 import DepsList from "./DepsList.astro";
 import Rating from "./Rating.astro";
 
-const { stats, type, deps, tags } = Astro.props as TechCard;
+interface Props extends TechCard {
+  fadeBody?: boolean;
+}
+
+const { fadeBody, stats, type, deps, tags } = Astro.props;
 const { pro = 0, exp = 0, frs = 0, int = 0 } = stats || {};
 
 const iconMap: Record<TechCardType, string> = {
@@ -23,7 +27,10 @@ const iconName = iconMap[type];
 ---
 
 <div
-  class="mt-1 mb-1 mr-1 flex w-32 flex-grow flex-col rounded-t-xl rounded-r-xl bg-secondary-focus"
+  class:list={[
+    "mt-1 mb-1 mr-1 flex w-[7.5rem] flex-grow flex-col rounded-t-xl rounded-r-xl bg-secondary-focus",
+    { "opacity-70": fadeBody },
+  ]}
 >
   <!-- Type -->
   <div

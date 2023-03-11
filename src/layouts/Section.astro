@@ -10,7 +10,7 @@ const {
   noHorizontalMobilePadding,
   noVerticalPadding,
   invert,
-  class: className,
+  class: extraClass,
   ...props
 } = Astro.props;
 ---
@@ -22,7 +22,7 @@ const {
       "pt-12 pb-8": !noVerticalPadding,
       "bg-neutral-900 dark:bg-neutral prose-invert": invert,
     },
-    className,
+    extraClass,
   ]}
   {...props}
 >

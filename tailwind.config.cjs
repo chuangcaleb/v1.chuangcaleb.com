@@ -8,6 +8,9 @@ module.exports = {
       screens: {
         xlPadded: { raw: "(min-width: calc(1280px + 3rem))" },
       },
+      space: {
+        26: "6.5rem",
+      },
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {
