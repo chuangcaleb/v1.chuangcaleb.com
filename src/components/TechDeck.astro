@@ -1,14 +1,15 @@
 ---
+import type { HTMLAttributes } from "astro/types";
 import type { TechTitle } from "../data/TechStack";
 import TechCard from "./TechCard/TechCard.astro";
 
-interface Props extends astroHTML.JSX.HTMLAttributes {
+interface Props extends HTMLAttributes<"div"> {
   cards: TechTitle[];
   isStacked?: boolean;
   hasGap?: boolean;
 }
 
-const { cards, isStacked, hasGap, class: extraClass, ...props } = Astro.props;
+const { cards, isStacked, hasGap, class: extraClass, ...attrs } = Astro.props;
 ---
 
 <div
@@ -18,7 +19,7 @@ const { cards, isStacked, hasGap, class: extraClass, ...props } = Astro.props;
     { "gap-4 ": hasGap },
     extraClass,
   ]}
-  {...props}
+  {...attrs}
 >
   {cards.map((card) => <TechCard title={card} fadeBody={isStacked} />)}
 </div>

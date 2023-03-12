@@ -1,10 +1,11 @@
 ---
 import { Sprite } from "astro-iconify";
+import type { HTMLAttributes } from "astro/types";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header/Header.astro";
 
-interface Props extends astroHTML.JSX.HTMLAttributes {
+interface Props extends HTMLAttributes<"div"> {
   title: string;
   description: string;
   index?: boolean;
@@ -17,6 +18,7 @@ const {
   description,
   index,
   hasSpriteProvider,
+  ...attrs
 } = Astro.props;
 ---
 
@@ -27,7 +29,7 @@ const {
   <body class="prose dark:prose-dark">
     <Header index={index} />
     <main>
-      <div class:list={[extraClass]}>
+      <div class:list={[extraClass]} {...attrs}>
         {
           hasSpriteProvider ? (
             <Sprite.Provider>

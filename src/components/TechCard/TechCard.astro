@@ -4,12 +4,13 @@ import type { TechTitle } from "../../data/TechStack";
 import CardIcon from "./CardIcon.astro";
 import CardBody from "./CardBody/CardBody.astro";
 import CardHeader from "./CardHeader.astro";
+import type { HTMLAttributes } from "astro/types";
 
-interface Props extends astroHTML.JSX.HTMLAttributes {
+interface Props extends HTMLAttributes<"div"> {
   title: TechTitle;
   fadeBody?: boolean;
 }
-const { title, fadeBody, class: extraClass, ...props } = Astro.props;
+const { title, fadeBody, class: extraClass, ...attrs } = Astro.props;
 const techCard = TechStack[title];
 const { grade, icon } = techCard;
 ---
@@ -19,7 +20,7 @@ const { grade, icon } = techCard;
     "snap-start relative ml-3 mt-3 flex h-48 max-w-fit rounded-xl border border-secondary-focus bg-secondary text-secondary-content hover:text-white hover:shadow-xl cursor-default",
     extraClass,
   ]}
-  {...props}
+  {...attrs}
 >
   <CardHeader title={title} grade={grade} />
   <CardIcon icon={icon} />

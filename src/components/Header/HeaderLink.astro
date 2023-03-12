@@ -1,7 +1,9 @@
 ---
-interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+import type { HTMLAttributes } from "astro/types";
 
-const { href, class: extraClass, ...props } = Astro.props;
+interface Props extends HTMLAttributes<"a"> {}
+
+const { href, class: extraClass, ...attrs } = Astro.props;
 
 const { pathname } = Astro.url;
 const isActive = href === pathname || href === pathname.replace(/\/$/, "");
@@ -10,11 +12,11 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 <a
   href={href}
   class:list={[
-    extraClass,
     "inline-block hover:underline underline-offset-2",
     { "underline disabled:opacity-75 pointer-events-none": isActive },
+    extraClass,
   ]}
-  {...props}
+  {...attrs}
   aria-current={isActive && "page"}
   aria-disabled={isActive}
 >

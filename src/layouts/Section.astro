@@ -1,5 +1,7 @@
 ---
-interface Props extends astroHTML.JSX.HTMLAttributes {
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"section"> {
   width?: "full" | "prose";
   noHorizontalMobilePadding?: boolean;
   noVerticalPadding?: boolean;
@@ -11,7 +13,7 @@ const {
   noVerticalPadding,
   variant,
   class: extraClass,
-  ...props
+  ...attrs
 } = Astro.props;
 ---
 
@@ -26,7 +28,7 @@ const {
     },
     extraClass,
   ]}
-  {...props}
+  {...attrs}
 >
   {
     width === "full" ? (
