@@ -3,13 +3,13 @@ interface Props extends astroHTML.JSX.HTMLAttributes {
   width?: "full" | "prose";
   noHorizontalMobilePadding?: boolean;
   noVerticalPadding?: boolean;
-  invert?: boolean;
+  variant?: "dark" | "secondary";
 }
 const {
   width,
   noHorizontalMobilePadding,
   noVerticalPadding,
-  invert,
+  variant,
   class: extraClass,
   ...props
 } = Astro.props;
@@ -21,7 +21,8 @@ const {
     {
       "px-4 xlPadded:px-0": width === "full" && !noHorizontalMobilePadding,
       "py-12": !noVerticalPadding,
-      "bg-neutral-900 dark:bg-neutral prose-dark": invert,
+      "bg-neutral-900 dark:bg-neutral prose-dark": variant === "dark",
+      "bg-secondary prose-secondary": variant === "secondary",
     },
     extraClass,
   ]}
@@ -33,9 +34,11 @@ const {
     ) : (
       <div
         class:list={[
-          { "xl:max-w-screen-xl mx-auto": width !== "prose" },
-          { "max-w-prose mx-auto": width === "prose" },
-          { "px-4 xlPadded:px-0": !noHorizontalMobilePadding },
+          {
+            "xl:max-w-screen-xl mx-auto": width !== "prose",
+            "max-w-prose mx-auto": width === "prose",
+            "px-4 xlPadded:px-0": !noHorizontalMobilePadding,
+          },
         ]}
       >
         <slot />
