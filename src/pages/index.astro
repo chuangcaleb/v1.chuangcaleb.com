@@ -11,13 +11,11 @@ import Section from "../layouts/Section.astro";
   title={SITE_TITLE}
   description={SITE_DESCRIPTION}
   class="text-xl"
-  fullWidth
   index
   hasSpriteProvider
 >
   <Section
     invert
-    fullWidth
     noVerticalPadding
     class="grid h-screen min-h-fit xl:grid-cols-2"
   >
@@ -86,8 +84,7 @@ import Section from "../layouts/Section.astro";
       <button class="btn-ghost btn">About me</button>
     </div>
   </Section>
-
-  <Section noVerticalPadding class="">
+  <Section noVerticalPadding width="full">
     <TechDeck
       cards={[
         "Javascript",
