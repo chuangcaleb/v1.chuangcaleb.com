@@ -11,8 +11,8 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
   href={href}
   class:list={[
     extraClass,
-    "hover:underline inline-block",
-    // { underline: isActive },
+    "inline-block",
+    { "underline disabled:opacity-75 pointer-events-none": isActive },
   ]}
   {...props}
   aria-current={isActive && "page"}

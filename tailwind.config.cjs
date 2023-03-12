@@ -14,10 +14,10 @@ module.exports = {
       typography: () => ({
         secondary: {
           css: {
+            "max-width": "inherit",
             // This is configured to daisyUI's `secondary-content` in hsl()
             "--bc": "230 100% 93%",
-            "--text-opacity": 1,
-            "--tw-prose-body": "hsla(var(--bc)/.2)",
+            "--tw-prose-body": "hsla(var(--bc)/.8)",
             "--tw-prose-headings": "hsl(var(--bc))",
             "--tw-prose-lead": "hsl(var(--bc))",
             "--tw-prose-links": "hsl(var(--bc))",
@@ -35,6 +35,7 @@ module.exports = {
         },
         dark: {
           css: {
+            "max-width": "inherit",
             "code::before": {
               content: '""',
             },
@@ -42,7 +43,7 @@ module.exports = {
               content: '""',
             },
             "--bc": "230 100% 97%",
-            "--tw-prose-body": "hsla(var(--bc)/.2)",
+            "--tw-prose-body": "hsla(var(--bc)/.8)",
             "--tw-prose-headings": "hsl(var(--bc))",
             "--tw-prose-lead": "hsl(var(--bc))",
             "--tw-prose-links": "hsl(var(--bc))",
@@ -60,6 +61,7 @@ module.exports = {
         },
         DEFAULT: {
           css: {
+            "max-width": "inherit",
             "code::before": {
               content: '""',
             },
