@@ -8,7 +8,7 @@ import Header from "../components/Header/Header.astro";
 interface Props extends HTMLAttributes<"div"> {
   title: string;
   description: string;
-  index?: boolean;
+  isIndex?: boolean;
   hasSpriteProvider?: boolean;
 }
 
@@ -16,10 +16,28 @@ const {
   title,
   class: extraClass,
   description,
-  index,
+  isIndex,
   hasSpriteProvider,
   ...attrs
 } = Astro.props;
+
+// const BodyContent = (
+
+//     <Header isIndex={isIndex} />
+//     <main>
+//       <div class:list={[extraClass]} {...attrs}>
+//         {hasSpriteProvider ? (
+//           <Sprite.Provider>
+//             <slot />
+//           </Sprite.Provider>
+//         ) : (
+//           <slot />
+//         )}
+//       </div>
+//     </main>
+//     <Footer />
+
+// );
 ---
 
 <html lang="en">
@@ -27,20 +45,26 @@ const {
     <BaseHead title={title} description={description} />
   </head>
   <body class="prose dark:prose-dark">
-    <Header index={index} />
-    <main>
-      <div class:list={[extraClass]} {...attrs}>
-        {
-          hasSpriteProvider ? (
-            <Sprite.Provider>
-              <slot />
-            </Sprite.Provider>
-          ) : (
+    {
+      hasSpriteProvider ? (
+        <Sprite.Provider>
+          <Header isIndex={isIndex} />
+          <main>
+            <div class:list={[extraClass]} {...attrs}>
+                <slot />
+            </div>
+          </main>
+          <Footer />
+        </Sprite.Provider>
+      ) : (
+      <Header isIndex={isIndex} />
+      <main>
+        <div class:list={[extraClass]} {...attrs}>
             <slot />
-          )
-        }
-      </div>
-    </main>
-    <Footer />
+        </div>
+      </main>
+      <Footer />
+      )
+    }
   </body>
 </html>

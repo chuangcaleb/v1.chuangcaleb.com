@@ -1,26 +1,26 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 interface Props {
-  index?: boolean;
+  isIndex?: boolean;
 }
-const { index } = Astro.props;
+const { isIndex } = Astro.props;
 ---
 
 <header
   class:list={[
     "max-w-screen-xl mx-auto px-4 xlPadded:px-0 min-h-fit select-none prose-a:no-underline",
-    { "absolute z-10 inset-0": index },
+    { "absolute z-10 inset-0": isIndex },
   ]}
 >
   <nav
     class:list={[
       "py-2 flex h-12",
-      { "justify-end": index },
-      { "justify-between": !index },
+      { "justify-end": isIndex },
+      { "justify-between": !isIndex },
     ]}
   >
     {
-      !index && (
+      !isIndex && (
         <a href="/" class="hover:underline">
           <h2 class="my-0 text-2xl xl:text-3xl">
             <span class="font-light">Chuang</span>
@@ -29,7 +29,7 @@ const { index } = Astro.props;
         </a>
       )
     }
-    <ul class:list={["flex gap-6 my-auto", { "prose-dark": index }]}>
+    <ul class:list={["flex gap-6 my-auto", { "prose-dark": isIndex }]}>
       <HeaderLink href="/blog">blog</HeaderLink>
       <HeaderLink href="/about">about</HeaderLink>
     </ul>
