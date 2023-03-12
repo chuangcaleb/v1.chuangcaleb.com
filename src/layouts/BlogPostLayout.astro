@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
+import Section from "./Section.astro";
 
 export type BlogProps = CollectionEntry<"blog">["data"];
 
@@ -8,7 +9,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
-  <article>
+  <Section class="mx-auto max-w-prose">
     {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
     <h1>{title}</h1>
     {pubDate && <time>{pubDate}</time>}
@@ -21,5 +22,5 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     }
     <hr class="border-gray-300" />
     <slot />
-  </article>
+  </Section>
 </BaseLayout>

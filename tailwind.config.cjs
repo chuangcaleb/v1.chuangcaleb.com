@@ -11,6 +11,9 @@ module.exports = {
       space: {
         26: "6.5rem",
       },
+      maxWidth: {
+        prose: "65ch",
+      },
       typography: () => ({
         secondary: {
           css: {

@@ -11,7 +11,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
   href={href}
   class:list={[
     extraClass,
-    "inline-block",
+    "inline-block hover:underline underline-offset-4",
     { "underline disabled:opacity-75 pointer-events-none": isActive },
   ]}
   {...props}
