@@ -13,7 +13,11 @@ import Section from "../layouts/Section.astro";
   isIndex
   hasSpriteProvider
 >
-  <Section variant="dark" class="grid h-screen min-h-fit xl:grid-cols-2">
+  <Section
+    variant="dark"
+    width="full"
+    class="grid h-screen min-h-fit xl:grid-cols-2"
+  >
     <div class="place-self-center text-center xl:text-left 2xl:px-12">
       <div class="grid justify-items-center gap-10 xl:justify-items-start">
         <div class="grid gap-4">
@@ -33,8 +37,6 @@ import Section from "../layouts/Section.astro";
       </div>
     </div>
     <div>
-      <p>asds</p>
-      <h2>asds</h2>
       <TechCard title="Typescript" />
     </div>
   </Section>
@@ -92,7 +94,7 @@ import Section from "../layouts/Section.astro";
         "Next",
         "Django",
       ]}
-      class="border-8 border-neutral-focus"
+      class="border-8 border-base-200 dark:border-neutral-focus"
     />
   </Section>
 </BaseLayout>
