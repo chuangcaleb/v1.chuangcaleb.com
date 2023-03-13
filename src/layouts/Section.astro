@@ -2,17 +2,16 @@
 import type { HTMLAttributes } from "astro/types";
 
 interface Props extends HTMLAttributes<"section"> {
-  width?: "full" | "prose"; // default: max-w-xl
-  noHorizontalMobilePadding?: boolean;
-  // paddingX?: "always" | "none"; // default: mobile
-  noVerticalPadding?: boolean;
-  variant?: "dark" | "secondary";
+  contentWidth?: "full" | "prose" | "xl"; // default: max-w-xl
+  paddingX?: "always" | "none" | "mobile"; // default: (gutters only on) mobile
+  noPaddingY?: boolean; // default: paddingY true
+  variant?: "base" | "dark" | "secondary"; // default: base
 }
 const {
-  width,
-  noHorizontalMobilePadding,
-  noVerticalPadding,
-  variant,
+  contentWidth = "xl",
+  paddingX = "mobile",
+  noPaddingY,
+  variant = "base",
   class: extraClass,
   ...attrs
 } = Astro.props;
@@ -22,8 +21,12 @@ const {
   class:list={[
     "w-full",
     {
-      "px-4 xlPadded:px-0": width === "full" && !noHorizontalMobilePadding,
-      "py-12": !noVerticalPadding,
+      // paddingX
+      "px-4": paddingX !== "none",
+      "xlPadded:px-0": paddingX !== "always",
+      // paddingY
+      "py-16": !noPaddingY,
+      // variants
       "bg-neutral-900 dark:bg-neutral prose-dark": variant === "dark",
       "bg-secondary prose-secondary": variant === "secondary",
     },
@@ -32,15 +35,15 @@ const {
   {...attrs}
 >
   {
-    width === "full" ? (
+    contentWidth === "full" ? (
       <slot />
     ) : (
       <div
         class:list={[
           {
-            "xl:max-w-screen-xl mx-auto": width !== "prose",
-            "max-w-prose mx-auto": width === "prose",
-            "px-4 xlPadded:px-0": !noHorizontalMobilePadding,
+            // i.e. full or max-w-xl
+            "xl:max-w-screen-xl mx-auto": contentWidth !== "prose",
+            "max-w-prose mx-auto": contentWidth === "prose",
           },
         ]}
       >
