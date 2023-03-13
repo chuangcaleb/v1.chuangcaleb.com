@@ -2,8 +2,9 @@
 import type { HTMLAttributes } from "astro/types";
 
 interface Props extends HTMLAttributes<"section"> {
-  width?: "full" | "prose";
+  width?: "full" | "prose"; // default: max-w-xl
   noHorizontalMobilePadding?: boolean;
+  // paddingX?: "always" | "none"; // default: mobile
   noVerticalPadding?: boolean;
   variant?: "dark" | "secondary";
 }
