@@ -15,16 +15,31 @@
     display: none;
   }
   ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: 8px;
+    height: 8px;
   }
-  /* ::-webkit-scrollbar-track {;
-  } */
-  ::-webkit-scrollbar-thumb {
-    @apply bg-secondary;
+
+  @media (prefers-color-scheme: light) {
+    body::-webkit-scrollbar-track {
+      @apply bg-neutral-900;
+    }
+    ::-webkit-scrollbar-thumb {
+      @apply bg-primary;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      @apply bg-primary-focus;
+    }
   }
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-secondary-focus;
+  @media (prefers-color-scheme: dark) {
+    body::-webkit-scrollbar-track {
+      @apply bg-base-300;
+    }
+    ::-webkit-scrollbar-thumb {
+      @apply bg-secondary;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      @apply bg-secondary-focus;
+    }
   }
 
   /* Prose */

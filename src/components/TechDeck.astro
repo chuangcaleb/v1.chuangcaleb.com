@@ -14,7 +14,7 @@ const { cards, isStacked, hasGap, class: extraClass, ...attrs } = Astro.props;
 
 <div
   class:list={[
-    "flex max-w-fit mx-auto overflow-scroll p-2 snap-normal snap-x scroll-pl-5 bg-neutral rounded-xl",
+    "techdeck flex max-w-fit mx-auto overflow-scroll p-2 snap-normal snap-x scroll-pl-5 bg-neutral rounded-xl",
     { "-space-x-26": isStacked },
     { "gap-4 ": hasGap },
     extraClass,
@@ -23,3 +23,10 @@ const { cards, isStacked, hasGap, class: extraClass, ...attrs } = Astro.props;
 >
   {cards.map((card) => <TechCard title={card} fadeBody={isStacked} />)}
 </div>
+
+<style>
+  .techdeck::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+</style>
