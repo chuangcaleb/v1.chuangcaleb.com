@@ -2,6 +2,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import compress from "astro-compress";
+import compressor from "astro-compressor";
 import purgecss from "astro-purgecss";
 import { defineConfig } from "astro/config";
 
@@ -13,8 +14,11 @@ export default defineConfig({
     sitemap(),
     tailwind({ config: { applyBaseStyles: false } }),
     ...(import.meta.env.PROD
-      ? [purgecss({ keyframes: true, variables: true, rejected: true })]
+      ? [
+          purgecss({ keyframes: true, variables: true, rejected: true }),
+          compress({ logger: 1 }),
+          compressor(),
+        ]
       : []),
-    compress({ logger: 1 }),
   ],
 });

@@ -10,6 +10,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.54.1
   astro: ^2.1.2
   astro-compress: ^1.1.35
+  astro-compressor: ^0.3.0
   astro-iconify: ^1.2.0
   astro-purgecss: ^2.0.1
   autoprefixer: ^10.4.14
@@ -41,6 +42,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.54.1_mlk7dnz565t663n4razh6a6v6i
   '@typescript-eslint/parser': 5.54.1_ycpbpc6yetojsgtrx3mwntkhsu
   astro-compress: 1.1.35
+  astro-compressor: 0.3.0
   autoprefixer: 10.4.14_postcss@8.4.21
   eslint: 8.35.0
   eslint-plugin-astro: 0.23.0_eslint@8.35.0
@@ -1350,6 +1352,10 @@ packages:
       sharp: 0.31.3
       svgo: 3.0.2
       terser: 5.16.5
+    dev: true
+
+  /astro-compressor/0.3.0:
+    resolution: {integrity: sha512-w2qdtUgd75RDSPX9m693VVr8bFSuLpTPxs/Toy6kEAsr082AOGRivOl/1pmjf6tDWaU07rlX5X5ZV90ZP6/RGg==}
     dev: true
 
   /astro-eslint-parser/0.11.0:
