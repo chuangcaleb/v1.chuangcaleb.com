@@ -11,10 +11,10 @@ export default defineConfig({
   site: "https://example.com",
   integrations: [
     mdx(),
-    sitemap(),
     tailwind({ config: { applyBaseStyles: false } }),
     ...(import.meta.env.PROD
       ? [
+          sitemap(),
           purgecss({ keyframes: true, variables: true, rejected: true }),
           compress({ logger: 1 }),
           compressor(),
