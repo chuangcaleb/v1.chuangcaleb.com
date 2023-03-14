@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import { SITE_DESCRIPTION } from "../../consts";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Section from "../../layouts/Section.astro";
 
@@ -9,7 +9,7 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<BaseLayout title={`Chuang Caleb's Blog`} description={SITE_DESCRIPTION}>
   <Section>
     <ul class="list-none p-0">
       {

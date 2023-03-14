@@ -1,14 +1,16 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { SITE_TITLE } from "../consts";
 import BaseLayout from "./BaseLayout.astro";
 import Section from "./Section.astro";
 
 export type BlogProps = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage } =
+  Astro.props.frontmatter || Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={`${title} | ${SITE_TITLE}`} description={description}>
   <Section contentWidth="prose">
     <article>
       {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
