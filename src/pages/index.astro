@@ -1,4 +1,5 @@
 ---
+import OverflowScrollArea from "../components/OverflowScrollArea.astro";
 import ProjectCard from "../components/projects/ProjectCard.astro";
 import TechCard from "../components/TechCard/TechCard.astro";
 import TechDeck from "../components/TechDeck.astro";
@@ -42,11 +43,11 @@ import Section from "../layouts/Section.astro";
   </Section>
   <Section id="projects">
     <h2 class="mt-0 text-4xl">⭐️ My Favorite Projects</h2>
-    <div class="flex flex-wrap justify-center gap-8 xl:flex-nowrap">
+    <OverflowScrollArea class="flex-col gap-8 sm:flex-row xl:overflow-visible">
       <ProjectCard title="PowerKids Kindergarten" />
       <ProjectCard title="PowerKids Kindergarten" />
       <ProjectCard title="PowerKids Kindergarten" />
-    </div>
+    </OverflowScrollArea>
   </Section>
   <Section variant="secondary">
     <div class="max-w-prose">

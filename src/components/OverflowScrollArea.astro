@@ -1,0 +1,24 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {}
+
+const { class: extraClass, ...attrs } = Astro.props;
+---
+
+<div
+  class:list={[
+    "scrollable-area flex mx-auto overflow-scroll p-2 pb-6 rounded-xl",
+    extraClass,
+  ]}
+  {...attrs}
+>
+  <slot />
+</div>
+
+<style>
+  .scrollable-area::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+</style>
