@@ -17,6 +17,7 @@ const ratingMap: Record<TechCardStatsTitle, [string, string]> = {
 };
 
 const [color, iconName] = ratingMap[title];
+const colorClass = "rating-" + color;
 
 // pro mdi:clipboard-check mdi:clipboard-check-multiple ic:baseline-library-add-check ic:baseline-speed
 // exp bi:card-list mdi:book-education
@@ -25,8 +26,8 @@ const [color, iconName] = ratingMap[title];
 //  https://css-tricks.com/five-methods-for-five-star-ratings/
 ---
 
-<span style={{ color: `var(--${color})` }}>{title}</span>
-<div class="grid grid-cols-5" style={{ color: `var(--${color})` }}>
+<span class={colorClass}>{title}</span>
+<div class:list={["grid grid-cols-5", colorClass]}>
   {
     Array.from({ length: 5 }, (_, i) => (
       <Sprite
@@ -37,21 +38,33 @@ const [color, iconName] = ratingMap[title];
     ))
   }
 </div>
-<style>
-  :root {
+<style is:global>
+  .rating-red {
+    color: #f87171;
+  }
+  .rating-blue {
+    color: #60a5fa;
+  }
+  .rating-green {
+    color: #4ade80;
+  }
+  .rating-yellow {
+    color: #facc15;
+  }
+  /* :root {
     --red: #f87171;
     --blue: #60a5fa;
     --green: #4ade80;
     --yellow: #facc15;
-    /* --red: #dc2626;
+    --red: #dc2626;
     --blue: #2563eb;
     --green: #16a34a;
-    --yellow: #ca8a04; */
-    /* --red: #b91c1c;
+    --yellow: #ca8a04;
+    --red: #b91c1c;
     --blue: #1d4ed8;
     --green: #15803d;
-    --yellow: #a16207; */
-  }
+    --yellow: #a16207;
+  } */
   /* @media (prefers-color-scheme: dark) {
     :root {
       --red: #ef4444;
