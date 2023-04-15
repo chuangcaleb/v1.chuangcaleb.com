@@ -1,0 +1,19 @@
+---
+import { Sprite } from "astro-iconify";
+
+interface Props {
+  hasWrapper: boolean;
+}
+
+const { hasWrapper } = Astro.props;
+---
+
+{
+  hasWrapper ? (
+    <Sprite.Provider>
+      <slot />
+    </Sprite.Provider>
+  ) : (
+    <slot />
+  )
+}

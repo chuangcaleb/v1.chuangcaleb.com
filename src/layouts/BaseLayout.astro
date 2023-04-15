@@ -1,13 +1,15 @@
 ---
 import BaseHead from "@components/BaseHead.astro";
+import SpriteProviderWrapper from "@components/layout/SpriteProviderWrapper.astro";
 import type { HTMLAttributes } from "astro/types";
 
 interface Props extends HTMLAttributes<"div"> {
   title: string;
   description: string;
+  hasSpriteProvider?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, hasSpriteProvider = false } = Astro.props;
 ---
 
 <html lang="en">
@@ -16,7 +18,9 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <main>
-      <slot />
+      <SpriteProviderWrapper hasWrapper={hasSpriteProvider}>
+        <slot />
+      </SpriteProviderWrapper>
     </main>
   </body>
 </html>
