@@ -6,7 +6,7 @@ const backgroundCV = {
   dark: "bg-neutral-600",
 };
 
-const gridColumnCV = {
+const colSpanCV = {
   full: "col-span-3",
   middle: "[grid-column:2]",
   none: null,
@@ -19,7 +19,7 @@ const paddingXCV = {
 };
 
 interface Props extends HTMLAttributes<"section"> {
-  colSpan?: keyof typeof gridColumnCV; // default: max-w-xl
+  colSpan?: keyof typeof colSpanCV; // default: max-w-xl
   paddingX?: keyof typeof paddingXCV; // default: (gutters only on) mobile
   bg?: keyof typeof backgroundCV; // default: base
   noPaddingY?: boolean; // default: paddingY true
@@ -35,7 +35,7 @@ const {
 const sectionClass = [
   "text-black",
   backgroundCV[bg],
-  gridColumnCV[colSpan],
+  colSpanCV[colSpan],
   paddingXCV[paddingX],
   extraClass,
 ];
