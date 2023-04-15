@@ -1,0 +1,68 @@
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Scroll */
+  /* body {
+    overscroll-behavior-y: none;
+    overflow: overlay;
+  }
+  ::-webkit-scrollbar-corner {
+    display: none;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  @media (prefers-color-scheme: light) {
+    body::-webkit-scrollbar-track {
+      @apply bg-neutral-900;
+    }
+    ::-webkit-scrollbar-thumb {
+      @apply bg-primary;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      @apply bg-primary-focus;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    body::-webkit-scrollbar-track {
+      @apply bg-base-300;
+    }
+    ::-webkit-scrollbar-thumb {
+      @apply bg-secondary;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      @apply bg-secondary-focus;
+    }
+  } */
+
+  /* Prose */
+  /* .prose :where(p):not(:where([class~="not-prose"] *)) {
+    color: var(--tw-prose-body);
+  } */
+  /* .prose, already delcared by default */
+  /* .prose-dark,
+  .prose-secondary {
+    --tw-prose-body: hsla(var(--bc) / 0.8);
+    --tw-prose-headings: hsl(var(--bc));
+    --tw-prose-lead: hsl(var(--bc));
+    --tw-prose-links: hsl(var(--bc));
+    --tw-prose-bold: hsl(var(--bc));
+    --tw-prose-counters: hsl(var(--bc));
+    --tw-prose-bullets: hsla(var(--bc) / 0.5);
+    --tw-prose-hr: hsla(var(--bc) / 0.2);
+    --tw-prose-quotes: hsl(var(--bc));
+    --tw-prose-quote-borders: hsla(var(--bc) / 0.2);
+    --tw-prose-captions: hsla(var(--bc) / 0.5);
+    --tw-prose-code: hsl(var(--bc));
+    --tw-prose-th-borders: hsla(var(--bc) / 0.5);
+    --tw-prose-td-borders: hsla(var(--bc) / 0.2);
+  } */
+  code::before,
+  code::after {
+    content: "";
+  }
+}

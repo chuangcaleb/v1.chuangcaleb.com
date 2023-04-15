@@ -1,0 +1,10 @@
+:root {
+  --default-gutter: 1fr;
+  --max-width-medium: 880px;
+  --max-width-small: 700px;
+  --max-width-prose: 65ch;
+  --layout-medium: var(--default-gutter) minmax(auto, var(--max-width-medium))
+    var(--default-gutter);
+  --layout-small: var(--default-gutter) minmax(auto, var(--max-width-small))
+    var(--default-gutter);
+}
