@@ -6,6 +6,7 @@
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
       "@data/*": ["src/data/*"],
+      "@utils/*": ["src/utils/*"],
       "@constants": ["src/constants.ts"]
     }
   }

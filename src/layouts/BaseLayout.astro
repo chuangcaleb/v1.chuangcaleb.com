@@ -1,26 +1,43 @@
 ---
 import BaseHead from "@components/BaseHead.astro";
 import SpriteProviderWrapper from "@components/layout/SpriteProviderWrapper.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "@constants";
 import type { HTMLAttributes } from "astro/types";
 
+const gridLayoutCV = {
+  full: "grid grid-cols-[var(--layout-small)]",
+  medium: "grid grid-cols-[var(--layout-medium)]",
+  prose: "grid grid-cols-[var(--layout-prose)]",
+  none: null,
+};
+
 interface Props extends HTMLAttributes<"div"> {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   hasSpriteProvider?: boolean;
+  gridLayout?: keyof typeof gridLayoutCV;
 }
 
-const { title, description, hasSpriteProvider = false } = Astro.props;
+const {
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
+  hasSpriteProvider = false,
+  gridLayout = "medium",
+  class: extraClass,
+} = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body>
-    <main>
-      <SpriteProviderWrapper hasWrapper={hasSpriteProvider}>
+  <body class="min-h-screen">
+    <SpriteProviderWrapper hasWrapper={hasSpriteProvider}>
+      <main
+        class:list={["[grid-column:2]", gridLayoutCV[gridLayout], extraClass]}
+      >
         <slot />
-      </SpriteProviderWrapper>
-    </main>
+      </main>
+    </SpriteProviderWrapper>
   </body>
 </html>

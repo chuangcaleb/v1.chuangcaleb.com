@@ -6,25 +6,41 @@ const backgroundCV = {
   dark: "bg-neutral-600",
 };
 
+const gridColumnCV = {
+  full: "col-span-3",
+  middle: "[grid-column:2]",
+  none: null,
+};
+
+const paddingXCV = {
+  always: "px-4",
+  mobile: "px-4 sm:px-0",
+  none: null,
+};
+
 interface Props extends HTMLAttributes<"section"> {
-  contentWidth?: "full" | "prose" | "xl"; // default: max-w-xl
-  paddingX?: "always" | "none" | "mobile"; // default: (gutters only on) mobile
+  colSpan?: keyof typeof gridColumnCV; // default: max-w-xl
+  paddingX?: keyof typeof paddingXCV; // default: (gutters only on) mobile
+  bg?: keyof typeof backgroundCV; // default: base
   noPaddingY?: boolean; // default: paddingY true
-  background?: keyof typeof backgroundCV; // default: base
 }
 const {
-  contentWidth = "xl",
-  paddingX = "mobile",
-  noPaddingY,
-  background = "base",
+  colSpan = "middle",
+  bg = "base",
+  paddingX = "always",
   class: extraClass,
   ...attrs
 } = Astro.props;
+
+const sectionClass = [
+  "text-black",
+  backgroundCV[bg],
+  gridColumnCV[colSpan],
+  paddingXCV[paddingX],
+  extraClass,
+];
 ---
 
-<section
-  class:list={["text-black", backgroundCV[background], extraClass]}
-  {...attrs}
->
+<section class:list={sectionClass} {...attrs}>
   <slot />
 </section>
