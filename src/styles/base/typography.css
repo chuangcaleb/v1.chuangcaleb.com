@@ -17,7 +17,7 @@
     @apply leading-7 [&:not(:first-child)]:mt-6;
   }
   a {
-    @apply font-medium underline decoration-gray-400 underline-offset-4 hover:decoration-black;
+    @apply font-medium underline underline-offset-2 duration-100 hover:underline-offset-4;
   }
   blockquote {
     @apply mt-6 border-l-2 border-slate-300 pl-6 italic text-slate-800 dark:border-slate-600 dark:text-slate-200;

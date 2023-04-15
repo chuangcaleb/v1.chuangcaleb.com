@@ -1,7 +1,7 @@
 // const colors = require("tailwindcss/colors");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [],
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
@@ -14,26 +14,26 @@ module.exports = {
       maxWidth: {
         prose: "65ch",
       },
-      typography: () => ({
-        secondary: {
-          css: {
-            "max-width": "inherit",
-            // This is configured to daisyUI's `secondary-content` in hsl()
-            // "--bc": "230 100% 93%",
-          },
-        },
-        dark: {
-          css: {
-            "max-width": "inherit",
-            // "--bc": "230 100% 97%",
-          },
-        },
-        DEFAULT: {
-          css: {
-            "max-width": "inherit",
-          },
-        },
-      }),
+      // typography: () => ({
+      //   secondary: {
+      //     css: {
+      //       "max-width": "inherit",
+      //       // This is configured to daisyUI's `secondary-content` in hsl()
+      //       // "--bc": "230 100% 93%",
+      //     },
+      //   },
+      //   dark: {
+      //     css: {
+      //       "max-width": "inherit",
+      //       // "--bc": "230 100% 97%",
+      //     },
+      //   },
+      //   DEFAULT: {
+      //     css: {
+      //       "max-width": "inherit",
+      //     },
+      //   },
+      // }),
     },
   },
   // daisyui: {
