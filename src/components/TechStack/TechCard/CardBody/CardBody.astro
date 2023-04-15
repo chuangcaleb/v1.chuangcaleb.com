@@ -1,6 +1,6 @@
 ---
 import { Sprite } from "astro-iconify";
-import type { TechCard, TechCardType } from "../../../data/TechStack/types";
+import type { TechCard, TechCardType } from "@../data/TechStack/types";
 import DepsList from "./DepsList.astro";
 import Rating from "./Rating.astro";
 import TagsList from "./TagsList.astro";
@@ -34,12 +34,12 @@ const iconName = iconMap[type];
 >
   <!-- Type -->
   <div
-    class="absolute top-0 right-0 rounded-tr-2xl rounded-bl-lg bg-secondary p-[0.5em] text-sm"
+    class="bg-secondary absolute top-0 right-0 rounded-tr-2xl rounded-bl-lg p-[0.5em] text-sm"
   >
     <Sprite name={iconName} class="h-5 w-5" />
   </div>
   <!-- Deps -->
-  <div class="mb-4 bg-secondary pb-1 pl-4">
+  <div class="bg-secondary mb-4 pb-1 pl-4">
     {(<DepsList deps={deps} />)}
   </div>
   <!-- Tags -->

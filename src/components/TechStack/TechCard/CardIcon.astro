@@ -1,6 +1,6 @@
 ---
 import { Sprite } from "astro-iconify";
-import type { TechCardIcon } from "../../data/TechStack/types";
+import type { TechCardIcon } from "@data/TechStack/types";
 
 interface Props {
   icon: TechCardIcon;
@@ -24,7 +24,7 @@ if (Object.keys(iconStyles).length === 0) {
 ---
 
 <div
-  class="absolute -top-3 -left-3 z-10 rounded-xl border border-secondary-focus bg-secondary p-1"
+  class="border-secondary-focus bg-secondary absolute -top-3 -left-3 z-10 rounded-xl border p-1"
 >
   <div
     class:list={[

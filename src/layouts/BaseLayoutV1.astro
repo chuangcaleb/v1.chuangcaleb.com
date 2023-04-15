@@ -1,0 +1,70 @@
+---
+import { Sprite } from "astro-iconify";
+import type { HTMLAttributes } from "astro/types";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/layout/Footer.astro";
+import Header from "../components/layout/Header/Header.astro";
+
+interface Props extends HTMLAttributes<"div"> {
+  title: string;
+  description: string;
+  isIndex?: boolean;
+  hasSpriteProvider?: boolean;
+}
+
+const {
+  title,
+  class: extraClass,
+  description,
+  isIndex,
+  hasSpriteProvider,
+  ...attrs
+} = Astro.props;
+
+// const BodyContent = (
+
+//     <Header isIndex={isIndex} />
+//     <main>
+//       <div class:list={[extraClass]} {...attrs}>
+//         {hasSpriteProvider ? (
+//           <Sprite.Provider>
+//             <slot />
+//           </Sprite.Provider>
+//         ) : (
+//           <slot />
+//         )}
+//       </div>
+//     </main>
+//     <Footer />
+
+// );
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body class="prose dark:prose-dark">
+    {
+      hasSpriteProvider ? (
+        <Sprite.Provider>
+          <Header isIndex={isIndex} />
+          <main>
+            <div class:list={[extraClass]} {...attrs}>
+                <slot />
+            </div>
+          </main>
+          <Footer />
+        </Sprite.Provider>
+      ) : (
+      <Header isIndex={isIndex} />
+      <main>
+        <div class:list={[extraClass]} {...attrs}>
+            <slot />
+        </div>
+      </main>
+      <Footer />
+      )
+    }
+  </body>
+</html>

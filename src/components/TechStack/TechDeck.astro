@@ -1,7 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import type { TechTitle } from "../data/TechStack";
+
 import TechCard from "./TechCard/TechCard.astro";
+import type { TechTitle } from "@data/TechStack";
 
 interface Props extends HTMLAttributes<"div"> {
   cards: TechTitle[];
