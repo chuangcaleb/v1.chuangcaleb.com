@@ -1,10 +1,11 @@
 :root {
-  --default-gutter: 1fr;
-  --max-width-medium: 880px;
-  --max-width-small: 700px;
+  --max-width-xl: 1280px;
+  --max-width-lg: 1024px;
+  --max-width-md: 768px;
   --max-width-prose: 65ch;
-  --layout-medium: var(--default-gutter) minmax(auto, var(--max-width-medium))
-    var(--default-gutter);
-  --layout-small: var(--default-gutter) minmax(auto, var(--max-width-small))
-    var(--default-gutter);
+
+  --layout-xl: 1fr minmax(auto, var(--max-width-xl)) 1fr;
+  --layout-lg: 1fr minmax(auto, var(--max-width-lg)) 1fr;
+  --layout-md: 1fr minmax(auto, var(--max-width-md)) 1fr;
+  --layout-prose: 1fr minmax(auto, var(--max-width-prose)) 1fr;
 }

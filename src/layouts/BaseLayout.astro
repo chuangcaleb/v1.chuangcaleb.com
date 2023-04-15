@@ -5,8 +5,9 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "@constants";
 import type { HTMLAttributes } from "astro/types";
 
 const gridLayoutCV = {
-  full: "grid grid-cols-[var(--layout-small)]",
-  medium: "grid grid-cols-[var(--layout-medium)]",
+  xl: "grid grid-cols-[var(--layout-xl)]",
+  lg: "grid grid-cols-[var(--layout-lg)]",
+  md: "grid grid-cols-[var(--layout-md)]",
   prose: "grid grid-cols-[var(--layout-prose)]",
   none: null,
 };
@@ -22,7 +23,7 @@ const {
   title = SITE_TITLE,
   description = SITE_DESCRIPTION,
   hasSpriteProvider = false,
-  gridLayout = "medium",
+  gridLayout = "xl",
   class: extraClass,
 } = Astro.props;
 ---
