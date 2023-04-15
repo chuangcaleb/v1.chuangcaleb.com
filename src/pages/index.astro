@@ -1,7 +1,7 @@
 ---
+import Button from "../components/common/Button.astro";
 import OverflowScrollArea from "../components/OverflowScrollArea.astro";
 import ProjectCard from "../components/projects/ProjectCard.astro";
-import TechCard from "../components/TechCard/TechCard.astro";
 import TechDeck from "../components/TechDeck.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -32,13 +32,13 @@ import Section from "../layouts/Section.astro";
           </h2>
         </div>
         <div class="flex gap-4">
-          <button class="btn-primary btn">Connect with me</button>
-          <button class="btn-ghost-invert btn">About me</button>
+          <Button class="">Connect with me</Button>
+          <Button class="">About me</Button>
         </div>
       </div>
     </div>
     <div>
-      <TechCard title="Typescript" />
+      <p>some other text</p>
     </div>
   </Section>
   <Section id="projects" paddingX="none">
@@ -59,10 +59,10 @@ import Section from "../layouts/Section.astro";
         with Astro.
       </p>
       <div class="flex flex-wrap gap-2">
-        <button class="btn">Action!</button>
-        <button class="btn-secondary btn">Action!</button>
-        <button class="btn-primary btn">Connect with me</button>
-        <button class="btn-ghost-invert btn">About me</button>
+        <Button class="btn">Action!</Button>
+        <Button class="btn-secondary btn">Action!</Button>
+        <Button class="btn-primary btn">Connect with me</Button>
+        <Button class="btn-ghost-invert btn">About me</Button>
       </div>
     </div>
   </Section>
@@ -80,10 +80,10 @@ import Section from "../layouts/Section.astro";
         with Astro.
       </p>
       <div class="flex flex-wrap gap-2">
-        <button class="btn">Action!</button>
-        <button class="btn-secondary btn">Action!</button>
-        <button class="btn-primary btn">Connect with me</button>
-        <button class="btn-ghost-invert btn">About me</button>
+        <Button class="btn">Action!</Button>
+        <Button class="btn-secondary btn">Action!</Button>
+        <Button class="btn-primary btn">Connect with me</Button>
+        <Button class="btn-ghost-invert btn">About me</Button>
       </div>
     </div>
   </Section>
@@ -98,10 +98,10 @@ import Section from "../layouts/Section.astro";
       </p>
       <p>Here are a few ideas on how to get started with the template:</p>
       <div class="flex flex-wrap justify-end gap-2">
-        <button class="btn">Action!</button>
-        <button class="btn-secondary btn">Action!</button>
-        <button class="btn-primary btn">Connect with me</button>
-        <button class="btn-ghost btn">About me</button>
+        <Button class="btn">Action!</Button>
+        <Button class="btn-secondary btn">Action!</Button>
+        <Button class="btn-primary btn">Connect with me</Button>
+        <Button class="btn-ghost btn">About me</Button>
       </div>
     </div>
   </Section>
@@ -118,7 +118,7 @@ import Section from "../layouts/Section.astro";
         "Next",
         "Django",
       ]}
-      class="border-8 border-base-200 dark:border-neutral-focus"
+      class="border-base-200 dark:border-neutral-focus border-8"
     />
   </Section>
 </BaseLayout>

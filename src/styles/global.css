@@ -7,9 +7,9 @@
     scroll-behavior: smooth;
   }
   /* Scroll */
-  body {
+  /* body {
     overscroll-behavior-y: none;
-    /* overflow: overlay; */
+    overflow: overlay;
   }
   ::-webkit-scrollbar-corner {
     display: none;
@@ -40,16 +40,15 @@
     ::-webkit-scrollbar-thumb:hover {
       @apply bg-secondary-focus;
     }
-  }
+  } */
 
   /* Prose */
-  .prose :where(p):not(:where([class~="not-prose"] *)) {
+  /* .prose :where(p):not(:where([class~="not-prose"] *)) {
     color: var(--tw-prose-body);
-  }
+  } */
   /* .prose, already delcared by default */
-  .prose-dark,
+  /* .prose-dark,
   .prose-secondary {
-    /* max-width: inherit; */
     --tw-prose-body: hsla(var(--bc) / 0.8);
     --tw-prose-headings: hsl(var(--bc));
     --tw-prose-lead: hsl(var(--bc));
@@ -64,16 +63,10 @@
     --tw-prose-code: hsl(var(--bc));
     --tw-prose-th-borders: hsla(var(--bc) / 0.5);
     --tw-prose-td-borders: hsla(var(--bc) / 0.2);
-  }
+  } */
   code::before,
   code::after {
     content: "";
-  }
-}
-
-@layer components {
-  .btn-ghost-invert {
-    @apply btn-ghost invert dark:invert-0;
   }
 }
 
