@@ -1,10 +1,17 @@
 ---
+import Section from "@components/layout/Section.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@constants";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Sprite from "astro-iconify";
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION} hasSpriteProvider>
-  <h1>Hello</h1>
-  <Sprite name="logos:react" class="h-8" />
+  <Section>
+    <h1>Hello</h1>
+    <Sprite name="logos:react" class="h-8" />
+    <Section background="dark">
+      <h1>Hello</h1>
+      <Sprite name="logos:react" class="h-8" />
+    </Section>
+  </Section>
 </BaseLayout>

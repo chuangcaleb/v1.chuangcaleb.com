@@ -1,0 +1,30 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+const backgroundCV = {
+  base: "bg-white",
+  dark: "bg-neutral-600",
+};
+
+interface Props extends HTMLAttributes<"section"> {
+  contentWidth?: "full" | "prose" | "xl"; // default: max-w-xl
+  paddingX?: "always" | "none" | "mobile"; // default: (gutters only on) mobile
+  noPaddingY?: boolean; // default: paddingY true
+  background?: keyof typeof backgroundCV; // default: base
+}
+const {
+  contentWidth = "xl",
+  paddingX = "mobile",
+  noPaddingY,
+  background = "base",
+  class: extraClass,
+  ...attrs
+} = Astro.props;
+---
+
+<section
+  class:list={["text-black", backgroundCV[background], extraClass]}
+  {...attrs}
+>
+  <slot />
+</section>
