@@ -16,7 +16,7 @@ import { Icon } from "astro-iconify";
       </ul>
     </nav>
   </Section> -->
-  <GridLayout isNestedGrid class="gap-x-8 md:gap-x-12 xl:gap-x-16">
+  <GridLayout isNestedGrid class="gap-x-8 md:gap-x-12">
     <Section class="grid py-16">
       <div class="my-auto text-center [grid-area:1/1]">
         <div
@@ -24,7 +24,7 @@ import { Icon } from "astro-iconify";
         >
           <div class="grid gap-y-6">
             <h1
-              class="whitespace-nowrap break-keep text-5xl font-extrabold sm:text-7xl md:text-8xl"
+              class="whitespace-nowrap break-keep text-6xl font-extrabold sm:text-7xl md:text-8xl"
             >
               Chuang Caleb
             </h1>
@@ -40,21 +40,29 @@ import { Icon } from "astro-iconify";
             </p>
           </div>
           <div class="grid gap-y-4">
-            <div class="flex gap-4">
-              <Button class="flex gap-x-2 whitespace-nowrap">
+            <div
+              class="grid auto-rows-fr grid-cols-2 gap-4 sm:grid-flow-col sm:grid-cols-none"
+            >
+              <Button class="col-span-full flex gap-x-2 whitespace-nowrap">
                 <Icon name="mdi:connection" class="w-6" />
                 Connect with me!
               </Button>
-              <a href="https://github.com/chuangcaleb">
+              <a
+                href="https://github.com/chuangcaleb"
+                class="group rounded-xl border border-cc-blue hover:bg-cc-blue"
+              >
                 <Icon
                   name="mdi:github"
-                  class="w-12 rounded-xl border border-cc-blue p-1 text-cc-blue hover:bg-cc-blue hover:text-cc-white"
+                  class="inline-block w-12 p-1 text-cc-blue group-hover:text-cc-white"
                 />
               </a>
-              <a href="https://www.linkedin.com/in/chuangcaleb/">
+              <a
+                href="https://www.linkedin.com/in/chuangcaleb/"
+                class="group rounded-xl border border-cc-blue hover:bg-cc-blue"
+              >
                 <Icon
                   name="mdi:linkedin"
-                  class="w-12 rounded-xl border border-cc-blue p-1 text-cc-blue hover:bg-cc-blue hover:text-cc-white"
+                  class="inline-block w-12 p-1 text-cc-blue group-hover:text-cc-white"
                 />
               </a>
             </div>
