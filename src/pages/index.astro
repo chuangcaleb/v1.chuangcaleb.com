@@ -16,7 +16,7 @@ import { Icon } from "astro-iconify";
       </ul>
     </nav>
   </Section> -->
-  <GridLayout isNestedGrid class="gap-x-4">
+  <GridLayout isNestedGrid class="gap-x-4 md:gap-x-8">
     <Section class="grid py-16">
       <div class="my-auto text-center [grid-area:1/1]">
         <div
@@ -34,8 +34,9 @@ import { Icon } from "astro-iconify";
               > specializing in <strong>Front-End Web</strong>.<span
                 class="font-extralight"
               >
-                I design and create experiences with the values: critical,
-                calculating, clever.
+                I design and create experiences by being <em>collaborative</em>, <em
+                  >calculating</em
+                >, and <em>clever</em>.
               </span>
             </p>
           </div>
@@ -78,18 +79,15 @@ import { Icon } from "astro-iconify";
       </div>
     </Section>
   </GridLayout>
-  <Section>
-    <h2>My Work</h2>
-  </Section>
   <Section asArticle>
     <h2>My Experiences</h2>
     <ul>
       <li>
-        🧳 I am currently working as a (Front-End) <strong
+        🧳 I have been working as a (Front-End) <strong
           >Software Engineer I</strong
         > at <a href="https://www.airasia.com/aa/appdownload/">
           airasia Super App</a
-        >
+        > since Oct 2022
       </li>
       <li>
         🎓 I graduted with a <strong>
@@ -117,7 +115,64 @@ import { Icon } from "astro-iconify";
       <li>🎵 I always need my 🎸 guitar, and I'm learning 🎹 keyboard!</li>
     </ul>
   </Section>
-  <Section>
+  <Section asArticle>
+    <h2>My Work</h2>
+
+    <h3>PowerKids Kindergarten Company Website</h3>
+    <p>
+      An official company website to promote registration and showcase details
+      about PowerKids Kindergarten. Created with Jekyll, Bootstrap, SCSS, and
+      hosted on GitHub Pages whilst deployed to a custom <code>.edu.my</code> domain.
+    </p>
+    <p>
+      <a href="https://www.powerkids.edu.my">[site]</a>
+      <a href="https://github.com/chuangcaleb/powerkids-jekyll">[source]</a>
+    </p>
+    <h3>whatsthestoryabout Storywriting Blog</h3>
+    <p>
+      A static blog where I can showcase my story analyses, reviews and
+      write-ups. Created with Jekyll, Bootstrap, SCSS, minimal Javascript, and
+      hosted on GitHub Pages.
+    </p>
+    <p>
+      <a href="http://chuangcaleb.github.io/wtsa/about">[site]</a>
+      <a href="https://github.com/chuangcaleb/wtsa">[source]</a>
+    </p>
+    <h3>
+      Classification of Themes and Motifs in Musical Composition with MIDI
+    </h3>
+    <p>
+      A multi-label classifier models to predict themes/motifs in musical
+      composition, for my dissertation and final-year university project.
+      Created with Python and scikit-learn, with MIDI data web-scraped with
+      beautifulsoup4.
+    </p>
+    <p>
+      <a href="https://github.com/chuangcaleb/music-theme-recognition"
+        >[source]</a
+      >
+    </p>
+    <h3>Points Counter System</h3>
+    <p>
+      A live and dynamic points-tracker web app for games events with
+      customizable styles and auto-sync/refresh. Created with Django, MySQL, and
+      minimal javascript, hosted on pythonanywhere.
+    </p>
+    <p>
+      <a href="https://github.com/chuangcaleb/points">[source]</a>
+    </p>
+  </Section>
+  <Section asArticle>
     <h2>My Stack</h2>
+    <ul>
+      <li>
+        Languages: Javascript/Typescript, Python, mcfunction, Java... C,
+        Haskell, Dart
+      </li>
+      <li>Frameworks: React, Astro, NextJS, Django, Flutter</li>
+      <li>Styling: Tailwind, SCSS, Material UI</li>
+      <li>Dev Tools: VS Code, Git, Figma, GIMP, LaTeX</li>
+      <li>Meta: ObsidianMD, Advanced Markdown</li>
+    </ul>
   </Section>
 </BaseLayout>

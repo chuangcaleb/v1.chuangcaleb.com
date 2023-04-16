@@ -29,7 +29,7 @@ const {
   </head>
   <body class="min-h-screen text-cc-black dark:bg-cc-space dark:text-cc-white">
     <SpriteProviderWrapper hasWrapper={hasSpriteProvider}>
-      <GridLayout gridLayout={gridLayout} class={extraClass} asMain>
+      <GridLayout gridLayout={gridLayout} class={extraClass + " pb-20"} asMain>
         <slot />
       </GridLayout>
     </SpriteProviderWrapper>
