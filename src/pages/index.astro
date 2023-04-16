@@ -1,11 +1,11 @@
 ---
-import HeaderLink from "@components/layout/Header/HeaderLink.astro";
+import Button from "@components/common/Button.astro";
 import Section from "@components/layout/Section.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
-<BaseLayout hasSpriteProvider>
-  <Section colSpan="full" class="" noPaddingY>
+<BaseLayout>
+  <!-- <Section colSpan="full" class="" noPaddingY>
     <nav class="flex justify-between py-2">
       <h1 class="text-2xl">chuangcaleb</h1>
       <ul class:list={["flex gap-6 my-auto"]}>
@@ -13,77 +13,44 @@ import BaseLayout from "@layouts/BaseLayout.astro";
         <HeaderLink href="/lore">lore</HeaderLink>
       </ul>
     </nav>
-  </Section>
-  <Section bg="dark" colSpan="full" class="h-[80vh]">
-    <p>Chuang Caleb</p>
+  </Section> -->
+  <Section colSpan="full" class="grid h-[80svh] min-h-fit xl:grid-cols-2">
+    <div class="place-self-center text-center xl:text-left 2xl:px-12">
+      <div class="grid justify-items-center gap-10 xl:justify-items-start">
+        <div class="grid gap-4">
+          <h1
+            class="whitespace-nowrap break-keep text-5xl font-extrabold sm:text-7xl md:text-8xl"
+          >
+            Chuang Caleb
+          </h1>
+          <p class="text-xl lg:text-2xl">
+            I'm a <strong>Software Engineer</strong> based in <strong
+              >KL, Malaysia</strong
+            > specializing in <strong>Front-End Web</strong>.<span
+              class="font-extralight"
+            >
+              I design and create experiences with the values: critical,
+              calculating, clever.
+            </span>
+          </p>
+        </div>
+        <div class="flex gap-4">
+          <Button class="">Connect with me</Button>
+          <Button class="">About me</Button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p>some other text</p>
+    </div>
   </Section>
   <Section>
-    <h2>My projects</h2>
+    <h2>My Work</h2>
   </Section>
   <Section>
     <h2>My Experiences</h2>
   </Section>
   <Section>
     <h2>My Stack</h2>
-  </Section>
-  <Section class="mx-4 border" asArticle>
-    <h1>The Joke Tax Chronicles</h1>
-    <p>
-      Once upon a time, in a far-off land, there was a very lazy king who spent
-      all day lounging on his throne. One day, his advisors came to him with a
-      problem: the kingdom was running out of money.
-    </p>
-    <h2>The King's Plan</h2>
-    <p>
-      The king thought long and hard, and finally came up with{" "}
-      <a href="/"> a brilliant plan</a>
-      : he would tax the jokes in the kingdom.
-    </p>
-    <blockquote>
-      "After all," he said, "everyone enjoys a good joke, so it's only fair that
-      they should pay for the privilege."
-    </blockquote>
-    <h3>The Joke Tax</h3>
-    <p>
-      The king's subjects were not amused. They grumbled and complained, but the
-      king was firm:
-    </p>
-    <ul>
-      <li>1st level of puns: 5 gold coins</li>
-      <li>2nd level of jokes: 10 gold coins</li>
-      <li>3rd level of one-liners : 20 gold coins</li>
-    </ul>
-    <p>
-      As a result, people stopped telling jokes, and the kingdom fell into a
-      gloom. But there was one person who refused to let the king's foolishness
-      get him down: a court jester named Jokester.
-    </p>
-    <h3>Jokester's Revolt</h3>
-    <p>
-      Jokester began sneaking into the castle in the middle of the night and
-      leaving jokes all over the place: under the king's pillow, in his soup,
-      even in the royal toilet. The king was furious, but he couldn't seem to
-      stop Jokester.
-    </p>
-    <p>
-      And then, one day, the people of the kingdom discovered that the jokes
-      left by Jokester were so funny that they couldn't help but laugh. And once
-      they started laughing, they couldn't stop.
-    </p>
-    <h3>The People's Rebellion</h3>
-    <p>
-      The people of the kingdom, feeling uplifted by the laughter, started to
-      tell jokes and puns again, and soon the entire kingdom was in on the joke.
-    </p>
-
-    <code>
-      The king, seeing how much happier his subjects were, realized the error of
-      his ways and repealed the joke tax. Jokester was declared a hero, and the
-      kingdom lived happily ever after.
-    </code>
-    <p>
-      The moral of the story is: never underestimate the power of a good laugh
-      and always be careful of bad ideas.
-    </p>
   </Section>
 </BaseLayout>

@@ -6,6 +6,12 @@ interface Props extends HTMLAttributes<"button"> {}
 const { class: extraClass, ...attrs } = Astro.props;
 ---
 
-<button class:list={["border py-2 px-6 rounded", extraClass]} {...attrs}>
+<button
+  class:list={[
+    "font-semibold py-3 px-6 rounded bg-cc-blue text-cc-white hover:-translate-y-[0.1em] duration-100",
+    extraClass,
+  ]}
+  {...attrs}
+>
   <slot />
 </button>

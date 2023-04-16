@@ -5,6 +5,15 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      colors: {
+        cc: {
+          space: "var(--cc-space)",
+          white: "var(--cc-white)",
+          blue: "var(--cc-blue)",
+          black: "var(--cc-black)",
+        },
+      },
+
       // screens: {
       //   xlPadded: { raw: "(min-width: calc(1280px + 3rem))" },
       // },

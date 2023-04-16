@@ -1,4 +1,9 @@
 :root {
+  --cc-space: #2b2f40;
+  --cc-white: #ededed;
+  --cc-blue: #6797e4;
+  --cc-black: #202331;
+
   --w-xl: 1280px;
   --w-lg: 1024px;
   --w-md: 768px;
