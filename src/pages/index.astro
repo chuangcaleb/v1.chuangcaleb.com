@@ -1,5 +1,6 @@
 ---
 import Button from "@components/common/Button.astro";
+import GridLayout from "@components/layout/GridLayout.astro";
 import Section from "@components/layout/Section.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Icon } from "astro-iconify";
@@ -15,52 +16,54 @@ import { Icon } from "astro-iconify";
       </ul>
     </nav>
   </Section> -->
-  <Section colSpan="full" class="grid h-[80svh] min-h-fit xl:grid-cols-2">
-    <div class="place-self-center px-8 text-center xl:text-left 2xl:px-12">
-      <div class="grid justify-items-center gap-10 xl:justify-items-start">
-        <div class="grid gap-4">
-          <h1
-            class="whitespace-nowrap break-keep text-5xl font-extrabold sm:text-7xl lg:text-8xl"
-          >
-            Chuang Caleb
-          </h1>
-          <p class="text-xl lg:text-2xl">
-            I'm a <strong>Software Engineer</strong> based in <strong
-              >KL, Malaysia</strong
-            > specializing in <strong>Front-End Web</strong>.<span
-              class="font-extralight"
+  <GridLayout isNestedGrid>
+    <Section class="grid h-[80svh] min-h-fit xl:grid-cols-2">
+      <div class="place-self-center px-8 text-center xl:text-left 2xl:px-12">
+        <div class="grid justify-items-center gap-10 xl:justify-items-start">
+          <div class="grid gap-4">
+            <h1
+              class="whitespace-nowrap break-keep text-5xl font-extrabold sm:text-7xl lg:text-8xl"
             >
-              I design and create experiences with the values: critical,
-              calculating, clever.
-            </span>
-          </p>
-        </div>
-        <div class="grid gap-y-4">
-          <div class="flex gap-4">
-            <Button class="flex gap-x-2">
-              <Icon name="mdi:connection" class="w-6" />
-              Connect with me
-            </Button>
-            <a href="https://github.com/chuangcaleb">
-              <Icon
-                name="mdi:github"
-                class="w-12 rounded-xl border border-cc-blue p-1 text-cc-blue hover:bg-cc-blue hover:text-cc-white"
-              />
-            </a>
-            <a href="https://www.linkedin.com/in/chuangcaleb/">
-              <Icon
-                name="mdi:linkedin"
-                class="w-12 rounded-xl border border-cc-blue p-1 text-cc-blue hover:bg-cc-blue hover:text-cc-white"
-              />
-            </a>
+              Chuang Caleb
+            </h1>
+            <p class="text-xl lg:text-2xl">
+              I'm a <strong>Software Engineer</strong> based in <strong
+                >KL, Malaysia</strong
+              > specializing in <strong>Front-End Web</strong>.<span
+                class="font-extralight"
+              >
+                I design and create experiences with the values: critical,
+                calculating, clever.
+              </span>
+            </p>
+          </div>
+          <div class="grid gap-y-4">
+            <div class="flex gap-4">
+              <Button class="flex gap-x-2">
+                <Icon name="mdi:connection" class="w-6" />
+                Connect with me
+              </Button>
+              <a href="https://github.com/chuangcaleb">
+                <Icon
+                  name="mdi:github"
+                  class="w-12 rounded-xl border border-cc-blue p-1 text-cc-blue hover:bg-cc-blue hover:text-cc-white"
+                />
+              </a>
+              <a href="https://www.linkedin.com/in/chuangcaleb/">
+                <Icon
+                  name="mdi:linkedin"
+                  class="w-12 rounded-xl border border-cc-blue p-1 text-cc-blue hover:bg-cc-blue hover:text-cc-white"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div>
-      <p>some other text</p>
-    </div>
-  </Section>
+      <div>
+        <p>some other text</p>
+      </div>
+    </Section>
+  </GridLayout>
   <Section>
     <h2>My Work</h2>
   </Section>

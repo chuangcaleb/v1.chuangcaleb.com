@@ -1,0 +1,35 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+const gridLayoutCV = {
+  xl: "grid-cols-[var(--layout-xl)]",
+  lg: "grid-cols-[var(--layout-lg)]",
+  md: "grid-cols-[var(--layout-md)]",
+  prose: "grid-cols-[var(--layout-prose)]",
+  none: null,
+};
+
+const gridClasses = "grid gap-x-4 gap-y-16";
+
+interface Props extends HTMLAttributes<"div"> {
+  gridLayout?: keyof typeof gridLayoutCV;
+  isNestedGrid?: boolean;
+}
+
+const {
+  gridLayout = "xl",
+  isNestedGrid = false,
+  class: extraClass,
+} = Astro.props;
+---
+
+<div
+  class:list={[
+    gridLayoutCV[gridLayout],
+    gridLayout !== "none" && gridClasses,
+    isNestedGrid && "col-span-full",
+    extraClass,
+  ]}
+>
+  <slot />
+</div>
