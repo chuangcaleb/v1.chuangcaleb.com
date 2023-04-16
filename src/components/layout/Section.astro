@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from "astro/types";
 
 const backgroundCV = {
-  base: "bg-white",
+  base: null,
   dark: "bg-neutral-600",
 };
 
@@ -22,11 +22,14 @@ interface Props extends HTMLAttributes<"section"> {
   paddingX?: keyof typeof paddingXCV; // default: (gutters only on) mobile
   bg?: keyof typeof backgroundCV; // default: base
   noPaddingY?: boolean; // default: paddingY true
+  asArticle?: boolean;
 }
 const {
   colSpan = "middle",
   bg = "base",
   paddingX = "always",
+  noPaddingY = false,
+  asArticle = false,
   class: extraClass,
   ...attrs
 } = Astro.props;
@@ -36,10 +39,20 @@ const sectionClass = [
   backgroundCV[bg],
   colSpanCV[colSpan],
   paddingXCV[paddingX],
+  asArticle,
   extraClass,
+  !noPaddingY && "py-8",
 ];
 ---
 
-<section class:list={sectionClass} {...attrs}>
-  <slot />
-</section>
+{
+  asArticle ? (
+    <article class:list={sectionClass} {...attrs}>
+      <slot />
+    </article>
+  ) : (
+    <section class:list={sectionClass} {...attrs}>
+      <slot />
+    </section>
+  )
+}

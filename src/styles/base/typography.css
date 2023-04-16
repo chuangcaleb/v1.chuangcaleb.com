@@ -37,4 +37,8 @@
     @apply bg-slate-100 text-slate-900;
     @apply dark:bg-slate-800 dark:text-slate-400;
   }
+
+  article ul {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  }
 }

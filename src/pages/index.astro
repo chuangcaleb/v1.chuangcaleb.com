@@ -1,21 +1,32 @@
 ---
+import HeaderLink from "@components/layout/Header/HeaderLink.astro";
 import Section from "@components/layout/Section.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { Sprite } from "astro-iconify";
 ---
 
 <BaseLayout hasSpriteProvider>
-  <Section colSpan="middle">
-    <p>Hello</p>
-    <Sprite name="logos:react" class="h-8" />
+  <Section colSpan="full" class="" noPaddingY>
+    <nav class="flex justify-between py-2">
+      <h1 class="text-2xl">chuangcaleb</h1>
+      <ul class:list={["flex gap-6 my-auto"]}>
+        <HeaderLink href="/blog">blog</HeaderLink>
+        <HeaderLink href="/lore">lore</HeaderLink>
+      </ul>
+    </nav>
   </Section>
-  <Section bg="dark">
-    <p>Hello</p>
+  <Section bg="dark" colSpan="full" class="h-[80vh]">
+    <p>Chuang Caleb</p>
   </Section>
-  <Section colSpan="full" class="bg-blue-200">
-    <p>Hello</p>
+  <Section>
+    <h2>My projects</h2>
   </Section>
-  <Section colSpan="middle" class="bg-red-200">
+  <Section>
+    <h2>My Experiences</h2>
+  </Section>
+  <Section>
+    <h2>My Stack</h2>
+  </Section>
+  <Section class="mx-4 border" asArticle>
     <h1>The Joke Tax Chronicles</h1>
     <p>
       Once upon a time, in a far-off land, there was a very lazy king who spent
@@ -37,7 +48,7 @@ import { Sprite } from "astro-iconify";
       The king's subjects were not amused. They grumbled and complained, but the
       king was firm:
     </p>
-    <ul class="my-6 ml-6 list-disc [&>li]:mt-2">
+    <ul>
       <li>1st level of puns: 5 gold coins</li>
       <li>2nd level of jokes: 10 gold coins</li>
       <li>3rd level of one-liners : 20 gold coins</li>
