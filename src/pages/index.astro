@@ -3,6 +3,7 @@ import Button from "@components/common/Button.astro";
 import GridLayout from "@components/layout/GridLayout.astro";
 import Section from "@components/layout/Section.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { Cloudinary } from "astro-cloudinary-image";
 import { Icon } from "astro-iconify";
 ---
 
@@ -70,11 +71,18 @@ import { Icon } from "astro-iconify";
           </div>
         </div>
       </div>
-      <div class="-z-10 grid place-items-center [grid-area:1/1] lg:ml-auto">
-        <img
-          src="https://res.cloudinary.com/dxvww1uyr/image/upload/c_crop,g_face,h_700,q_80,r_max,w_700/v1681634787/artistic-profile.png"
-          alt="profile"
-          class="max-h-[500px] opacity-20 lg:opacity-30 xl:opacity-100"
+      <div
+        class="-z-10 mx-auto max-w-[500px] opacity-10 [grid-area:1/1] dark:opacity-20 lg:mr-0 lg:ml-auto dark:lg:opacity-30 xl:opacity-100"
+      >
+        <Cloudinary
+          height="700"
+          width="700"
+          cornerRadius="max"
+          resize="crop"
+          gravity="face"
+          alt="Profile photo of Chuang Caleb with a painting-like filter"
+          src="v1681634787/artistic-profile.png"
+          errorImage="icons/picture-not-found.svg"
         />
       </div>
     </Section>
