@@ -16,17 +16,19 @@ import { Icon } from "astro-iconify";
       </ul>
     </nav>
   </Section> -->
-  <GridLayout isNestedGrid>
-    <Section class="grid h-[75svh] min-h-fit xl:grid-cols-2">
-      <div class="place-self-center px-8 text-center xl:text-left 2xl:px-12">
-        <div class="grid justify-items-center gap-10 xl:justify-items-start">
-          <div class="grid gap-4">
+  <GridLayout isNestedGrid class="gap-x-8 md:gap-x-12 xl:gap-x-16">
+    <Section class="grid py-16">
+      <div class="my-auto text-center [grid-area:1/1]">
+        <div
+          class="grid justify-items-center gap-10 py-4 lg:justify-items-start lg:pr-8 lg:text-left"
+        >
+          <div class="grid gap-y-6">
             <h1
-              class="whitespace-nowrap break-keep text-5xl font-extrabold sm:text-7xl lg:text-8xl"
+              class="whitespace-nowrap break-keep text-5xl font-extrabold sm:text-7xl md:text-8xl"
             >
               Chuang Caleb
             </h1>
-            <p class="text-xl lg:text-2xl">
+            <p class="mx-auto max-w-lg text-xl md:text-2xl lg:mx-0 lg:max-w-xl">
               I'm a <strong>Software Engineer</strong> based in <strong
                 >KL, Malaysia</strong
               > specializing in <strong>Front-End Web</strong>.<span
@@ -39,9 +41,9 @@ import { Icon } from "astro-iconify";
           </div>
           <div class="grid gap-y-4">
             <div class="flex gap-4">
-              <Button class="flex gap-x-2">
+              <Button class="flex gap-x-2 whitespace-nowrap">
                 <Icon name="mdi:connection" class="w-6" />
-                Connect with me
+                Connect with me!
               </Button>
               <a href="https://github.com/chuangcaleb">
                 <Icon
@@ -59,8 +61,12 @@ import { Icon } from "astro-iconify";
           </div>
         </div>
       </div>
-      <div>
-        <p>some other text</p>
+      <div class="-z-10 grid place-items-center [grid-area:1/1] lg:ml-auto">
+        <img
+          src="https://res.cloudinary.com/dxvww1uyr/image/upload/c_crop,g_face,h_700,q_80,r_max,w_700/v1681634787/artistic-profile.png"
+          alt="profile"
+          class="opacity-20 sm:h-[500px] lg:opacity-30 xl:opacity-100"
+        />
       </div>
     </Section>
   </GridLayout>
