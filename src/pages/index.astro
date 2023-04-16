@@ -17,7 +17,7 @@ import { Icon } from "astro-iconify";
     </nav>
   </Section> -->
   <GridLayout isNestedGrid class="gap-x-4 md:gap-x-8">
-    <Section class="grid py-16">
+    <Section class="grid py-8 md:py-16">
       <div class="my-auto text-center [grid-area:1/1]">
         <div
           class="grid justify-items-center gap-10 py-4 lg:justify-items-start lg:text-left"
@@ -79,7 +79,10 @@ import { Icon } from "astro-iconify";
       </div>
     </Section>
   </GridLayout>
-  <Section asArticle>
+  <Section
+    asArticle
+    class="-mx-4 bg-cc-space p-8 text-cc-white dark:bg-cc-white dark:text-cc-black lg:mx-0 lg:rounded-2xl"
+  >
     <h2>My Experiences</h2>
     <ul>
       <li>
