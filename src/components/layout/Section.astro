@@ -12,23 +12,18 @@ const colSpanCV = {
   none: null,
 };
 
-const paddingXCV = {
-  always: "px-4",
-  none: null,
-};
-
 interface Props extends HTMLAttributes<"section"> {
   colSpan?: keyof typeof colSpanCV; // default: max-w-xl
-  paddingX?: keyof typeof paddingXCV; // default: (gutters only on) mobile
+  // paddingX?: keyof typeof paddingXCV; // default: (gutters only on) mobile
   bg?: keyof typeof backgroundCV; // default: base
-  noPaddingY?: boolean; // default: paddingY true
+  // noPaddingY?: boolean; // default: paddingY true
   asArticle?: boolean;
 }
 const {
   colSpan = "middle",
   bg = "base",
-  paddingX = "always",
-  noPaddingY = false,
+  // paddingX = "always",
+  // noPaddingY = false,
   asArticle = false,
   class: extraClass,
   ...attrs
@@ -37,9 +32,9 @@ const {
 const sectionClass = [
   backgroundCV[bg],
   colSpanCV[colSpan],
-  paddingXCV[paddingX],
+  // paddingXCV[paddingX],
   extraClass,
-  !noPaddingY && "py-8",
+  // !noPaddingY && "py-8",
 ];
 ---
 
