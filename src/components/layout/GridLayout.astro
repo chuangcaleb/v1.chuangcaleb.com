@@ -9,27 +9,39 @@ const gridLayoutCV = {
   none: null,
 };
 
+export type GridLayoutCVKeys = keyof typeof gridLayoutCV;
+
 const gridClasses = "grid gap-x-4 gap-y-16";
 
 interface Props extends HTMLAttributes<"div"> {
-  gridLayout?: keyof typeof gridLayoutCV;
+  gridLayout?: GridLayoutCVKeys;
   isNestedGrid?: boolean;
+  asMain?: boolean;
 }
 
 const {
   gridLayout = "xl",
   isNestedGrid = false,
+  asMain = false,
   class: extraClass,
 } = Astro.props;
+
+const gridLayoutClassList = [
+  gridLayoutCV[gridLayout],
+  gridLayout !== "none" && gridClasses,
+  isNestedGrid && "col-span-full",
+  extraClass,
+];
 ---
 
-<div
-  class:list={[
-    gridLayoutCV[gridLayout],
-    gridLayout !== "none" && gridClasses,
-    isNestedGrid && "col-span-full",
-    extraClass,
-  ]}
->
-  <slot />
-</div>
+{
+  asMain ? (
+    <main class:list={gridLayoutClassList}>
+      <slot />
+    </main>
+  ) : (
+    <div class:list={gridLayoutClassList}>
+      <slot />
+    </div>
+  )
+}

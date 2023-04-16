@@ -1,24 +1,17 @@
 ---
 import BaseHead from "@components/BaseHead.astro";
+import GridLayout, {
+  GridLayoutCVKeys,
+} from "@components/layout/GridLayout.astro";
 import SpriteProviderWrapper from "@components/layout/SpriteProviderWrapper.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@constants";
 import type { HTMLAttributes } from "astro/types";
-
-const gridLayoutCV = {
-  xl: "grid-cols-[var(--layout-xl)]",
-  lg: "grid-cols-[var(--layout-lg)]",
-  md: "grid-cols-[var(--layout-md)]",
-  prose: "grid-cols-[var(--layout-prose)]",
-  none: null,
-};
-
-const gridClasses = "grid gap-x-4 gap-y-16";
 
 interface Props extends HTMLAttributes<"div"> {
   title?: string;
   description?: string;
   hasSpriteProvider?: boolean;
-  gridLayout?: keyof typeof gridLayoutCV;
+  gridLayout?: GridLayoutCVKeys;
 }
 
 const {
@@ -36,15 +29,9 @@ const {
   </head>
   <body class="min-h-screen text-cc-black dark:bg-cc-space dark:text-cc-white">
     <SpriteProviderWrapper hasWrapper={hasSpriteProvider}>
-      <main
-        class:list={[
-          gridLayoutCV[gridLayout],
-          gridLayout !== "none" && gridClasses,
-          extraClass,
-        ]}
-      >
+      <GridLayout gridLayout={gridLayout} class={extraClass} asMain>
         <slot />
-      </main>
+      </GridLayout>
     </SpriteProviderWrapper>
   </body>
 </html>
