@@ -1,8 +1,12 @@
 :root {
-  --cc-space: #2b2f40;
-  --cc-white: #ededed;
-  --cc-blue: #6797e4;
-  --cc-black: #202331;
+  --cc-space: 228.57deg 20% 21%;
+  --cc-white: 0deg 0% 94%;
+  --cc-blue: 221.21deg 83% 60%;
+  --cc-black: 229.41deg 21% 16%;
+  /* --cc-space: #2b2f40;
+  --cc-white: #f0f0f0;
+  --cc-blue: #2563eb;
+  --cc-black: #202331; */
 
   --w-xl: 1280px;
   --w-lg: 1024px;
@@ -13,4 +17,10 @@
   --layout-lg: 1fr minmax(auto, var(--w-lg)) 1fr;
   --layout-md: 1fr minmax(auto, var(--w-md)) 1fr;
   --layout-prose: 1fr minmax(auto, var(--w-prose)) 1fr;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cc-blue: 216.96 70% 60%;
+  }
 }

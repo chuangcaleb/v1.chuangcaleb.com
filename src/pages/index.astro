@@ -2,6 +2,7 @@
 import Button from "@components/common/Button.astro";
 import Section from "@components/layout/Section.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { Icon } from "astro-iconify";
 ---
 
 <BaseLayout>
@@ -19,7 +20,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
       <div class="grid justify-items-center gap-10 xl:justify-items-start">
         <div class="grid gap-4">
           <h1
-            class="whitespace-nowrap break-keep text-5xl font-extrabold sm:text-7xl md:text-8xl"
+            class="whitespace-nowrap break-keep text-5xl font-extrabold sm:text-7xl lg:text-8xl"
           >
             Chuang Caleb
           </h1>
@@ -34,9 +35,25 @@ import BaseLayout from "@layouts/BaseLayout.astro";
             </span>
           </p>
         </div>
-        <div class="flex gap-4">
-          <Button class="">Connect with me</Button>
-          <Button class="">About me</Button>
+        <div class="grid gap-y-4">
+          <div class="flex gap-4">
+            <Button class="flex">
+              <Icon name="mdi:connection" class="mr-2 w-6" />
+              Connect with me
+            </Button>
+            <a href="https://github.com/chuangcaleb">
+              <Icon
+                name="mdi:github"
+                class="w-12 rounded-xl border border-cc-blue p-1 text-cc-blue hover:bg-cc-blue hover:text-cc-white"
+              />
+            </a>
+            <a href="https://www.linkedin.com/in/chuangcaleb/">
+              <Icon
+                name="mdi:linkedin"
+                class="w-12 rounded-xl border border-cc-blue p-1 text-cc-blue hover:bg-cc-blue hover:text-cc-white"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>

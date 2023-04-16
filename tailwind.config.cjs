@@ -7,10 +7,10 @@ module.exports = {
     extend: {
       colors: {
         cc: {
-          space: "var(--cc-space)",
-          white: "var(--cc-white)",
-          blue: "var(--cc-blue)",
-          black: "var(--cc-black)",
+          space: "hsl(var(--cc-space) / <alpha-value>)",
+          white: "hsl(var(--cc-white) / <alpha-value>)",
+          blue: "hsl(var(--cc-blue) / <alpha-value>)",
+          black: "hsl(var(--cc-black) / <alpha-value>)",
         },
       },
 
