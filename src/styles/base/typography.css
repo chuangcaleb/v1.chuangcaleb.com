@@ -1,16 +1,23 @@
 @layer base {
   /* Taken from https://ui.shadcn.com/docs/primitives/typography */
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply scroll-m-20 font-semibold tracking-tight first:mt-0;
+  }
   h1 {
-    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+    @apply text-4xl lg:text-5xl;
   }
   h2 {
-    @apply mt-10 scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0;
+    @apply mt-10 text-3xl;
   }
   h3 {
-    @apply mt-8 scroll-m-20 text-2xl font-semibold tracking-tight;
+    @apply mt-8 text-2xl;
   }
   h4 {
-    @apply mt-8 scroll-m-20 text-xl font-semibold tracking-tight;
+    @apply mt-8 text-xl;
   }
 
   p {
@@ -20,10 +27,14 @@
     @apply font-medium underline underline-offset-2 duration-100 hover:underline-offset-4;
   }
   blockquote {
-    @apply mt-6 border-l-2 border-slate-300 pl-6 italic text-slate-800 dark:border-slate-600 dark:text-slate-200;
+    @apply mt-6 border-l-2  pl-6 italic;
+    @apply border-slate-300 text-slate-800;
+    @apply dark:border-slate-600 dark:text-slate-200;
   }
 
   code {
-    @apply relative rounded bg-slate-100 py-[0.2rem] px-[0.3rem] font-mono text-sm text-slate-900 dark:bg-slate-800 dark:text-slate-400;
+    @apply relative rounded py-[0.2rem] px-[0.3rem] font-mono text-sm;
+    @apply bg-slate-100 text-slate-900;
+    @apply dark:bg-slate-800 dark:text-slate-400;
   }
 }

@@ -5,14 +5,14 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
-      screens: {
-        xlPadded: { raw: "(min-width: calc(1280px + 3rem))" },
-      },
+      // screens: {
+      //   xlPadded: { raw: "(min-width: calc(1280px + 3rem))" },
+      // },
       space: {
         26: "6.5rem",
       },
       maxWidth: {
-        prose: "65ch",
+        prose: "var(--w-prose)",
       },
       // typography: () => ({
       //   secondary: {
