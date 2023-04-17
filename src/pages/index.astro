@@ -3,7 +3,6 @@ import Button from "@components/common/Button.astro";
 import GridLayout from "@components/layout/GridLayout.astro";
 import Section from "@components/layout/Section.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { Cloudinary } from "astro-cloudinary-image";
 import { Icon } from "astro-iconify";
 ---
 
@@ -43,7 +42,7 @@ import { Icon } from "astro-iconify";
           </div>
           <div class="grid gap-y-4">
             <div
-              class="grid auto-rows-fr grid-cols-2 gap-4 sm:grid-flow-col sm:grid-cols-none"
+              class="grid auto-rows-fr grid-cols-3 gap-4 sm:grid-flow-col sm:grid-cols-none"
             >
               <Button class="col-span-full flex gap-x-2 whitespace-nowrap">
                 <Icon name="mdi:connection" class="w-6" />
@@ -81,17 +80,11 @@ import { Icon } from "astro-iconify";
         </div>
       </div>
       <div
-        class="-z-10 mx-auto max-w-[500px] opacity-10 [grid-area:1/1] dark:opacity-20 lg:mr-0 lg:ml-auto dark:lg:opacity-30 xl:opacity-100"
+        class="-z-10 mx-auto max-w-[500px] select-none opacity-10 [grid-area:1/1] dark:opacity-20 lg:mr-0 lg:ml-auto dark:lg:opacity-30 xl:opacity-100"
       >
-        <Cloudinary
-          height="700"
-          width="700"
-          cornerRadius="max"
-          resize="crop"
-          gravity="face"
-          alt="Profile photo of Chuang Caleb with a painting-like filter"
-          src="v1681634787/artistic-profile.png"
-          errorImage="icons/picture-not-found.svg"
+        <img
+          src="https://res.cloudinary.com/dxvww1uyr/image/upload/c_crop,g_face,h_700,q_80,r_max,w_700,x_0,y_0,z_0/v1681634787/artistic-profile.png"
+          alt="Head profile of Chuang Caleb with a painting-like filter"
         />
       </div>
     </Section>
@@ -117,7 +110,7 @@ import { Icon } from "astro-iconify";
         >
       </li>
       <li>
-        🎭 I love <storng>storywriting</storng>, I write about story in my <a
+        🎭 I love <strong>storywriting</strong>, I write about story in my <a
           href="https://chuangcaleb.github.io/wtsa">story blog</a
         >
       </li>
@@ -200,10 +193,18 @@ import { Icon } from "astro-iconify";
         Languages: Javascript/Typescript, Python, mcfunction, Java... C,
         Haskell, Dart
       </li>
-      <li>Frameworks: React, Astro, NextJS, Django, Flutter</li>
-      <li>Styling: Tailwind, SCSS, Material UI</li>
+      <li>Frameworks: React/NextJS, Astro, Jekyll, Django, Flutter</li>
+      <li>Styling: Tailwind, SCSS, Material UI, Bootstrap</li>
       <li>Dev Tools: VS Code, Git, Figma, GIMP, LaTeX</li>
       <li>Meta: ObsidianMD, Advanced Markdown</li>
+    </ul>
+    <p>- interest 👀 / null</p>
+    <p>- researching 🔎 / exploring 👉 / EXPLORED</p>
+    <ul>
+      <li>EXPLORED: learning ✨ / confident ⭐️ / expert 💫</li>
+      <li>personal projects to-go choice ❤️ / null</li>
+      <li>professional experience 💼 / null</li>
+      <li>fresh 🌿 / stale 📅 / null</li>
     </ul>
   </Section>
 </BaseLayout>
