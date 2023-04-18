@@ -4,6 +4,7 @@ import GridLayout from "@components/layout/GridLayout.astro";
 import Section from "@components/layout/Section.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Icon } from "astro-iconify";
+import { LINK_GITHUB, LINK_LINKEDIN, LINK_CV } from "@data/links";
 ---
 
 <BaseLayout gridLayout="lg">
@@ -46,36 +47,31 @@ import { Icon } from "astro-iconify";
             <div
               class="grid auto-rows-fr grid-cols-3 gap-4 sm:grid-flow-col sm:grid-cols-none"
             >
-              <Button class="col-span-full flex gap-x-2 whitespace-nowrap">
+              <!-- <Button class="col-span-full flex gap-x-2 whitespace-nowrap">
                 <Icon name="mdi:connection" class="w-6" />
                 Connect with me!
-              </Button>
-              <a
-                href="https://github.com/chuangcaleb"
-                class="group rounded-xl border border-cc-blue hover:bg-cc-blue"
-              >
-                <Icon
-                  name="mdi:github"
-                  class="inline-block w-12 p-1 text-cc-blue group-hover:text-cc-white"
-                />
-              </a>
-              <a
+              </Button> -->
+              <!-- <a
                 href="https://www.linkedin.com/in/chuangcaleb/"
-                class="group rounded-xl border border-cc-blue hover:bg-cc-blue"
+                class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
+              > -->
+              <a
+                href={LINK_LINKEDIN}
+                class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
               >
-                <Icon
-                  name="mdi:linkedin"
-                  class="inline-block w-12 p-1 text-cc-blue group-hover:text-cc-white"
-                />
+                <Icon name="mdi:linkedin" class="w-12 p-1" />
               </a>
               <a
-                href="https://docs.google.com/document/d/1qohsYe0w-Mq5yqIdNaHPuOHvs2lYvnGySULgR2Baqwk/edit?usp=sharing"
-                class="group rounded-xl border border-cc-blue hover:bg-cc-blue"
+                href={LINK_GITHUB}
+                class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
               >
-                <Icon
-                  name="academicons:cv"
-                  class="inline-block w-12 p-1 text-cc-blue group-hover:text-cc-white"
-                />
+                <Icon name="mdi:github" class="w-12 p-1" />
+              </a>
+              <a
+                href={LINK_CV}
+                class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
+              >
+                <Icon name="academicons:cv" class="w-12 p-1" />
               </a>
             </div>
           </div>
@@ -177,10 +173,7 @@ import { Icon } from "astro-iconify";
       <a href="https://github.com/chuangcaleb/points">[source]</a>
     </p>
     <p>
-      <a
-        href="https://docs.google.com/document/d/1qohsYe0w-Mq5yqIdNaHPuOHvs2lYvnGySULgR2Baqwk/edit?usp=sharing"
-        class="mt-8 inline-flex"
-      >
+      <a href={LINK_CV} class="mt-8 inline-flex">
         <Button class="flex gap-x-2">
           <Icon name="academicons:cv-square" class="w-6" />
           My Portfolio Document
