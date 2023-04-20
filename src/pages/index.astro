@@ -2,9 +2,10 @@
 import Button from "@components/common/Button.astro";
 import GridLayout from "@components/layout/GridLayout.astro";
 import Section from "@components/layout/Section.astro";
+import { LINK_CV, LINK_GITHUB, LINK_LINKEDIN } from "@data/links";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { Cloudinary } from "astro-cloudinary-image";
 import { Icon } from "astro-iconify";
-import { LINK_GITHUB, LINK_LINKEDIN, LINK_CV } from "@data/links";
 ---
 
 <BaseLayout gridLayout="lg">
@@ -34,7 +35,7 @@ import { LINK_GITHUB, LINK_LINKEDIN, LINK_CV } from "@data/links";
             >
               I'm a <strong>Software Engineer</strong> based in <strong
                 >KL, Malaysia</strong
-              > specializing in <strong>Front-End Web</strong>.<span
+              >—specializing in <strong>Front-End Web</strong>.<span
                 class="font-extralight"
               >
                 I design and create experiences by being <em>collaborative</em>, <em
@@ -58,20 +59,23 @@ import { LINK_GITHUB, LINK_LINKEDIN, LINK_CV } from "@data/links";
               <a
                 href={LINK_LINKEDIN}
                 class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
+                aria-label="LinkedIn profile of Chuang Caleb"
               >
                 <Icon name="mdi:linkedin" class="w-12 p-1" />
               </a>
               <a
                 href={LINK_GITHUB}
                 class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
+                aria-label="GitHub profile of Chuang Caleb"
               >
                 <Icon name="mdi:github" class="w-12 p-1" />
               </a>
               <a
                 href={LINK_CV}
                 class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
+                aria-label="CV/Résumé of Chuang Caleb"
               >
-                <Icon name="academicons:cv" class="w-12 p-1" />
+                <Icon name="mdi:card-account-details-star" class="w-12 p-2" />
               </a>
             </div>
           </div>
@@ -80,10 +84,28 @@ import { LINK_GITHUB, LINK_LINKEDIN, LINK_CV } from "@data/links";
       <div
         class="-z-10 mx-auto max-w-[500px] select-none opacity-10 [grid-area:1/1] dark:opacity-20 lg:ml-auto lg:mr-0 dark:lg:opacity-30 xl:opacity-100"
       >
-        <img
+        <!-- <img
           src="https://res.cloudinary.com/dxvww1uyr/image/upload/c_crop,g_face,h_700,q_30,r_max,w_700,x_0,y_0,z_0/v1681634787/artistic-profile.png"
           alt="Head profile of Chuang Caleb with a painting-like filter"
+          height={700}
+          width={700}
+        /> -->
+        <Cloudinary
+          gravity="face"
+          height="700"
+          width="700"
+          cornerRadius="max"
+          alt="Screenshot of the PowerKids Kindergarten's website's landing page"
+          src="v1681634787/artistic-profile.png"
+          errorImage="icons/picture-not-found.svg"
+          resize="crop"
         />
+        <!-- <CldImg
+          height="700"
+          width="700"
+          src="v1681634787/artistic-profile.png"
+          alt="asds"
+        /> -->
       </div>
     </Section>
   </GridLayout>
