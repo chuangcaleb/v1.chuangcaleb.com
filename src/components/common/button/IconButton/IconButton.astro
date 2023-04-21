@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-iconify";
+import type { HTMLAttributes } from "astro/types";
+import { twJoin } from "tailwind-merge";
+import { Button } from "../BaseButton";
+
+interface Props extends HTMLAttributes<"button"> {
+  name: string;
+  iconClass: string | null | undefined;
+  hasContent?: boolean;
+}
+
+const {
+  name,
+  iconClass,
+  class: extraClass,
+  hasContent = false,
+  // eslint-disable-next-line no-unused-vars
+  slot,
+  ...attrs
+} = Astro.props;
+---
+
+<Button
+  class={twJoin(hasContent && "flex gap-x-2", extraClass)}
+  {...attrs}
+  noDefaultPadding={!hasContent}
+>
+  <Icon name={name} class={iconClass} />
+  <slot />
+</Button>

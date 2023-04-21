@@ -1,5 +1,6 @@
 ---
-import Button from "@components/common/Button.astro";
+import { Button } from "@components/common/button/BaseButton";
+import { IconButton } from "@components/common/button/IconButton";
 import GridLayout from "@components/layout/GridLayout.astro";
 import { Section } from "@components/layout/Section";
 import { LINK_CV, LINK_GITHUB, LINK_LINKEDIN } from "@data/links";
@@ -35,9 +36,8 @@ import { Icon } from "astro-iconify";
             >
               I'm a <strong>Software Engineer</strong> based in <strong
                 >KL, Malaysia</strong
-              >—specializing in <strong>Front-End Web</strong>.<span
-                class="font-extralight"
-              >
+              >—specializing in <strong>Front-End Web</strong>.
+              <span class="font-extralight">
                 I design and create experiences by being <em>collaborative</em>, <em
                   >calculating</em
                 >, and <em>clever</em>.
@@ -196,11 +196,13 @@ import { Icon } from "astro-iconify";
     </p>
     <p>
       <a href={LINK_CV} class="mt-8 inline-flex">
-        <Button class="flex gap-x-2">
-          <Icon name="academicons:cv-square" class="w-6" />
+        <IconButton name="academicons:cv-square" iconClass="w-6" hasContent>
           My Portfolio Document
-        </Button>
+        </IconButton>
       </a>
+    </p>
+    <p>
+      <Button class="flex gap-x-2">My Portfolio Document</Button>
     </p>
   </Section>
   <Section asArticle>

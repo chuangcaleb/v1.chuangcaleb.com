@@ -22,8 +22,9 @@
 
   /* a:not(:has(button)) { */
   a {
-    @apply font-medium underline underline-offset-2 duration-100 hover:underline-offset-4;
+    @apply font-medium underline decoration-inherit underline-offset-2 duration-100 hover:underline-offset-4;
   }
+
   blockquote {
     @apply mt-6 border-l-2  pl-6 italic;
     @apply border-slate-300 text-slate-800;
@@ -31,7 +32,7 @@
   }
 
   code {
-    @apply relative rounded py-[0.2rem] px-[0.3rem] font-mono text-sm;
+    @apply relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm;
     @apply bg-cc-white text-cc-space;
     @apply dark:bg-cc-black dark:text-white;
   }
