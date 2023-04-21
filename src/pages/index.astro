@@ -4,7 +4,6 @@ import GridLayout from "@components/layout/GridLayout.astro";
 import { Section } from "@components/layout/Section";
 import { LINK_CV, LINK_GITHUB, LINK_LINKEDIN } from "@data/links";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { Cloudinary } from "astro-cloudinary-image";
 import { Icon } from "astro-iconify";
 ---
 
@@ -19,7 +18,7 @@ import { Icon } from "astro-iconify";
     </nav>
   </Section> -->
   <GridLayout isNestedGrid>
-    <Section class="grid py-8 md:py-16">
+    <Section class="grid py-16">
       <div class="my-auto text-center [grid-area:1/1]">
         <div
           class="grid justify-items-center gap-10 py-4 lg:justify-items-start lg:text-left"
@@ -82,15 +81,15 @@ import { Icon } from "astro-iconify";
         </div>
       </div>
       <div
-        class="-z-10 mx-auto max-w-[500px] select-none opacity-10 [grid-area:1/1] dark:opacity-20 lg:ml-auto lg:mr-0 dark:lg:opacity-30 xl:opacity-100"
+        class="-z-10 mx-auto flex max-h-min min-h-[450px] select-none place-items-center opacity-10 [grid-area:1/1] dark:opacity-20 md:min-h-[500px] lg:ml-auto lg:mr-0 dark:lg:opacity-30 xl:opacity-100"
       >
-        <!-- <img
-          src="https://res.cloudinary.com/dxvww1uyr/image/upload/c_crop,g_face,h_700,q_30,r_max,w_700,x_0,y_0,z_0/v1681634787/artistic-profile.png"
+        <img
+          src="https://res.cloudinary.com/dxvww1uyr/image/upload/c_fill,g_face,f_auto,q_auto,dpr_auto,r_max,w_500,ar_1:1/v1681634787/portfolio/artistic-profile.png"
           alt="Head profile of Chuang Caleb with a painting-like filter"
-          height={700}
-          width={700}
-        /> -->
-        <Cloudinary
+          height="500"
+          width="500"
+        />
+        <!-- <Cloudinary
           gravity="face"
           height="700"
           width="700"
@@ -99,7 +98,7 @@ import { Icon } from "astro-iconify";
           src="v1681634787/artistic-profile.png"
           errorImage="icons/picture-not-found.svg"
           resize="crop"
-        />
+        /> -->
         <!-- <CldImg
           height="700"
           width="700"
