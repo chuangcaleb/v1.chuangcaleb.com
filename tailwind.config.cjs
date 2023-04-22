@@ -19,6 +19,9 @@ module.exports = {
       maxWidth: {
         prose: "var(--w-prose)",
       },
+      // screens: {
+      //   sm: '425px',
+      // },
       // typography: () => ({
       //   secondary: {
       //     css: {

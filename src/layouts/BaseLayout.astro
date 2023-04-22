@@ -1,8 +1,10 @@
 ---
 import BaseHead from "@components/BaseHead.astro";
+import Footer from "@components/layout/Footer.astro";
 import GridLayout, {
   GridLayoutCVKeys,
 } from "@components/layout/GridLayout.astro";
+import { Section } from "@components/layout/Section";
 import SpriteProviderWrapper from "@components/layout/SpriteProviderWrapper.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@constants";
 import type { HTMLAttributes } from "astro/types";
@@ -36,6 +38,14 @@ const {
         asMain
       >
         <slot />
+      </GridLayout>
+      <GridLayout
+        gridLayout="md"
+        class="bg-cc-space text-cc-white dark:bg-cc-white dark:text-cc-black"
+      >
+        <Section>
+          <Footer class="[grid-column:2]">adsa</Footer>
+        </Section>
       </GridLayout>
     </SpriteProviderWrapper>
   </body>
