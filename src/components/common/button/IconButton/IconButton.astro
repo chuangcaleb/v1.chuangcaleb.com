@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-iconify";
 import type { HTMLAttributes } from "astro/types";
-import { twJoin } from "tailwind-merge";
+import { twMerge } from "tailwind-merge";
 import { Button } from "../BaseButton";
 
 interface Props extends HTMLAttributes<"button"> {
@@ -22,7 +22,7 @@ const {
 ---
 
 <Button
-  class={twJoin(hasContent && "flex gap-x-2", extraClass)}
+  class={twMerge(hasContent && "flex gap-x-2", extraClass)}
   {...attrs}
   noDefaultPadding={!hasContent}
 >

@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
 
 const gridLayoutCV = {
   xl: "grid-cols-[var(--layout-xl)]",
@@ -26,21 +27,21 @@ const {
   class: extraClass,
 } = Astro.props;
 
-const gridLayoutClassList = [
+const gridLayoutClassList = twMerge(
   gridLayoutCV[gridLayout],
   gridLayout !== "none" && gridClasses,
   isNestedGrid && "col-span-full",
-  extraClass,
-];
+  extraClass
+);
 ---
 
 {
   asMain ? (
-    <main class:list={gridLayoutClassList}>
+    <main class={gridLayoutClassList}>
       <slot />
     </main>
   ) : (
-    <div class:list={gridLayoutClassList}>
+    <div class={gridLayoutClassList}>
       <slot />
     </div>
   )

@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
 
 const backgroundCV = {
   base: null,
@@ -30,22 +31,22 @@ const {
   ...attrs
 } = Astro.props;
 
-const sectionClassList = [
+const sectionClassList = twMerge(
   backgroundCV[bg],
   colSpanCV[colSpan],
   // paddingXCV[paddingX],
-  extraClass,
+  extraClass
   // !noPaddingY && "py-8",
-];
+);
 ---
 
 {
   asArticle ? (
-    <article class:list={sectionClassList} {...attrs}>
+    <article class={sectionClassList} {...attrs}>
       <slot />
     </article>
   ) : (
-    <section class:list={sectionClassList} {...attrs}>
+    <section class={sectionClassList} {...attrs}>
       <slot />
     </section>
   )

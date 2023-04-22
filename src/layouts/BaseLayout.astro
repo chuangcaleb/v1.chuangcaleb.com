@@ -6,6 +6,7 @@ import GridLayout, {
 import SpriteProviderWrapper from "@components/layout/SpriteProviderWrapper.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@constants";
 import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
 
 interface Props extends HTMLAttributes<"div"> {
   title?: string;
@@ -31,7 +32,7 @@ const {
     <SpriteProviderWrapper hasWrapper={hasSpriteProvider}>
       <GridLayout
         gridLayout={gridLayout}
-        class:list={[extraClass, "pb-20"]}
+        class={twMerge("pb-20", extraClass)}
         asMain
       >
         <slot />

@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
 
 interface Props extends HTMLAttributes<"a"> {}
 
@@ -12,11 +13,11 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 <li class="list-none">
   <a
     href={href}
-    class:list={[
+    class={twMerge(
       "inline-block hover:underline underline-offset-2",
-      { "underline disabled:opacity-75 pointer-events-none": isActive },
-      extraClass,
-    ]}
+      isActive && "underline disabled:opacity-75 pointer-events-none",
+      extraClass
+    )}
     {...attrs}
     aria-current={isActive && "page"}
     aria-disabled={isActive}

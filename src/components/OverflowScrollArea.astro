@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
 
 interface Props extends HTMLAttributes<"div"> {}
 
@@ -7,10 +8,10 @@ const { class: extraClass, ...attrs } = Astro.props;
 ---
 
 <div
-  class:list={[
+  class={twMerge(
     "scrollable-area flex mx-auto overflow-scroll p-4 xl:px-0 rounded-xl",
-    extraClass,
-  ]}
+    extraClass
+  )}
   {...attrs}
 >
   <slot />

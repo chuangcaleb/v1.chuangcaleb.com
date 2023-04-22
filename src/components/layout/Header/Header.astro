@@ -1,4 +1,5 @@
 ---
+import { twMerge } from "tailwind-merge";
 import HeaderLink from "./HeaderLink.astro";
 interface Props {
   isIndex?: boolean;
@@ -7,17 +8,17 @@ const { isIndex } = Astro.props;
 ---
 
 <header
-  class:list={[
+  class={twMerge(
     "max-w-screen-xl mx-auto px-4 xlPadded:px-0 min-h-fit select-none prose-a:no-underline",
-    { "absolute z-10 inset-0": isIndex },
-  ]}
+    isIndex && "absolute z-10 inset-0"
+  )}
 >
   <nav
-    class:list={[
+    class={twMerge(
       "py-2 flex h-12",
-      { "justify-end": isIndex },
-      { "justify-between": !isIndex },
-    ]}
+      isIndex && "justify-end",
+      !isIndex && "justify-between"
+    )}
   >
     {
       !isIndex && (
@@ -29,7 +30,7 @@ const { isIndex } = Astro.props;
         </a>
       )
     }
-    <ul class:list={["flex gap-6 my-auto", { "prose-dark": isIndex }]}>
+    <ul class={twMerge("flex gap-6 my-auto", isIndex && "prose-dark")}>
       <HeaderLink href="/blog">blog</HeaderLink>
       <HeaderLink href="/lore">lore</HeaderLink>
     </ul>
