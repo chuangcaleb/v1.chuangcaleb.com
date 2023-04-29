@@ -12,14 +12,14 @@ import { twMerge } from "tailwind-merge";
 interface Props extends HTMLAttributes<"div"> {
   title?: string;
   description?: string;
-  hasSpriteProvider?: boolean;
+  // hasSpriteProvider?: boolean;
   gridLayout?: GridLayoutCVKeys;
 }
 
 const {
   title = SITE_TITLE,
   description = SITE_DESCRIPTION,
-  hasSpriteProvider = false,
+  // hasSpriteProvider = false,
   gridLayout = "xl",
   class: extraClass,
 } = Astro.props;
@@ -30,7 +30,7 @@ const {
     <BaseHead title={title} description={description} />
   </head>
   <body class="min-h-screen text-cc-black dark:bg-cc-space dark:text-cc-white">
-    <SpriteProviderWrapper hasWrapper={hasSpriteProvider}>
+    <SpriteProviderWrapper hasWrapper>
       <GridLayout
         gridLayout={gridLayout}
         class={twMerge("pb-20", extraClass)}

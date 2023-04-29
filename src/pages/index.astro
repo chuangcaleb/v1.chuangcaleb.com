@@ -5,7 +5,7 @@ import GridLayout from "@components/layout/GridLayout.astro";
 import { Section } from "@components/layout/Section";
 import { LINK_CV, LINK_GITHUB, LINK_LINKEDIN } from "@data/links";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { Icon } from "astro-iconify";
+import { Sprite } from "astro-iconify";
 ---
 
 <BaseLayout gridLayout="lg">
@@ -60,21 +60,24 @@ import { Icon } from "astro-iconify";
                 class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
                 aria-label="LinkedIn profile of Chuang Caleb"
               >
-                <Icon name="mdi:linkedin" class="w-12 p-1" />
+                <Sprite name="mdi:linkedin" class="aspect-square w-12 p-1" />
               </a>
               <a
                 href={LINK_GITHUB}
                 class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
                 aria-label="GitHub profile of Chuang Caleb"
               >
-                <Icon name="mdi:github" class="w-12 p-1" />
+                <Sprite name="mdi:github" class="aspect-square w-12 p-1" />
               </a>
               <a
                 href={LINK_CV}
                 class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
                 aria-label="CV/Résumé of Chuang Caleb"
               >
-                <Icon name="mdi:card-account-details-star" class="w-12 p-2" />
+                <Sprite
+                  name="mdi:card-account-details-star"
+                  class="aspect-square w-12 p-2"
+                />
               </a>
             </div>
           </div>
