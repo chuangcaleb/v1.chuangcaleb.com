@@ -1,19 +1,31 @@
 ---
-import { STACK, TechName } from "@data/techStack";
+import { STACK, TechName, Stage } from "@data/techStack";
 import { Sprite } from "astro-iconify";
 
 interface Props {
   name: TechName;
 }
 
+const STAGES = {
+  researching: "🤔",
+  exploring: "👉",
+  learning: "✨",
+  confident: "⭐️",
+  expert: "💫",
+} as { [s: Stage]: string };
+
 const { name } = Astro.props;
 
 const tech = STACK[name];
 
-const { icon } = tech;
+const { icon, stage } = tech;
+
+const icons = [STAGES[stage]].join();
 ---
 
 <div class="flex rounded-md border bg-cc-space">
   <Sprite name={icon} class="ml-2 aspect-square w-12" />
-  <span class="text-flow-vertical p-1 text-xs tracking-widest">✨❤️💼🌿</span>
+  <span class="text-flow-vertical p-1 text-xs tracking-widest"
+    >{icons}❤️💼🌿</span
+  >
 </div>
