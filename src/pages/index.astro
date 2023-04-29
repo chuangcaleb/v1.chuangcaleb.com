@@ -1,4 +1,5 @@
 ---
+import { Tech } from "@components/common/Tech";
 import { Button } from "@components/common/button/BaseButton";
 import { IconButton } from "@components/common/button/IconButton";
 import GridLayout from "@components/layout/GridLayout.astro";
@@ -237,5 +238,16 @@ import { Sprite } from "astro-iconify";
       <li>professional experience 💼 / null</li>
       <li>fresh 🌿 / stale 📅 / null</li>
     </ul>
+    <div class="flex flex-wrap gap-4">
+      <Tech name="Javascript" />
+      <Tech name="Typescript" />
+      <Tech name="Python" />
+      <Tech name="React" />
+      <Tech name="Astro" />
+      <Tech name="Next" />
+      <Tech name="Django" />
+      <Tech name="Material UI" />
+      <Tech name="Tailwind" />
+    </div>
   </Section>
 </BaseLayout>

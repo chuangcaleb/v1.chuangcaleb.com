@@ -1,0 +1,6 @@
+@layer utilities {
+  .text-flow-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+}

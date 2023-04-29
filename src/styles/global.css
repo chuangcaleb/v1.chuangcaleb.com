@@ -4,6 +4,7 @@
 @import "tailwind/components";
 
 @import "tailwind/utilities";
+@import "utilities";
 
 /* * {
   outline: 1px solid #f00 !important;
