@@ -1,14 +1,23 @@
 ---
+import { twMerge } from "tailwind-merge";
+
 const today = new Date();
+
+const { class: extraClass } = Astro.props;
 ---
 
-<footer class="grid grid-cols-2 gap-x-4 gap-y-8 py-8 sm:grid-cols-4">
-  <div class="col-span-2 hidden gap-y-1 sm:grid">
-    <h1>Chuang<br />Caleb</h1>
+<footer
+  class={twMerge(
+    "grid grid-cols-2 gap-x-4 gap-y-8 py-8 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6",
+    extraClass
+  )}
+>
+  <div class="col-span-2 grid gap-y-1">
+    <h1>Chuang <br class="max-sm:hidden" />Caleb</h1>
     <p class="font-light">@ balechuang@gmail.com</p>
   </div>
   <div>
-    <h2 class="mb-2 text-2xl">🧭 nav</h2>
+    <h2 class="mb-2 text-2xl">nav</h2>
     <ul class="[&>li]:pb-2">
       <li>
         <a href="/">GitHub</a>
@@ -23,7 +32,7 @@ const today = new Date();
   </div>
 
   <div>
-    <h2 class="mb-2 text-2xl">🔗 links</h2>
+    <h2 class="mb-2 text-2xl">socials</h2>
     <ul class="[&>li]:pb-2">
       <li>
         <a href="/">GitHub</a>
@@ -37,7 +46,7 @@ const today = new Date();
     </ul>
   </div>
 
-  <div class="col-span-full font-extralight md:text-center">
+  <div class="col-span-full font-extralight sm:text-center">
     &copy; {today.getFullYear()} Chuang Caleb. All rights reserved.
   </div>
 </footer>
