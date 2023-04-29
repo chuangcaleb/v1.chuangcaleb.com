@@ -12,7 +12,7 @@ const STAGES = {
   learning: "✨",
   confident: "⭐️",
   expert: "💫",
-} as { [s: Stage]: string };
+} as Record<Stage, string>;
 
 const { name } = Astro.props;
 
@@ -25,7 +25,7 @@ const icons = [STAGES[stage]].join();
 
 <div class="flex rounded-md border bg-cc-space">
   <Sprite name={icon} class="ml-2 aspect-square w-12" />
-  <span class="text-flow-vertical p-1 text-xs tracking-widest"
-    >{icons}❤️💼🌿</span
-  >
+  <span class="text-flow-vertical p-1 text-xs tracking-widest">
+    {icons}❤️🌿💼
+  </span>
 </div>
