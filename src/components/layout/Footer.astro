@@ -1,4 +1,5 @@
 ---
+import LINKS from "@data/links";
 import { Sprite } from "astro-iconify";
 import { twMerge } from "tailwind-merge";
 
@@ -15,11 +16,15 @@ const { class: extraClass } = Astro.props;
 >
   <div class="col-span-2 grid gap-y-1">
     <h1>Chuang <br class="max-sm:hidden" />Caleb</h1>
-    <a href="mailto:balechuang@gmail.com" class="whitespace-nowrap font-light">
+    <a
+      href={"mailto:" + LINKS.EMAIL.href}
+      class="whitespace-nowrap font-light"
+      aria-label={LINKS.EMAIL.ariaLabel}
+    >
       <Sprite
-        name="mdi:email-outline"
+        name={LINKS.EMAIL.icon}
         class="mb-auto mr-1 inline aspect-square w-4"
-      />balechuang@gmail.com
+      />{LINKS.EMAIL.href}
     </a>
   </div>
   <div>

@@ -3,7 +3,7 @@ import { Button } from "@components/common/button/BaseButton";
 import { IconButton } from "@components/common/button/IconButton";
 import GridLayout from "@components/layout/GridLayout.astro";
 import { Section } from "@components/layout/Section";
-import { LINK_CV, LINK_GITHUB, LINK_LINKEDIN } from "@data/links";
+import LINKS from "@data/links";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Sprite } from "astro-iconify";
 ---
@@ -56,26 +56,32 @@ import { Sprite } from "astro-iconify";
                 class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
               > -->
               <a
-                href={LINK_LINKEDIN}
+                href={LINKS.LINKEDIN.href}
                 class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
-                aria-label="LinkedIn profile of Chuang Caleb"
-              >
-                <Sprite name="mdi:linkedin" class="aspect-square w-12 p-1" />
-              </a>
-              <a
-                href={LINK_GITHUB}
-                class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
-                aria-label="GitHub profile of Chuang Caleb"
-              >
-                <Sprite name="mdi:github" class="aspect-square w-12 p-1" />
-              </a>
-              <a
-                href={LINK_CV}
-                class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
-                aria-label="CV/Résumé of Chuang Caleb"
+                aria-label={LINKS.LINKEDIN.ariaLabel}
               >
                 <Sprite
-                  name="mdi:card-account-details-star"
+                  name={LINKS.LINKEDIN.icon}
+                  class="aspect-square w-12 p-1"
+                />
+              </a>
+              <a
+                href={LINKS.GITHUB.href}
+                class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
+                aria-label={LINKS.GITHUB.ariaLabel}
+              >
+                <Sprite
+                  name={LINKS.GITHUB.icon}
+                  class="aspect-square w-12 p-1"
+                />
+              </a>
+              <a
+                href={LINKS.RESUME.href}
+                class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
+                aria-label={LINKS.RESUME.ariaLabel}
+              >
+                <Sprite
+                  name={LINKS.RESUME.icon}
                   class="aspect-square w-12 p-2"
                 />
               </a>
@@ -197,8 +203,12 @@ import { Sprite } from "astro-iconify";
       <a href="https://github.com/chuangcaleb/points">[source]</a>
     </p>
     <p>
-      <a href={LINK_CV} class="mt-8 inline-flex">
-        <IconButton name="academicons:cv-square" iconClass="w-6" hasContent>
+      <a
+        href={LINKS.RESUME.href}
+        class="mt-8 inline-flex"
+        aria-label={LINKS.RESUME.ariaLabel}
+      >
+        <IconButton name={LINKS.RESUME.icon} iconClass="w-6" hasContent>
           My Portfolio Document
         </IconButton>
       </a>
