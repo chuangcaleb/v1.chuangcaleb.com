@@ -18,14 +18,21 @@ const { name } = Astro.props;
 
 const tech = STACK[name];
 
-const { icon, stage } = tech;
+const { icon, stage, isInterested, isWork, isFresh } = tech;
 
-const icons = [STAGES[stage]].join();
+const icons = [
+  STAGES[stage],
+  isInterested && "❤️",
+  isWork && "🌿",
+  isFresh && "💼",
+]
+  .filter(Boolean)
+  .join("");
 ---
 
 <div class="rounded-md border bg-cc-space">
   <Sprite name={icon} class="mx-3 mb-1 mt-2 aspect-square w-12" />
   <span class="block p-1 text-center text-sm tracking-widest">
-    {icons}❤️🌿💼
+    {icons}
   </span>
 </div>
