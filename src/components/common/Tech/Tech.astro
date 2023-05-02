@@ -23,8 +23,8 @@ const { icon, stage, isInterested, isWork, isFresh } = tech;
 const icons = [
   STAGES[stage],
   isInterested && "❤️",
-  isWork && "🌿",
-  isFresh && "💼",
+  isWork && "💼",
+  isFresh ? "🌿" : "📆",
 ]
   .filter(Boolean)
   .join("");

@@ -36,6 +36,13 @@ export const STACK = {
     isWork: false,
     isFresh: false,
   },
+  mcfunction: {
+    icon: "mdi:minecraft",
+    stage: "expert",
+    isInterested: true,
+    isWork: false,
+    isFresh: true,
+  },
   React: {
     icon: "logos:react",
     stage: "confident",
@@ -77,6 +84,13 @@ export const STACK = {
     isInterested: true,
     isWork: true,
     isFresh: true,
+  },
+  Bootstrap: {
+    icon: "logos:bootstrap",
+    stage: "expert",
+    isInterested: false,
+    isWork: false,
+    isFresh: false,
   },
 } as const satisfies { [s: string]: Tech };
 

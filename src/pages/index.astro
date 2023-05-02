@@ -5,6 +5,7 @@ import { IconButton } from "@components/common/button/IconButton";
 import GridLayout from "@components/layout/GridLayout.astro";
 import { Section } from "@components/layout/Section";
 import LINKS from "@data/links";
+import { STACK } from "@data/techStack";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Sprite } from "astro-iconify";
 ---
@@ -239,15 +240,7 @@ import { Sprite } from "astro-iconify";
       <li>fresh 🌿 / stale 📅 / null</li>
     </ul>
     <div class="flex flex-wrap justify-center gap-4">
-      <Tech name="Javascript" />
-      <Tech name="Typescript" />
-      <Tech name="Python" />
-      <Tech name="React" />
-      <Tech name="Astro" />
-      <Tech name="Next" />
-      <Tech name="Django" />
-      <Tech name="Material UI" />
-      <Tech name="Tailwind" />
+      {Object.keys(STACK).map((name) => <Tech name={name} />)}
     </div>
   </Section>
 </BaseLayout>
