@@ -9,12 +9,12 @@ interface Tech {
   // label: string;
   icon: string;
   stage: Stage;
-  isInterested: boolean;
-  isWork: boolean;
-  isFresh: boolean;
+  isInterested?: boolean;
+  isWork?: boolean;
+  isFresh?: boolean;
 }
 
-export const STACK = {
+const BUILD_STACK = {
   Javascript: {
     icon: "logos:javascript",
     stage: "confident",
@@ -33,14 +33,11 @@ export const STACK = {
     icon: "logos:python",
     stage: "confident",
     isInterested: true,
-    isWork: false,
-    isFresh: false,
   },
   mcfunction: {
     icon: "mdi:minecraft",
     stage: "expert",
     isInterested: true,
-    isWork: false,
     isFresh: true,
   },
   React: {
@@ -54,7 +51,6 @@ export const STACK = {
     icon: "astro",
     stage: "confident",
     isInterested: true,
-    isWork: false,
     isFresh: true,
   },
   Next: {
@@ -67,14 +63,10 @@ export const STACK = {
   Django: {
     icon: "logos:django-icon",
     stage: "confident",
-    isInterested: false,
-    isWork: false,
-    isFresh: false,
   },
   "Material UI": {
     icon: "logos:material-ui",
     stage: "confident",
-    isInterested: false,
     isWork: true,
     isFresh: true,
   },
@@ -88,14 +80,11 @@ export const STACK = {
   Bootstrap: {
     icon: "logos:bootstrap",
     stage: "expert",
-    isInterested: false,
-    isWork: false,
-    isFresh: false,
   },
 } as const satisfies { [s: string]: Tech };
 
-export type TechName = keyof typeof STACK;
+export type TechName = keyof typeof BUILD_STACK;
 
-export function isInTechStack(value: string): value is TechName {
-  return Object.keys(STACK).indexOf(value) !== -1;
-}
+export const STACK_KEYS = Object.keys(BUILD_STACK) as TechName[];
+
+export const STACK = BUILD_STACK as { [s: string]: Tech };
