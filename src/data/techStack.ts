@@ -95,3 +95,7 @@ export const STACK = {
 } as const satisfies { [s: string]: Tech };
 
 export type TechName = keyof typeof STACK;
+
+export function isInTechStack(value: string): value is TechName {
+  return Object.keys(STACK).indexOf(value) !== -1;
+}
