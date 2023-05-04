@@ -11,7 +11,7 @@ interface Tech {
   stage: Stage;
   isInterested: boolean;
   isWork: boolean;
-  isFresh: boolean | null;
+  isFresh: boolean;
 }
 
 export const STACK = {
