@@ -14,8 +14,10 @@ interface Tech {
   isFresh?: boolean;
 }
 
-const BUILD_STACK = {
+const RAW_STACK = {
+  // Langs
   Javascript: {
+    // icon: "skill-icons:javascript",
     icon: "logos:javascript",
     stage: "confident",
     isInterested: true,
@@ -23,6 +25,7 @@ const BUILD_STACK = {
     isFresh: true,
   },
   Typescript: {
+    // icon: "skill-icons:typescript",
     icon: "logos:typescript-icon",
     stage: "confident",
     isInterested: true,
@@ -30,6 +33,7 @@ const BUILD_STACK = {
     isFresh: true,
   },
   Python: {
+    // icon: "skill-icons:python-dark",
     icon: "logos:python",
     stage: "confident",
     isInterested: true,
@@ -40,7 +44,30 @@ const BUILD_STACK = {
     isInterested: true,
     isFresh: true,
   },
+  Java: {
+    icon: "skill-icons:java-light",
+    // icon: "logos:java",
+    stage: "learning",
+  },
+  C: {
+    // icon: "skill-icons:c",
+    icon: "logos:c",
+    stage: "learning",
+  },
+  Haskell: {
+    icon: "skill-icons:haskell-light",
+    // icon: "logos:haskell-icon",
+    stage: "exploring",
+  },
+  Dart: {
+    // icon: "skill-icons:dart-dark",
+    icon: "logos:dart",
+    stage: "learning",
+    isWork: true,
+  },
+  // Frameworks
   React: {
+    // icon: "skill-icons:react-dark",
     icon: "logos:react",
     stage: "confident",
     isInterested: true,
@@ -54,22 +81,30 @@ const BUILD_STACK = {
     isFresh: true,
   },
   Next: {
-    icon: "logos:nextjs-icon",
+    icon: "skill-icons:nextjs-light",
+    // icon: "logos:nextjs-icon",
     stage: "learning",
     isInterested: true,
     isWork: true,
     isFresh: true,
   },
   Django: {
+    // icon: "skill-icons:django",
     icon: "logos:django-icon",
     stage: "confident",
   },
-  "Material UI": {
-    icon: "logos:material-ui",
+  Jekyll: {
+    icon: "logos:jekyll",
     stage: "confident",
     isWork: true,
-    isFresh: true,
   },
+  Flutter: {
+    // icon: "skill-icons:flutter",
+    icon: "logos:flutter",
+    stage: "learning",
+    isWork: true,
+  },
+  // Styles
   Tailwind: {
     icon: "logos:tailwindcss-icon",
     stage: "expert",
@@ -77,14 +112,79 @@ const BUILD_STACK = {
     isWork: true,
     isFresh: true,
   },
+  Sass: {
+    icon: "logos:sass",
+    stage: "confident",
+    isInterested: true,
+    isWork: true,
+    isFresh: true,
+  },
+  "Material UI": {
+    icon: "logos:material-ui",
+    stage: "confident",
+    isWork: true,
+    isFresh: true,
+  },
   Bootstrap: {
     icon: "logos:bootstrap",
     stage: "expert",
   },
+  // Dev
+  VSCode: {
+    icon: "logos:visual-studio-code",
+    stage: "expert",
+    isInterested: true,
+    isWork: true,
+    isFresh: true,
+  },
+  Git: {
+    icon: "logos:git",
+    stage: "confident",
+    isInterested: true,
+    isWork: true,
+    isFresh: true,
+  },
+  GitHub: {
+    icon: "skill-icons:github-dark",
+    // icon: "logos:github-icon",
+    stage: "expert",
+    isInterested: true,
+    isWork: true,
+    isFresh: true,
+  },
+  Figma: {
+    icon: "logos:figma",
+    stage: "learning",
+    isInterested: true,
+    isWork: true,
+    isFresh: true,
+  },
+  GIMP: {
+    icon: "devicon:gimp",
+    stage: "learning",
+    isInterested: true,
+  },
+  LaTeX: {
+    icon: "skill-icons:latex-light",
+    stage: "learning",
+  },
+  // Meta
+  Obsidian: {
+    icon: "simple-icons:obsidian",
+    stage: "expert",
+    isInterested: true,
+    isFresh: true,
+  },
+  Markdown: {
+    icon: "mdi:language-markdown",
+    stage: "expert",
+    isInterested: true,
+    isFresh: true,
+  },
 } as const satisfies { [s: string]: Tech };
 
-export type TechName = keyof typeof BUILD_STACK;
+export type TechName = keyof typeof RAW_STACK;
 
-export const STACK_KEYS = Object.keys(BUILD_STACK) as TechName[];
+export const ALL_STACK_KEYS = Object.keys(RAW_STACK) as TechName[];
 
-export const STACK = BUILD_STACK as { [s: string]: Tech };
+export const STACK = RAW_STACK as { [s: string]: Tech };

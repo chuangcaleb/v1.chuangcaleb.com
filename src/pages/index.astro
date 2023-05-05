@@ -5,7 +5,7 @@ import { IconButton } from "@components/common/button/IconButton";
 import GridLayout from "@components/layout/GridLayout.astro";
 import { Section } from "@components/layout/Section";
 import LINKS from "@data/links";
-import { STACK_KEYS } from "@data/techStack";
+import { ALL_STACK_KEYS } from "@data/techStack";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Sprite } from "astro-iconify";
 ---
@@ -210,7 +210,7 @@ import { Sprite } from "astro-iconify";
         class="mt-8 inline-flex"
         aria-label={LINKS.RESUME.ariaLabel}
       >
-        <IconButton name={LINKS.RESUME.icon} iconClass="w-6" hasContent>
+        <IconButton name={LINKS.RESUME.icon} iconClass="w-6 h-6" hasContent>
           My Portfolio Document
         </IconButton>
       </a>
@@ -220,27 +220,8 @@ import { Sprite } from "astro-iconify";
     </p>
   </Section>
   <Section asArticle>
-    <h2>My Stack</h2>
-    <ul>
-      <li>
-        Languages: Javascript/Typescript, Python, mcfunction, Java... C,
-        Haskell, Dart
-      </li>
-      <li>Frameworks: React/NextJS, Astro, Jekyll, Django, Flutter</li>
-      <li>Styling: Tailwind, SCSS, Material UI, Bootstrap</li>
-      <li>Dev Tools: VS Code, Git, Figma, GIMP, LaTeX</li>
-      <li>Meta: ObsidianMD, Advanced Markdown</li>
-    </ul>
-    <p>- interest 👀 / null</p>
-    <p>- researching 🤔🔎 / exploring 👉 / EXPLORED</p>
-    <ul>
-      <li>EXPLORED: learning ✨ / confident ⭐️ / expert 💫</li>
-      <li>personal projects to-go choice ❤️ / null</li>
-      <li>professional experience 💼 / null</li>
-      <li>fresh 🌿 / stale 📅 / null</li>
-    </ul>
     <div class="flex flex-wrap justify-center gap-4">
-      {STACK_KEYS.map((name) => <Tech name={name} />)}
+      {ALL_STACK_KEYS.map((name) => <Tech name={name} />)}
     </div>
   </Section>
 </BaseLayout>
