@@ -1,25 +1,6 @@
-export type Stage =
-  | "researching"
-  | "exploring"
-  | "learning"
-  | "confident"
-  | "expert";
+import type { Tech } from "./types";
 
-interface Tech {
-  // label: string;
-  icon:
-    | string
-    | {
-        name: string;
-        color: string;
-      };
-  stage: Stage;
-  isInterested?: boolean;
-  isWork?: boolean;
-  isFresh?: boolean;
-}
-
-const RAW_STACK = {
+export const RAW_STACK = {
   // Langs
   Javascript: {
     // icon: "skill-icons:javascript",
@@ -152,7 +133,7 @@ const RAW_STACK = {
   GitHub: {
     icon: "skill-icons:github-dark",
     // icon: "logos:github-icon",
-    stage: "expert",
+    stage: "confident",
     isInterested: true,
     isWork: true,
     isFresh: true,
@@ -187,9 +168,3 @@ const RAW_STACK = {
     isFresh: true,
   },
 } as const satisfies { [s: string]: Tech };
-
-export type TechName = keyof typeof RAW_STACK;
-
-export const ALL_STACK_KEYS = Object.keys(RAW_STACK) as TechName[];
-
-export const STACK = RAW_STACK as { [s: string]: Tech };
