@@ -7,7 +7,12 @@ export type Stage =
 
 interface Tech {
   // label: string;
-  icon: string;
+  icon:
+    | string
+    | {
+        name: string;
+        color: string;
+      };
   stage: Stage;
   isInterested?: boolean;
   isWork?: boolean;
@@ -39,7 +44,7 @@ const RAW_STACK = {
     isInterested: true,
   },
   mcfunction: {
-    icon: "mdi:minecraft",
+    icon: { name: "mdi:minecraft", color: "forestgreen" },
     stage: "expert",
     isInterested: true,
     isFresh: true,
@@ -94,7 +99,7 @@ const RAW_STACK = {
     stage: "confident",
   },
   Jekyll: {
-    icon: "logos:jekyll",
+    icon: "devicon:jekyll",
     stage: "confident",
     isWork: true,
   },
@@ -126,7 +131,7 @@ const RAW_STACK = {
     isFresh: true,
   },
   Bootstrap: {
-    icon: "logos:bootstrap",
+    icon: "skill-icons:bootstrap",
     stage: "expert",
   },
   // Dev
@@ -138,7 +143,7 @@ const RAW_STACK = {
     isFresh: true,
   },
   Git: {
-    icon: "logos:git",
+    icon: "logos:git-icon",
     stage: "confident",
     isInterested: true,
     isWork: true,
@@ -170,13 +175,13 @@ const RAW_STACK = {
   },
   // Meta
   Obsidian: {
-    icon: "simple-icons:obsidian",
+    icon: { name: "simple-icons:obsidian", color: "SlateBlue" },
     stage: "expert",
     isInterested: true,
     isFresh: true,
   },
   Markdown: {
-    icon: "mdi:language-markdown",
+    icon: { name: "mdi:language-markdown", color: "dodgerblue" },
     stage: "expert",
     isInterested: true,
     isFresh: true,

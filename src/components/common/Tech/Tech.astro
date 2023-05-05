@@ -20,6 +20,10 @@ const tech = STACK[name];
 
 const { icon, stage, isInterested, isWork, isFresh } = tech;
 
+const iconName = typeof icon === "string" ? icon : icon.name;
+
+const iconColor = typeof icon === "object" && icon.color;
+
 const icons = [
   STAGES[stage],
   isInterested && "❤️",
@@ -31,7 +35,11 @@ const icons = [
 ---
 
 <div class="rounded-md border bg-cc-space text-cc-white">
-  <Sprite name={icon} class="mx-3 mb-1 mt-2 aspect-square w-12" />
+  <Sprite
+    name={iconName}
+    class="mx-3 mb-1 mt-2 aspect-square w-12"
+    style={{ color: iconColor }}
+  />
   <span class="block p-1 text-center text-sm tracking-widest">
     {icons}
   </span>
