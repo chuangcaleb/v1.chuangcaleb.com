@@ -5,9 +5,13 @@ import { IconButton } from "@components/common/button/IconButton";
 import GridLayout from "@components/layout/GridLayout.astro";
 import { Section } from "@components/layout/Section";
 import LINKS from "@data/links";
-import { ALL_STACK_KEYS } from "@data/tech-stack";
+import { ALL_STACK_KEYS, getFilteredStackKeys } from "@data/tech-stack";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Sprite } from "astro-iconify";
+
+const featuredStackKeys = getFilteredStackKeys(
+  (t) => t.isInterested === true || t.isWork === true
+);
 ---
 
 <BaseLayout gridLayout="lg">
@@ -220,8 +224,11 @@ import { Sprite } from "astro-iconify";
     </p>
   </Section>
   <Section asArticle>
-    <div class="flex flex-wrap justify-center gap-4">
+    <div class="mb-32 flex flex-wrap justify-center gap-4">
       {ALL_STACK_KEYS.map((name) => <Tech name={name} />)}
+    </div>
+    <div class="flex flex-wrap justify-center gap-4">
+      {featuredStackKeys.map((name) => <Tech name={name} />)}
     </div>
   </Section>
 </BaseLayout>
