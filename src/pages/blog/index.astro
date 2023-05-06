@@ -2,15 +2,20 @@
 import { getCollection } from "astro:content";
 import { SITE_DESCRIPTION } from "@constants";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Section from "@layouts/Section.astro";
+import Section from "@components/layout/Section/Section.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---
 
-<BaseLayout title={`Chuang Caleb's Blog`} description={SITE_DESCRIPTION}>
-  <Section>
+<BaseLayout
+  title={`Chuang Caleb's Blog`}
+  description={SITE_DESCRIPTION}
+  gridLayout="lg"
+>
+  <Section asArticle class="mt-4">
+    <h1>Projects</h1>
     <ul class="list-none p-0">
       {
         posts.map((post) => (

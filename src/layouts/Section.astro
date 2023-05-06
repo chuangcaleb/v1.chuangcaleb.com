@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
 
 interface Props extends HTMLAttributes<"section"> {
   contentWidth?: "full" | "prose" | "xl"; // default: max-w-xl
@@ -18,20 +19,19 @@ const {
 ---
 
 <section
-  class:list={[
+  class:list={twMerge(
     "w-full",
-    {
-      // paddingX
-      "px-4": paddingX !== "none",
-      "xlPadded:px-0": paddingX !== "always",
-      // paddingY
-      "py-16": !noPaddingY,
-      // variants
-      "bg-neutral-900 dark:bg-neutral prose-dark": variant === "dark",
-      "bg-secondary prose-secondary": variant === "secondary",
-    },
-    extraClass,
-  ]}
+    // paddingX
+    paddingX !== "none" && "px-4",
+    paddingX !== "always" && "xlPadded:px-0",
+    // paddingY
+    !noPaddingY && "py-16",
+    // variants
+    variant === "dark" && "bg-neutral-900 dark:bg-neutral prose-dark",
+    variant === "secondary" && "bg-secondary prose-secondary",
+
+    extraClass
+  )}
   {...attrs}
 >
   {

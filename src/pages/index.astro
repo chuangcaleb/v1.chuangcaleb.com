@@ -10,7 +10,11 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { Sprite } from "astro-iconify";
 
 const featuredStackKeys = getFilteredStackKeys(
-  (t) => t.isInterested === true || t.isWork === true
+  (t) =>
+    t.isInterested === true ||
+    t.isWork === true ||
+    t.stage === "confident" ||
+    t.stage === "expert"
 );
 ---
 
