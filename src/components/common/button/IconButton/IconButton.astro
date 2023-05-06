@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-iconify";
+import { Sprite } from "astro-iconify";
 import type { HTMLAttributes } from "astro/types";
 import { twMerge } from "tailwind-merge";
 import { Button } from "../BaseButton";
@@ -26,6 +26,6 @@ const {
   {...attrs}
   noDefaultPadding={!hasContent}
 >
-  <Icon name={name} class={iconClass} />
+  <Sprite name={name} class={iconClass} />
   <slot />
 </Button>
