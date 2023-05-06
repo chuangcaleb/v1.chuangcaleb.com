@@ -1,4 +1,4 @@
-import type { RAW_STACK } from "./rawStack";
+import RAW_STACK from "./rawStack";
 
 export type Stage =
   | "researching"
