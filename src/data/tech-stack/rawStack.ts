@@ -2,17 +2,17 @@ import type { Tech } from "./types";
 
 export const RAW_STACK = {
   // Langs
-  Javascript: {
-    // icon: "skill-icons:javascript",
-    icon: "logos:javascript",
+  Typescript: {
+    // icon: "skill-icons:typescript",
+    icon: "logos:typescript-icon",
     stage: "confident",
     isInterested: true,
     isWork: true,
     isFresh: true,
   },
-  Typescript: {
-    // icon: "skill-icons:typescript",
-    icon: "logos:typescript-icon",
+  Javascript: {
+    // icon: "skill-icons:javascript",
+    icon: "logos:javascript",
     stage: "confident",
     isInterested: true,
     isWork: true,
@@ -138,6 +138,7 @@ export const RAW_STACK = {
     isWork: true,
     isFresh: true,
   },
+  // TOols
   Figma: {
     icon: "logos:figma",
     stage: "learning",
@@ -154,7 +155,6 @@ export const RAW_STACK = {
     icon: "skill-icons:latex-light",
     stage: "learning",
   },
-  // Meta
   Obsidian: {
     icon: { name: "simple-icons:obsidian", color: "SlateBlue" },
     stage: "expert",
