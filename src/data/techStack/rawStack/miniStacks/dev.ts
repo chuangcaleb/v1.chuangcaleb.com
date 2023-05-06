@@ -1,4 +1,4 @@
-import type { Tech } from "../../types";
+import type { Tech } from "@data/techStack/types";
 
 export const DEV = {
   VSCode: {

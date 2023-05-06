@@ -1,4 +1,4 @@
-import type { Tech } from "../types";
+import type { Tech } from "@data/techStack/types";
 
 export const TOOLS = {
   Figma: {
@@ -23,7 +23,7 @@ export const TOOLS = {
     isInterested: true,
     isFresh: true,
   },
-  Markdown: {
+  "(Advanced) Markdown": {
     icon: { name: "mdi:language-markdown", color: "dodgerblue" },
     stage: "expert",
     isInterested: true,
