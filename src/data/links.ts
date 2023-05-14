@@ -19,7 +19,7 @@ const LINKS = {
     icon: "mdi:github",
   },
   RESUME: {
-    label: "CV/Résumé",
+    label: "CV / Résumé",
     href: "https://docs.google.com/document/d/1qohsYe0w-Mq5yqIdNaHPuOHvs2lYvnGySULgR2Baqwk/edit?usp=sharing",
     ariaLabel: "CV/Résumé of Chuang Caleb",
     icon: "mdi:card-account-details-star",

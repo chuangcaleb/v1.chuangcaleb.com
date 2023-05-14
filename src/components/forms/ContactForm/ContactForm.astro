@@ -9,7 +9,7 @@ interface Props extends HTMLAttributes<"div"> {}
 const { class: extraClass } = Astro.props;
 ---
 
-<form class={twMerge("grid gap-4 rounded-lg p-4 md:p-6", extraClass)}>
+<form class={twMerge("grid gap-4 rounded-lg my-16", extraClass)}>
   <h2>
     <Sprite
       name="mdi:connection"
@@ -18,11 +18,11 @@ const { class: extraClass } = Astro.props;
   </h2>
   <label>
     Email:
-    <input name="email" class="w-full rounded-lg sm:w-[30ch]" />
+    <input name="email" class="mt-2 w-full rounded-lg sm:w-[30ch]" />
   </label>
   <label>
     Message:
-    <textarea name="message" class="w-full rounded-lg" rows={4}></textarea>
+    <textarea name="message" class="mt-2 w-full rounded-lg" rows={4}></textarea>
   </label>
   <IconButton
     name="mdi:send"

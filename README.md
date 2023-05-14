@@ -30,3 +30,5 @@ Any static assets, like images, can be placed in the `public/` directory.
 ## 👀 Want to learn more?
 
 Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+- random tilt of tech cards
