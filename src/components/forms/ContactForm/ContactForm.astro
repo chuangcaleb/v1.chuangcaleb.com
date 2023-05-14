@@ -1,0 +1,36 @@
+---
+import { IconButton } from "@components/common/button/IconButton";
+import { Sprite } from "astro-iconify";
+import type { HTMLAttributes } from "astro/types";
+import { twMerge } from "tailwind-merge";
+
+interface Props extends HTMLAttributes<"div"> {}
+
+const { class: extraClass } = Astro.props;
+---
+
+<form class={twMerge("grid gap-4 rounded-lg p-4 md:p-6", extraClass)}>
+  <h2>
+    <Sprite
+      name="mdi:connection"
+      class="mr-2 inline aspect-square w-8"
+    />Connect with me!
+  </h2>
+  <label>
+    Email:
+    <input name="email" class="w-full rounded-lg sm:w-[30ch]" />
+  </label>
+  <label>
+    Message:
+    <textarea name="message" class="w-full rounded-lg" rows={4}></textarea>
+  </label>
+  <IconButton
+    name="mdi:send"
+    iconClass="h-6 aspect-square"
+    hasContent
+    position="right"
+    class="max-w-fit"
+  >
+    Submit Message
+  </IconButton>
+</form>

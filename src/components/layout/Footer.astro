@@ -1,7 +1,11 @@
 ---
+import { ContactForm } from "@components/forms/ContactForm";
 import LINKS from "@data/links";
 import { Sprite } from "astro-iconify";
+import type { HTMLAttributes } from "astro/types";
 import { twMerge } from "tailwind-merge";
+
+interface Props extends HTMLAttributes<"div"> {}
 
 const today = new Date();
 
@@ -14,6 +18,8 @@ const { class: extraClass } = Astro.props;
     extraClass
   )}
 >
+  <ContactForm class="col-span-full" />
+  <hr class="col-span-full border-cc-white dark:border-cc-black" />
   <div class="col-span-2 grid gap-y-1">
     <h1>Chuang <br class="max-sm:hidden" />Caleb</h1>
     <a

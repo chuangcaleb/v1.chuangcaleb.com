@@ -8,6 +8,7 @@ interface Props extends HTMLAttributes<"button"> {
   name: string;
   iconClass: string | null | undefined;
   hasContent?: boolean;
+  position: "left" | "right";
 }
 
 const {
@@ -17,6 +18,7 @@ const {
   hasContent = false,
   // eslint-disable-next-line no-unused-vars
   slot,
+  position = "left",
   ...attrs
 } = Astro.props;
 ---
@@ -26,6 +28,7 @@ const {
   {...attrs}
   noDefaultPadding={!hasContent}
 >
+  {position === "right" && <slot />}
   <Sprite name={name} class={iconClass} />
-  <slot />
+  {position === "left" && <slot />}
 </Button>

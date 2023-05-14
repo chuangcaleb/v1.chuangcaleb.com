@@ -43,4 +43,11 @@
   article ul {
     @apply my-6 ml-6 list-disc [&>li]:mt-2;
   }
+  label > * {
+    display: block;
+  }
+  input,
+  textarea {
+    padding: 0.5rem;
+  }
 }
