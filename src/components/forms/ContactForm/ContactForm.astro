@@ -3,13 +3,42 @@ import { IconButton } from "@components/common/button/IconButton";
 import { Sprite } from "astro-iconify";
 import type { HTMLAttributes } from "astro/types";
 import { twMerge } from "tailwind-merge";
+import axios from "axios";
 
-interface Props extends HTMLAttributes<"div"> {}
+interface Props extends HTMLAttributes<"form"> {}
 
 const { class: extraClass } = Astro.props;
+
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData();
+    const requestBody = {
+      email: data.get("email"),
+      message: data.get("message"),
+    };
+    await axios({
+      method: "POST",
+      url: import.meta.env.PIPEDREAM_URL,
+      data: requestBody,
+    });
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+
+function handleSubmit(event: { preventDefault: () => void }) {
+  event.preventDefault();
+}
 ---
 
-<form class={twMerge("grid gap-4 rounded-lg my-16", extraClass)}>
+<form
+  method="POST"
+  action=""
+  class={twMerge("grid gap-4 rounded-lg my-16", extraClass)}
+  onsubmit="handleSubmit(event)"
+>
   <h2>
     <Sprite
       name="mdi:connection"
@@ -18,11 +47,20 @@ const { class: extraClass } = Astro.props;
   </h2>
   <label>
     Email:
-    <input name="email" class="mt-2 w-full rounded-lg sm:w-[30ch]" />
+    <input
+      name="email"
+      type="email"
+      required
+      class="mt-2 w-full rounded-lg sm:w-[30ch]"
+    />
   </label>
   <label>
     Message:
-    <textarea name="message" class="mt-2 w-full rounded-lg" rows={4}></textarea>
+    <textarea name="message" required class="mt-2 w-full rounded-lg" rows={4}
+      >{
+        "Introduce your name and your objective here, along with any other platforms for further communication!"
+      }</textarea
+    >
   </label>
   <IconButton
     name="mdi:send"
@@ -30,6 +68,7 @@ const { class: extraClass } = Astro.props;
     hasContent
     position="right"
     class="max-w-fit"
+    type="submit"
   >
     Submit Message
   </IconButton>
