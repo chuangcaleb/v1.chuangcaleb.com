@@ -1,11 +1,9 @@
 ---
 import { Tech } from "@components/common/Tech";
-import { Button } from "@components/common/button/BaseButton";
-import { IconButton } from "@components/common/button/IconButton";
 import GridLayout from "@components/layout/GridLayout.astro";
 import { Section } from "@components/layout/Section";
 import LINKS from "@data/links";
-import { ALL_STACK_KEYS, getFilteredStackKeys } from "@data/techStack";
+import { getFilteredStackKeys } from "@data/techStack";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Sprite } from "astro-iconify";
 
@@ -212,7 +210,7 @@ const featuredStackKeys = getFilteredStackKeys(
     <p>
       <a href="https://github.com/chuangcaleb/points">[source]</a>
     </p>
-    <p>
+    <!-- <p>
       <a
         href={LINKS.RESUME.href}
         class="mt-8 inline-flex"
@@ -229,14 +227,21 @@ const featuredStackKeys = getFilteredStackKeys(
     </p>
     <p>
       <Button class="flex gap-x-2">My Portfolio Document</Button>
-    </p>
+    </p> -->
   </Section>
   <Section asArticle>
-    <div class="mb-32 flex flex-wrap justify-center gap-4">
+    <!-- <div class="mb-32 flex flex-wrap justify-center gap-4">
       {ALL_STACK_KEYS.map((name) => <Tech name={name} />)}
-    </div>
-    <div class="flex flex-wrap justify-center gap-4">
-      {featuredStackKeys.map((name) => <Tech name={name} />)}
-    </div>
+    </div> -->
+    <h2>My Tech Stack</h2>
+    <ul class="ml-0 flex list-none flex-wrap justify-center gap-4">
+      {
+        featuredStackKeys.map((name) => (
+          <li>
+            <Tech name={name} />
+          </li>
+        ))
+      }
+    </ul>
   </Section>
 </BaseLayout>
