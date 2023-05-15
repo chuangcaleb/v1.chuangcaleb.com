@@ -16,6 +16,7 @@ if (Astro.request.method === "POST") {
       email: data.get("email"),
       message: data.get("message"),
     };
+    // TODO: throw error on maximum length
     await axios({
       method: "POST",
       url: import.meta.env.PIPEDREAM_URL,
@@ -36,27 +37,31 @@ function handleSubmit(event: { preventDefault: () => void }) {
 <form
   method="POST"
   action=""
-  class={twMerge("grid gap-4 rounded-lg my-16", extraClass)}
+  class={twMerge("grid gap-8 rounded-lg mt-8 mb-16", extraClass)}
   onsubmit="handleSubmit(event)"
 >
   <h2>
     <Sprite
       name="mdi:connection"
-      class="mr-2 inline aspect-square w-8"
+      class="mr-2 inline aspect-square w-12 pb-2"
     />Connect with me!
   </h2>
   <label>
-    Email:
+    <Sprite name="mdi:email-outline" class="inline aspect-square w-6 pb-1" />
+    Email
     <input
       name="email"
       type="email"
       required
-      class="mt-2 w-full rounded-lg sm:w-[30ch]"
+      maxlength="254"
+      class="mt-2 sm:w-[30ch]"
     />
   </label>
   <label>
-    Message:
-    <textarea name="message" required class="mt-2 w-full rounded-lg" rows={4}
+    <Sprite name="mdi:message-text-outline" class="inline aspect-square w-6" />
+    Message
+    <small class="inline italic">(max 300 characters)</small>
+    <textarea name="message" required class="mt-2" maxlength="3000" rows={4}
       >{
         "Introduce your name and your objective here, along with any other platforms for further communication!"
       }</textarea

@@ -46,8 +46,9 @@
   label > * {
     display: block;
   }
+
   input,
   textarea {
-    padding: 0.5rem;
+    @apply w-full rounded-lg border-cc-space p-2 text-cc-black dark:border;
   }
 }

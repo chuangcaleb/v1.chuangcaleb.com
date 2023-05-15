@@ -27,10 +27,9 @@ const { class: extraClass } = Astro.props;
       class="whitespace-nowrap font-light"
       aria-label={LINKS.EMAIL.ariaLabel}
     >
-      <Sprite
-        name={LINKS.EMAIL.icon}
-        class="mb-auto mr-1 inline aspect-square w-4"
-      />{LINKS.EMAIL.href}
+      <Sprite name={LINKS.EMAIL.icon} class="mr-1 inline aspect-square h-5" />{
+        LINKS.EMAIL.href
+      }
     </a>
   </div>
   <!-- <div>
@@ -49,8 +48,10 @@ const { class: extraClass } = Astro.props;
   </div> -->
 
   <div>
-    <h2 class="mb-2 text-2xl">Links</h2>
-    <ul class="[&>li]:pb-2">
+    <h2 class="mb-2 text-2xl">
+      <Sprite name="mdi:link" class="mb-1 mr-1 inline aspect-square w-8" />Links
+    </h2>
+    <ul class="ml-4 [&>li]:pb-2">
       <li>
         <a href={LINKS.GITHUB.href} aria-label={LINKS.GITHUB.ariaLabel}>
           <Sprite
