@@ -1,5 +1,6 @@
 ---
 import { Tech } from "@components/common/Tech";
+import { IconButton } from "@components/common/button/IconButton";
 import GridLayout from "@components/layout/GridLayout.astro";
 import { Section } from "@components/layout/Section";
 import LINKS from "@data/links";
@@ -51,18 +52,18 @@ const featuredStackKeys = getFilteredStackKeys(
               </span>
             </p>
           </div>
-          <div class="grid gap-y-4">
-            <div
-              class="grid auto-rows-fr grid-cols-3 gap-4 sm:grid-flow-col sm:grid-cols-none"
-            >
-              <!-- <Button class="col-span-full flex gap-x-2 whitespace-nowrap">
-                <Icon name="mdi:connection" class="w-6" />
+          <div class="flex flex-wrap justify-around gap-4">
+            <a href="#contact-form" class="no-underline">
+              <IconButton
+                name="mdi:connection"
+                iconClass="h-6 aspect-square"
+                hasContent
+                class="max-w-fit"
+              >
                 Connect with me!
-              </Button> -->
-              <!-- <a
-                href="https://www.linkedin.com/in/chuangcaleb/"
-                class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
-              > -->
+              </IconButton>
+            </a>
+            <div class="flex flex-wrap gap-x-4">
               <a
                 href={LINKS.LINKEDIN.href}
                 class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"

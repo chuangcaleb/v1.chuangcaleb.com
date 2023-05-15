@@ -1,14 +1,13 @@
 ---
 import { Sprite } from "astro-iconify";
-import type { HTMLAttributes } from "astro/types";
 import { twMerge } from "tailwind-merge";
-import { Button } from "../BaseButton";
+import { Button, ButtonProps } from "../BaseButton";
 
-interface Props extends HTMLAttributes<"button"> {
+interface Props extends ButtonProps {
   name: string;
   iconClass: string | null | undefined;
   hasContent?: boolean;
-  position: "left" | "right";
+  position?: "left" | "right";
 }
 
 const {
@@ -24,7 +23,7 @@ const {
 ---
 
 <Button
-  class={twMerge(hasContent && "flex gap-x-2", extraClass)}
+  class={twMerge(hasContent && "flex gap-x-2 whitespace-nowrap", extraClass)}
   {...attrs}
   noDefaultPadding={!hasContent}
 >

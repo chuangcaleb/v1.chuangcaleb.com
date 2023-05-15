@@ -2,20 +2,28 @@
 import type { HTMLAttributes } from "astro/types";
 import { twMerge } from "tailwind-merge";
 
-interface Props extends HTMLAttributes<"button"> {
+export interface Props extends HTMLAttributes<"button"> {
   noDefaultPadding?: boolean;
   fill?: "solid" | "outline" | "none";
   // variant?: "accent" | "neutral";
+  hoverBorder?: boolean;
 }
 
-const { noDefaultPadding = false, class: extraClass, ...attrs } = Astro.props;
+const {
+  noDefaultPadding = false,
+  hoverBorder = false,
+  class: extraClass,
+  ...attrs
+} = Astro.props;
 ---
 
 <button
   class={twMerge(
     !noDefaultPadding && "py-3 px-4",
-    // "font-semibold rounded-lg bg-cc-blue text-cc-white dark:hover:bg-cc-white dark:hover:text-cc-blue hover:text-cc-white hover:bg-cc-space justify-center items-center select-none dark:hover:border",
-    "font-semibold rounded-lg bg-cc-blue text-cc-white justify-center items-center select-none hover:opacity-70",
+    "font-semibold rounded-lg bg-cc-blue text-cc-white dark:hover:bg-cc-white dark:hover:text-cc-blue hover:text-cc-white hover:bg-cc-space justify-center items-center select-none",
+    hoverBorder &&
+      "border border-transparent hover:border-cc-white dark:hover:border-cc-space",
+    // "font-semibold rounded-lg bg-cc-blue text-cc-white justify-center items-center select-none hover:opacity-70",
     extraClass
   )}
   {...attrs}
