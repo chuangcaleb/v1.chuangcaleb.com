@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
 import compress from "astro-compress";
 import compressor from "astro-compressor";
-import purgecss from "astro-purgecss";
+// import purgecss from "astro-purgecss";
 import { defineConfig } from "astro/config";
 
 // https://astro.build/config
@@ -21,15 +21,14 @@ export default defineConfig({
     ...(import.meta.env.PROD
       ? [
           sitemap(),
-          purgecss({
-            keyframes: true,
-            variables: true,
-            rejected: true,
-          }),
           compress({
             logger: 1,
           }),
           compressor(),
+          // purgecss({
+          //   keyframes: true,
+          //   variables: true,
+          // }),
         ]
       : []),
   ],
