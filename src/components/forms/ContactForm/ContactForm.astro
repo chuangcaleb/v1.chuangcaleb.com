@@ -7,45 +7,12 @@ import { twMerge } from "tailwind-merge";
 interface Props extends HTMLAttributes<"form"> {}
 
 const { class: extraClass } = Astro.props;
-
-if (Astro.request.method === "POST") {
-  try {
-    const data = await Astro.request.formData();
-    const requestBody = {
-      email: data.get("email"),
-      message: data.get("message"),
-    };
-    // TODO: throw error on default message
-    await fetch(import.meta.env.PIPEDREAM_URL, {
-      method: "POST",
-      body: JSON.stringify(requestBody),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    // await axios({
-    //   method: "POST",
-    //   url: import.meta.env.PIPEDREAM_URL,
-    //   data: requestBody,
-    // });
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error(error.message);
-    }
-  }
-}
-
-function handleSubmit(event: { preventDefault: () => void }) {
-  event.preventDefault();
-}
 ---
 
 <form
   id="contact-form"
   method="POST"
   class={twMerge("grid gap-8 rounded-lg pt-8 pb-16", extraClass)}
-  onsubmit="handleSubmit(event)"
 >
   <h2>
     <Sprite
@@ -68,7 +35,7 @@ function handleSubmit(event: { preventDefault: () => void }) {
   <label>
     <Sprite name="mdi:message-text-outline" class="inline aspect-square w-6" />
     Message
-    <small class="inline italic">(max 300 characters)</small>
+    <small class="inline italic">(max 3000 characters)</small>
     <textarea name="message" required class="mt-2" maxlength="3000" rows={4}
       >{
         "Introduce your name and your objective here, along with any other platforms for further communication!"
@@ -87,3 +54,22 @@ function handleSubmit(event: { preventDefault: () => void }) {
     Send it off to me!
   </IconButton>
 </form>
+
+<script>
+  // eslint:disable-next-line  @typescript-eslint/no-explicit-any
+  async function submit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const response = await fetch("/api/submit", {
+      method: "POST",
+      body: formData,
+    });
+    // const data = await response.json();
+    // if (data.message) {
+    //   setResponseMessage(data.message);
+    // }
+  }
+  const form = document.getElementById("contact-form");
+
+  if (form) form.addEventListener("submit", submit, true);
+</script>
