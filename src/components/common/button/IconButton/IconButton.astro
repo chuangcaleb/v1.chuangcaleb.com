@@ -28,6 +28,6 @@ const {
   noDefaultPadding={!hasContent}
 >
   {position === "right" && <slot />}
-  <Sprite name={name} class={iconClass} />
+  <Sprite name={name} class={twMerge("inline", iconClass)} />
   {position === "left" && <slot />}
 </Button>
