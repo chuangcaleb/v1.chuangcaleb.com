@@ -16,7 +16,7 @@ if (Astro.request.method === "POST") {
       email: data.get("email"),
       message: data.get("message"),
     };
-    // TODO: throw error on maximum length
+    // TODO: throw error on default message
     await axios({
       method: "POST",
       url: import.meta.env.PIPEDREAM_URL,
@@ -37,7 +37,6 @@ function handleSubmit(event: { preventDefault: () => void }) {
 <form
   id="contact-form"
   method="POST"
-  action=""
   class={twMerge("grid gap-8 rounded-lg mt-8 mb-16", extraClass)}
   onsubmit="handleSubmit(event)"
 >
@@ -49,7 +48,7 @@ function handleSubmit(event: { preventDefault: () => void }) {
   </h2>
   <label>
     <Sprite name="mdi:email-outline" class="inline aspect-square w-6 pb-1" />
-    Email
+    Your Email
     <input
       name="email"
       type="email"
@@ -77,6 +76,6 @@ function handleSubmit(event: { preventDefault: () => void }) {
     type="submit"
     hoverBorder
   >
-    Submit Message
+    Send it off to me!
   </IconButton>
 </form>
