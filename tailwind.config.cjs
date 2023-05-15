@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       colors: {
         cc: {
-          space: "hsl(var(--cc-space) / <alpha-value>)",
+          night: "hsl(var(--cc-night) / <alpha-value>)",
           white: "hsl(var(--cc-white) / <alpha-value>)",
           blue: "hsl(var(--cc-blue) / <alpha-value>)",
           black: "hsl(var(--cc-black) / <alpha-value>)",

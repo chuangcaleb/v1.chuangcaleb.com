@@ -1,10 +1,10 @@
 :root {
-  --cc-space: 228.57deg 20% 30%;
+  --cc-night: 228.57deg 20% 30%;
   --cc-white: 0deg 0% 98%;
   --cc-blue: 221.21deg 83% 60%;
   --cc-black: 228.57deg 20% 12%;
   /* --cc-black: 229.41deg 21% 16%; */
-  /* --cc-space: #2b2f40;
+  /* --cc-night: #2b2f40;
   --cc-white: #f0f0f0;
   --cc-blue: #2563eb;
   --cc-black: #202331; */
@@ -24,6 +24,6 @@
   :root {
     --cc-white: 0deg 0% 94%;
     --cc-blue: 216.96 70% 60%;
-    --cc-space: 228.57deg 20% 21%;
+    --cc-night: 228.57deg 20% 21%;
   }
 }

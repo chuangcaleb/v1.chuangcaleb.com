@@ -5,19 +5,19 @@
   h2,
   h3,
   h4 {
-    @apply scroll-m-20 font-bold first:mt-0;
+    @apply scroll-m-20 first:mt-0;
   }
   h1 {
-    @apply text-4xl lg:text-5xl;
+    @apply text-4xl font-black lg:text-5xl;
   }
   h2 {
-    @apply mt-10 text-3xl lg:text-4xl;
+    @apply mt-10 text-3xl font-extrabold lg:text-4xl;
   }
   h3 {
-    @apply mt-8 text-2xl lg:text-3xl;
+    @apply mt-8 text-2xl font-bold lg:text-3xl;
   }
   h4 {
-    @apply mt-8 text-xl lg:text-2xl;
+    @apply mt-8 text-xl font-semibold lg:text-2xl;
   }
 
   /* a:not(:has(button)) { */
@@ -33,7 +33,7 @@
 
   code {
     @apply relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm;
-    @apply bg-cc-white text-cc-space;
+    @apply text-cc-night bg-cc-white;
     @apply dark:bg-cc-black dark:text-white;
   }
 
@@ -49,6 +49,6 @@
 
   input,
   textarea {
-    @apply w-full rounded-lg border-cc-space p-2 text-cc-black dark:border;
+    @apply border-cc-night w-full rounded-lg p-2 text-cc-black dark:border;
   }
 }
