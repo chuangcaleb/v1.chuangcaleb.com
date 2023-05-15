@@ -32,6 +32,11 @@ const icons = [
 ]
   .filter(Boolean)
   .join("");
+
+// We do this because emoji width is not constant across browsers
+// const invisibleIcons = "😀".repeat(
+//   3 - [isInterested, isWork, isFresh].filter(Boolean).length
+// );
 ---
 
 <div
@@ -44,7 +49,10 @@ const icons = [
     class="mx-3 mb-1 mt-2 aspect-square"
     style={{ color: iconColor }}
   />
-  <span class="block w-[11ch] p-1 text-center text-sm md:tracking-widest">
+  <div
+    class="w-20 whitespace-nowrap px-2 py-1 text-center text-sm tracking-widest"
+  >
     {icons}
-  </span>
+    <!-- <span class="text-transparent">{invisibleIcons}</span> -->
+  </div>
 </div>
