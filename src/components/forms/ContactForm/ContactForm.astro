@@ -3,7 +3,6 @@ import { IconButton } from "@components/common/button/IconButton";
 import { Sprite } from "astro-iconify";
 import type { HTMLAttributes } from "astro/types";
 import { twMerge } from "tailwind-merge";
-import axios from "axios";
 
 interface Props extends HTMLAttributes<"form"> {}
 
@@ -17,11 +16,19 @@ if (Astro.request.method === "POST") {
       message: data.get("message"),
     };
     // TODO: throw error on default message
-    await axios({
+    await fetch(import.meta.env.PIPEDREAM_URL, {
       method: "POST",
-      url: import.meta.env.PIPEDREAM_URL,
-      data: requestBody,
+      body: JSON.stringify(requestBody),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
+
+    // await axios({
+    //   method: "POST",
+    //   url: import.meta.env.PIPEDREAM_URL,
+    //   data: requestBody,
+    // });
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message);
@@ -37,7 +44,7 @@ function handleSubmit(event: { preventDefault: () => void }) {
 <form
   id="contact-form"
   method="POST"
-  class={twMerge("grid gap-8 rounded-lg mt-8 mb-16", extraClass)}
+  class={twMerge("grid gap-8 rounded-lg pt-8 pb-16", extraClass)}
   onsubmit="handleSubmit(event)"
 >
   <h2>
@@ -52,6 +59,7 @@ function handleSubmit(event: { preventDefault: () => void }) {
     <input
       name="email"
       type="email"
+      autocomplete="email"
       required
       maxlength="254"
       class="mt-2 sm:w-[30ch]"
