@@ -36,9 +36,14 @@ const { class: extraClass } = Astro.props;
     <Sprite name="mdi:message-text-outline" class="inline aspect-square w-6" />
     Message
     <small class="inline italic">(max 3000 characters)</small>
-    <textarea name="message" required class="mt-2" maxlength="3000" rows={4}
+    <textarea
+      name="message"
+      required
+      class="mt-2 h-max"
+      maxlength="3000"
+      rows={4}
       >{
-        "Introduce your name and your objective here, along with any other platforms for further communication!"
+        "Introduce your *name* and your *objective* here, along with your preferred platforms for further conversations!"
       }</textarea
     >
   </label>
@@ -56,18 +61,13 @@ const { class: extraClass } = Astro.props;
 </form>
 
 <script>
-  // eslint:disable-next-line  @typescript-eslint/no-explicit-any
   async function submit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const response = await fetch("/api/submit", {
+    await fetch("/api/submit", {
       method: "POST",
       body: formData,
     });
-    // const data = await response.json();
-    // if (data.message) {
-    //   setResponseMessage(data.message);
-    // }
   }
   const form = document.getElementById("contact-form");
 

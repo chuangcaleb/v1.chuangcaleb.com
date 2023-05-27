@@ -24,25 +24,24 @@ export const post: APIRoute = async ({ request }) => {
 
   // Execution
   try {
-    // const response = await axios.post(
-    //   import.meta.env.PIPEDREAM_URL,
-    //   requestBody,
-    //   { timeout: 5000 }
-    // );
-  } catch (error) {
+    await axios.post(
+      import.meta.env.PIPEDREAM_URL,
+      requestBody
+      // { timeout: 5000 }
+      // await axios.get("https://pokeapi.co/api/v2/pokemon/ditto");
+    );
+
+    // Return
     return new Response(
       JSON.stringify({
-        message: (error as AxiosError).message,
+        message: "Success!",
       }),
-      { status: Number((error as AxiosError).code) || 520 }
+      { status: 200 }
+    );
+  } catch (error) {
+    return new Response(
+      JSON.stringify({ message: (error as AxiosError).message }),
+      { status: (error as AxiosError).response?.status ?? 520 }
     );
   }
-
-  // Return
-  return new Response(
-    JSON.stringify({
-      message: "Success!",
-    }),
-    { status: 200 }
-  );
 };

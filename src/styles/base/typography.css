@@ -33,7 +33,7 @@
 
   code {
     @apply relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm;
-    @apply text-cc-night bg-cc-white;
+    @apply bg-cc-white text-cc-night;
     @apply dark:bg-cc-black dark:text-white;
   }
 
@@ -49,6 +49,6 @@
 
   input,
   textarea {
-    @apply border-cc-night w-full rounded-lg p-2 text-cc-black dark:border;
+    @apply w-full rounded-lg border-cc-night p-2 text-cc-night dark:border;
   }
 }
