@@ -1,6 +1,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth;
   }
 
   /* Scroll */
@@ -61,8 +62,4 @@
     --tw-prose-th-borders: hsla(var(--bc) / 0.5);
     --tw-prose-td-borders: hsla(var(--bc) / 0.2);
   } */
-  code::before,
-  code::after {
-    content: "";
-  }
 }
