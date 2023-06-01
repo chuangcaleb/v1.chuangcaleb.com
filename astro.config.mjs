@@ -1,7 +1,6 @@
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel/serverless";
 import compress from "astro-compress";
 import compressor from "astro-compressor";
 // import purgecss from "astro-purgecss";
@@ -9,8 +8,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
-  site: "https://example.com",
+  site: "https://chuangcaleb.vercel.app",
   integrations: [
     mdx(),
     tailwind({
@@ -32,5 +30,4 @@ export default defineConfig({
         ]
       : []),
   ],
-  adapter: vercel(),
 });
