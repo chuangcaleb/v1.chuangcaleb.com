@@ -20,33 +20,17 @@ const { class: extraClass } = Astro.props;
 >
   <ContactForm class="col-span-full" />
   <hr class="col-span-full border-cc-white dark:border-cc-black" />
-  <div class="col-span-2 grid gap-y-2">
+  <div class="col-span-2 space-y-4">
     <h1>Chuang <br class="max-md:hidden" />Caleb</h1>
-    <a
-      href={"mailto:" + LINKS.EMAIL.href}
-      class="whitespace-nowrap font-light"
-      aria-label={LINKS.EMAIL.ariaLabel}
+    <button
+      class="email-copy-button whitespace-nowrap underline decoration-inherit underline-offset-2 duration-100 hover:underline-offset-4"
+      aria-label={"Copy the " + LINKS.EMAIL.ariaLabel + " to the clipboard"}
     >
       <Sprite name={LINKS.EMAIL.icon} class="mr-1 inline aspect-square h-5" />{
         LINKS.EMAIL.href
       }
-    </a>
+    </button>
   </div>
-  <!-- <div>
-    <h2 class="mb-2 text-2xl">nav</h2>
-    <ul class="[&>li]:pb-2">
-      <li>
-        <a href="/">GitHub</a>
-      </li>
-      <li>
-        <a href="/">GitHub</a>
-      </li>
-      <li>
-        <a href="/">GitHub</a>
-      </li>
-    </ul>
-  </div> -->
-
   <div>
     <h2 class="mb-2 text-2xl">
       <Sprite name="mdi:link" class="mb-1 mr-1 inline aspect-square w-8" />Links
@@ -83,3 +67,29 @@ const { class: extraClass } = Astro.props;
     &copy; {today.getFullYear()} Chuang Caleb. All rights reserved.
   </div>
 </footer>
+
+<script>
+  import LINKS from "@data/links";
+
+  const emailCopyButton = document.querySelector(".email-copy-button");
+  if (emailCopyButton) {
+    emailCopyButton.addEventListener("click", () =>
+      navigator.clipboard.writeText(LINKS.EMAIL.href)
+    );
+  }
+</script>
+
+<style>
+  .email-copy-button:focus-visible:after,
+  .email-copy-button:hover:after {
+    content: " Click to Copy";
+    display: inline-block;
+    font-size: small;
+    margin-top: auto;
+    margin-left: 0.8em;
+    opacity: 0.5;
+  }
+  .email-copy-button:active::after {
+    content: " Copied!";
+  }
+</style>
