@@ -58,18 +58,68 @@ const { class: extraClass } = Astro.props;
   >
     Send it off to me!
   </IconButton>
+  <small>
+    This site is protected by reCAPTCHA, and the Google
+    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+    <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+  </small>
 </form>
 
 <script>
+  // @ts-nocheck
+
+  // https://www.youtube.com/watch?v=TCJ-YrcLOTM
+  // https://github.com/PipedreamHQ/nextjs-examples/blob/main/examples/contact-form/pages/components/ContactForm.js
   async function submit(event) {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    await fetch("/api/submit", {
-      method: "POST",
-      body: formData,
-    });
+
+    if (typeof grecaptcha === "undefined") {
+      grecaptcha = {};
+    }
+
+    grecaptcha.ready = function (cb) {
+      if (typeof grecaptcha === "undefined") {
+        const c = "___grecaptcha_cfg";
+        window[c] = window[c] || {};
+        (window[c]["fns"] = window[c]["fns"] || []).push(cb);
+      } else {
+        cb();
+      }
+    };
+
+    try {
+      grecaptcha.ready(async function () {
+        const token = await grecaptcha.execute(
+          import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY,
+          { action: "submit" }
+        );
+
+        // Build form body
+        const formData = new FormData(event.target);
+        const requestBody = {
+          email: formData.get("email"),
+          message: formData.get("message"),
+          token,
+        };
+
+        // Fetch
+        await fetch(import.meta.env.PUBLIC_PIPEDREAM_URL, {
+          method: "POST",
+          body: JSON.stringify(requestBody),
+        });
+      });
+      console.log("success!");
+    } catch (e) {
+      console.error(e);
+    }
   }
   const form = document.getElementById("contact-form");
 
   if (form) form.addEventListener("submit", submit, true);
 </script>
+
+<style is:global>
+  .grecaptcha-badge {
+    visibility: hidden;
+  }
+</style>

@@ -16,6 +16,9 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^3.4.1
     version: 3.4.1(astro@2.5.6)(react@18.2.0)
+  '@types/grecaptcha':
+    specifier: ^3.0.4
+    version: 3.0.4
   astro:
     specifier: ^2.5.6
     version: 2.5.6
@@ -1025,6 +1028,10 @@ packages:
 
   /@types/estree@1.0.1:
     resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
+    dev: false
+
+  /@types/grecaptcha@3.0.4:
+    resolution: {integrity: sha512-7l1Y8DTGXkx/r4pwU1nMVAR+yD/QC+MCHKXAyEX/7JZhwcN1IED09aZ9vCjjkcGdhSQiu/eJqcXInpl6eEEEwg==}
     dev: false
 
   /@types/hast@2.3.4:

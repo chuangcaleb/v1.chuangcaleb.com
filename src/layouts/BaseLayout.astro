@@ -29,23 +29,25 @@ const {
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body
-    class="grid min-h-screen gap-y-20 text-cc-black dark:bg-cc-night dark:text-cc-white"
-  >
-    <SpriteProviderWrapper hasWrapper>
-      <GridLayout
-        gridLayout={gridLayout}
-        class={twMerge("pb-10", extraClass)}
-        asMain
-      >
-        <slot />
-      </GridLayout>
-      <GridLayout
-        gridLayout="lg"
-        class="bg-cc-night text-cc-white dark:bg-cc-white dark:text-cc-black"
-      >
-        <Footer class="[grid-column:2]" />
-      </GridLayout>
-    </SpriteProviderWrapper>
+  <body>
+    <div
+      class="grid min-h-screen gap-y-20 text-cc-black dark:bg-cc-night dark:text-cc-white"
+    >
+      <SpriteProviderWrapper hasWrapper>
+        <GridLayout
+          gridLayout={gridLayout}
+          class={twMerge("pb-10", extraClass)}
+          asMain
+        >
+          <slot />
+        </GridLayout>
+        <GridLayout
+          gridLayout="lg"
+          class="bg-cc-night text-cc-white dark:bg-cc-white dark:text-cc-black"
+        >
+          <Footer class="[grid-column:2]" />
+        </GridLayout>
+      </SpriteProviderWrapper>
+    </div>
   </body>
 </html>

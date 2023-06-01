@@ -42,3 +42,12 @@ const { title, description } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <!-- <meta property="twitter:image" content={new URL(image, Astro.url)} /> -->
+
+<!-- reCaptcha to protect contact form  -->
+<script
+  src={"https://www.google.com/recaptcha/api.js?render=" +
+    import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY}
+  async
+  defer
+  is:inline
+></script>
