@@ -1,7 +1,6 @@
 ---
 import { Tech } from "@components/common/Tech";
 import { IconButton } from "@components/common/button/IconButton";
-import GridLayout from "@components/layout/GridLayout.astro";
 import { Section } from "@components/layout/Section";
 import LINKS from "@data/links";
 import { getFilteredStackKeys } from "@data/techStack";
@@ -20,101 +19,80 @@ const featuredStackKeys = getFilteredStackKeys(
 ---
 
 <BaseLayout gridLayout="lg">
-  <!-- <Section colSpan="full" class="" noPaddingY>
-    <nav class="flex justify-between py-2">
-      <h1 class="text-2xl">chuangcaleb</h1>
-      <ul class:list={["flex gap-6 my-auto"]}>
-        <HeaderLink href="/blog">blog</HeaderLink>
-        <HeaderLink href="/lore">lore</HeaderLink>
-      </ul>
-    </nav>
-  </Section> -->
-  <GridLayout isNestedGrid class="xl:gap-x-16">
-    <Section class="grid py-16">
-      <div class="my-auto text-center [grid-area:1/1]">
-        <div
-          class="grid justify-items-center gap-10 py-4 lg:justify-items-start lg:text-left"
-        >
-          <div class="grid gap-y-6">
-            <h1
-              class="text-5xl font-extrabold sm:text-6xl sm:tracking-wide md:text-7xl"
+  <Section class="flex flex-col gap-8 py-16 lg:flex-row">
+    <div class="my-auto text-center">
+      <div
+        class="grid justify-items-center gap-10 py-4 lg:justify-items-start lg:text-left"
+      >
+        <div class="grid gap-y-6">
+          <h1
+            class="text-5xl font-extrabold sm:text-6xl sm:tracking-wide md:text-7xl"
+          >
+            Chuang Caleb
+          </h1>
+          <p class="mx-auto max-w-lg text-2xl md:text-3xl lg:mx-0 lg:max-w-xl">
+            <strong>Software Developer</strong> based in <strong
+              >KL, Malaysia</strong
+            >—specializing in <strong>Front-End Web</strong>.
+            <span class="font-extralight">
+              Designing and creating experiences by being <em>collaborative</em
+              >, <em>calculating</em>, and <em>clever</em>.
+            </span>
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-around gap-4">
+          <a href="#contact-form" class="no-underline">
+            <IconButton
+              name="mdi:connection"
+              iconClass="h-6 aspect-square"
+              hasContent
+              class="max-w-fit"
             >
-              Chuang Caleb
-            </h1>
-            <p
-              class="mx-auto max-w-lg text-2xl md:text-3xl lg:mx-0 lg:max-w-xl"
+              Connect with me!
+            </IconButton>
+          </a>
+          <div class="flex flex-wrap gap-x-4">
+            <a
+              href={LINKS.LINKEDIN.href}
+              class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
+              title={LINKS.LINKEDIN.label}
+              aria-label={LINKS.LINKEDIN.ariaLabel}
             >
-              I'm a <strong>Software Engineer</strong> based in <strong
-                >KL, Malaysia</strong
-              >—specializing in <strong>Front-End Web</strong>.
-              <span class="font-extralight">
-                I design and create experiences by being <em>collaborative</em>, <em
-                  >calculating</em
-                >, and <em>clever</em>.
-              </span>
-            </p>
-          </div>
-          <div class="flex flex-wrap justify-around gap-4">
-            <a href="#contact-form" class="no-underline">
-              <IconButton
-                name="mdi:connection"
-                iconClass="h-6 aspect-square"
-                hasContent
-                class="max-w-fit"
-              >
-                Connect with me!
-              </IconButton>
+              <Sprite
+                name={LINKS.LINKEDIN.icon}
+                class="aspect-square w-12 p-1"
+              />
             </a>
-            <div class="flex flex-wrap gap-x-4">
-              <a
-                href={LINKS.LINKEDIN.href}
-                class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
-                title={LINKS.LINKEDIN.label}
-                aria-label={LINKS.LINKEDIN.ariaLabel}
-              >
-                <Sprite
-                  name={LINKS.LINKEDIN.icon}
-                  class="aspect-square w-12 p-1"
-                />
-              </a>
-              <a
-                href={LINKS.GITHUB.href}
-                class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
-                title={LINKS.GITHUB.label}
-                aria-label={LINKS.GITHUB.ariaLabel}
-              >
-                <Sprite
-                  name={LINKS.GITHUB.icon}
-                  class="aspect-square w-12 p-1"
-                />
-              </a>
-              <a
-                href={LINKS.RESUME.href}
-                class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
-                title={LINKS.RESUME.label}
-                aria-label={LINKS.RESUME.ariaLabel}
-              >
-                <Sprite
-                  name={LINKS.RESUME.icon}
-                  class="aspect-square w-12 p-2"
-                />
-              </a>
-            </div>
+            <a
+              href={LINKS.GITHUB.href}
+              class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
+              title={LINKS.GITHUB.label}
+              aria-label={LINKS.GITHUB.ariaLabel}
+            >
+              <Sprite name={LINKS.GITHUB.icon} class="aspect-square w-12 p-1" />
+            </a>
+            <a
+              href={LINKS.RESUME.href}
+              class="rounded-xl border border-cc-blue text-cc-blue hover:bg-cc-blue hover:text-cc-white"
+              title={LINKS.RESUME.label}
+              aria-label={LINKS.RESUME.ariaLabel}
+            >
+              <Sprite name={LINKS.RESUME.icon} class="aspect-square w-12 p-2" />
+            </a>
           </div>
         </div>
       </div>
-      <div
-        class="-z-10 mx-auto flex max-h-min min-h-[450px] select-none place-items-center opacity-10 [grid-area:1/1] dark:opacity-20 md:min-h-[500px] lg:ml-auto lg:mr-0 dark:lg:opacity-30 xl:opacity-100"
-      >
-        <img
-          src="https://www.gravatar.com/avatar/29d863c08e05a20bab30479ecae823eb?s=500"
-          alt="Head profile of Chuang Caleb with a painting-like filter"
-          height="500"
-          width="500"
-        />
-      </div>
-    </Section>
-  </GridLayout>
+    </div>
+
+    <img
+      src="https://www.gravatar.com/avatar/29d863c08e05a20bab30479ecae823eb?s=400"
+      alt="Head profile of Chuang Caleb with a painting-like filter"
+      height="400"
+      width="400"
+      class="mx-auto flex max-h-min select-none place-items-center rounded-3xl md:min-h-[350px] lg:mr-0"
+    />
+  </Section>
+
   <Section
     asArticle
     class="-mx-4 bg-cc-night px-4 py-8 text-cc-white dark:bg-cc-white dark:text-cc-black md:-mx-2 md:rounded-2xl md:px-8 lg:mx-0"
