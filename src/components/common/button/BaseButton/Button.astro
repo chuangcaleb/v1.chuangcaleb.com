@@ -21,8 +21,9 @@ const {
   class={twMerge(
     !noDefaultPadding && "py-3 px-4",
     "font-semibold rounded-lg bg-cc-blue text-cc-white dark:hover:bg-cc-white dark:hover:text-cc-blue hover:text-cc-white hover:bg-cc-night justify-center items-center select-none",
+    "disabled:hover:bg-cc-blue disabled:hover:text-cc-white disabled:select-auto disabled:opacity-50",
     hoverBorder &&
-      "border border-transparent hover:border-cc-white dark:hover:border-cc-night",
+      "border border-transparent hover:border-cc-white dark:hover:border-cc-night hover:disabled:border-transparent",
     // "font-semibold rounded-lg bg-cc-blue text-cc-white justify-center items-center select-none hover:opacity-70",
     extraClass
   )}

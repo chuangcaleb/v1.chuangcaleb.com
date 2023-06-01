@@ -7,63 +7,68 @@ import { twMerge } from "tailwind-merge";
 interface Props extends HTMLAttributes<"form"> {}
 
 const { class: extraClass } = Astro.props;
+const initialMessage =
+  "Introduce your *name* and your *objective* here, along with your preferred platforms for further conversations!";
 ---
 
-<form
-  id="contact-form"
-  method="POST"
-  class={twMerge("grid gap-8 rounded-lg pt-8 pb-16", extraClass)}
->
-  <h2>
+<div class={twMerge(" pt-8 pb-16", extraClass)}>
+  <h2 class="connect-heading mb-8">
     <Sprite
       name="mdi:connection"
       class="mr-2 inline aspect-square w-12 pb-2"
-    />Connect with me!
+    /><span class="connect-heading-text">Connect with me!</span>
   </h2>
-  <label>
-    <Sprite name="mdi:email-outline" class="inline aspect-square w-6 pb-1" />
-    Your Email
-    <input
-      name="email"
-      type="email"
-      autocomplete="email"
-      required
-      maxlength="254"
-      class="mt-2 sm:w-[30ch]"
-    />
-  </label>
-  <label>
-    <Sprite name="mdi:message-text-outline" class="inline aspect-square w-6" />
-    Message
-    <small class="inline italic">(max 3000 characters)</small>
-    <textarea
-      name="message"
-      required
-      class="mt-2 h-max"
-      maxlength="3000"
-      rows={4}
-      >{
-        "Introduce your *name* and your *objective* here, along with your preferred platforms for further conversations!"
-      }</textarea
+  <form id="contact-form" method="POST" class="relative grid gap-y-8">
+    <div
+      class="form-cover absolute -inset-4 -z-10 rounded-3xl bg-white opacity-50"
     >
-  </label>
-  <IconButton
-    name="mdi:send"
-    iconClass="h-6 aspect-square"
-    hasContent
-    position="right"
-    class="max-w-fit"
-    type="submit"
-    hoverBorder
-  >
-    Send it off to me!
-  </IconButton>
-  <small>
-    This site is protected by reCAPTCHA, and the Google
-    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-    <a href="https://policies.google.com/terms">Terms of Service</a> apply.
-  </small>
-</form>
+    </div>
+
+    <label>
+      <Sprite name="mdi:email-outline" class="inline aspect-square w-6 pb-1" />
+      Your Email
+      <input
+        name="email"
+        type="email"
+        autocomplete="email"
+        required
+        maxlength="254"
+        class="contact-form-field mt-2 sm:w-[30ch]"
+      />
+    </label>
+    <label>
+      <Sprite
+        name="mdi:message-text-outline"
+        class="inline aspect-square w-6"
+      />
+      Message
+      <small class="inline italic">(max 3000 characters)</small>
+      <textarea
+        name="message"
+        required
+        class="mt-2 h-max"
+        maxlength="3000"
+        rows={4}>{initialMessage}</textarea
+      >
+    </label>
+    <IconButton
+      name="mdi:send"
+      iconClass="h-6 aspect-square"
+      hasContent
+      position="right"
+      class="contact-form-field max-w-fit"
+      type="submit"
+      hoverBorder
+    >
+      <span class="submit-btn-text">Send it off to me!</span>
+    </IconButton>
+    <small>
+      This site is protected by reCAPTCHA, and the Google
+      <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+      <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+    </small>
+  </form>
+</div>
 
 <script>
   // @ts-nocheck
@@ -72,6 +77,14 @@ const { class: extraClass } = Astro.props;
   // https://github.com/PipedreamHQ/nextjs-examples/blob/main/examples/contact-form/pages/components/ContactForm.js
   async function submit(event) {
     event.preventDefault();
+    const submitBtn = document.querySelector("[type=submit]");
+    submitBtn.disabled = true;
+
+    submitBtn.classList.add("pointer-events-none");
+    const submitBtnText = document.querySelector(".submit-btn-text");
+    submitBtnText.innerText = "Sending message...";
+    const formCover = document.querySelector(".form-cover");
+    formCover.style.zIndex = "7";
 
     if (typeof grecaptcha === "undefined") {
       grecaptcha = {};
@@ -103,14 +116,23 @@ const { class: extraClass } = Astro.props;
         };
 
         // Fetch
-        await fetch(import.meta.env.PUBLIC_PIPEDREAM_URL, {
-          method: "POST",
-          body: JSON.stringify(requestBody),
-        });
+        // await fetch(import.meta.env.PUBLIC_PIPEDREAM_URL, {
+        //   method: "POST",
+        //   body: JSON.stringify(requestBody),
+        // });
       });
       console.log("success!");
+      submitBtnText.innerText = "Successfully sent!";
+
+      const connectHeadingText = document.querySelector(
+        ".connect-heading-text"
+      );
+      connectHeadingText.innerText = "We've connected!";
+      const headingText = document.querySelector(".connect-heading");
+      headingText.classList.add("animate-bounce");
     } catch (e) {
       console.error(e);
+      submitBtn.disabled = false;
     }
   }
   const form = document.getElementById("contact-form");
