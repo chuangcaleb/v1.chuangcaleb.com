@@ -2,7 +2,6 @@
 import { IconButton } from "@components/common/button/IconButton";
 import { Sprite } from "astro-iconify";
 import type { HTMLAttributes } from "astro/types";
-import { twMerge } from "tailwind-merge";
 
 interface Props extends HTMLAttributes<"form"> {}
 
@@ -11,7 +10,7 @@ const initialMessage =
   "You may introduce:\n\n1. Your *name*, and...\n2. Your *objective*, along with...\n3. Your *preferred platforms* for further conversations!";
 ---
 
-<div class={twMerge(" pt-8 pb-16", extraClass)}>
+<div class={extraClass}>
   <h2 class="connect-heading mb-8">
     <Sprite
       name="mdi:connection"
