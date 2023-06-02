@@ -8,7 +8,7 @@ interface Props extends HTMLAttributes<"form"> {}
 
 const { class: extraClass } = Astro.props;
 const initialMessage =
-  "Introduce your *name* and your *objective* here, along with your preferred platforms for further conversations!";
+  "You may introduce:\n\n1. Your *name*, and...\n2. Your *objective*, along with...\n3. Your *preferred platforms* for further conversations!";
 ---
 
 <div class={twMerge(" pt-8 pb-16", extraClass)}>
@@ -48,7 +48,7 @@ const initialMessage =
         required
         class="mt-2 h-max"
         maxlength="3000"
-        rows={4}>{initialMessage}</textarea
+        rows={5}>{initialMessage}</textarea
       >
     </label>
     <IconButton

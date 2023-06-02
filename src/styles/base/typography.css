@@ -21,6 +21,7 @@
   }
 
   /* a:not(:has(button)) { */
+  .a-like,
   a {
     @apply font-medium underline decoration-inherit underline-offset-2 duration-100 hover:underline-offset-4;
   }

@@ -2,6 +2,7 @@
   html {
     scroll-behavior: smooth;
     -webkit-scroll-behavior: smooth;
+    @apply dark:bg-cc-night;
   }
 
   /* Scroll */
