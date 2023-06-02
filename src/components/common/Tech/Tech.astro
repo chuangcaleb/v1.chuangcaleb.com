@@ -1,5 +1,9 @@
 ---
-import STACK, { TechName, Stage } from "@data/techStack";
+import STACK, {
+  TechName,
+  Stage,
+  TECH_ATTRIBUTES as TECH_ATTR,
+} from "@data/tech-stack";
 import { Sprite } from "astro-iconify";
 
 interface Props {
@@ -7,11 +11,11 @@ interface Props {
 }
 
 const STAGES = {
-  researching: "🤔",
-  exploring: "👉",
-  learning: "✨",
-  confident: "⭐️",
-  expert: "💫",
+  researching: TECH_ATTR.researching.emoji,
+  exploring: TECH_ATTR.exploring.emoji,
+  learning: TECH_ATTR.learning.emoji,
+  confident: TECH_ATTR.confident.emoji,
+  expert: TECH_ATTR.expert.emoji,
 } as Record<Stage, string>;
 
 const { name } = Astro.props;
@@ -26,9 +30,9 @@ const iconColor = typeof icon === "object" && icon.color;
 
 const icons = [
   STAGES[stage],
-  isInterested && "❤️",
-  isWork && "💼",
-  isFresh && "🌿",
+  isInterested && TECH_ATTR.isInterested.emoji,
+  isWork && TECH_ATTR.isWork.emoji,
+  isFresh && TECH_ATTR.isFresh.emoji,
 ]
   .filter(Boolean)
   .join("");

@@ -1,4 +1,4 @@
-import { DEV, FRAMEWORKS, LANGUAGES, STYLING, TOOLS } from "./miniStacks";
+import { DEV, FRAMEWORKS, LANGUAGES, STYLING, TOOLS } from "./mini-stacks";
 
 const RAW_STACK = {
   ...LANGUAGES,

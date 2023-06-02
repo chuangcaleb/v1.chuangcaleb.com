@@ -1,9 +1,10 @@
 ---
 import { Tech } from "@components/common/Tech";
+import { TechAttribute } from "@components/common/TechAttribute";
 import { IconButton } from "@components/common/button/IconButton";
 import { Section } from "@components/layout/Section";
 import LINKS from "@data/links";
-import { getFilteredStackKeys } from "@data/techStack";
+import { getFilteredStackKeys } from "@data/tech-stack";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Sprite } from "astro-iconify";
 
@@ -33,8 +34,9 @@ const featuredStackKeys = getFilteredStackKeys(
           <p class="mx-auto max-w-lg text-2xl md:text-3xl lg:mx-0 lg:max-w-xl">
             <strong>Software Developer</strong> based in <strong
               >KL, Malaysia</strong
-            >—specializing in <strong>Front-End Web</strong>.
-            <span class="font-extralight">
+            >—specializing in <strong>Front-End Web</strong>.<span
+              class="font-extralight"
+            >
               Designing and creating experiences by being <em>collaborative</em
               >, <em>calculating</em>, and <em>clever</em>.
             </span>
@@ -198,10 +200,21 @@ const featuredStackKeys = getFilteredStackKeys(
     </p> -->
   </Section>
   <Section asArticle>
-    <!-- <div class="mb-32 flex flex-wrap justify-center gap-4">
-      {ALL_STACK_KEYS.map((name) => <Tech name={name} />)}
-    </div> -->
     <h2 class="border-b pb-2 text-center">My Tech Stack</h2>
+    <!-- {
+      Object.entries(TECH_ATTRIBUTES).map(([name]) => (
+        <TechAttribute name={name} />
+      ))
+    } -->
+    <ul class="ml-0 flex list-none flex-wrap justify-center gap-y-2">
+      <TechAttribute name="learning" position="start" />
+      <TechAttribute name="confident" position="middle" />
+      <TechAttribute name="expert" position="end" />
+      <TechAttribute name="isInterested" />
+      <TechAttribute name="isWork" />
+      <TechAttribute name="isFresh" />
+    </ul>
+
     <ul class="ml-0 flex list-none flex-wrap justify-evenly gap-2 sm:gap-4">
       {
         featuredStackKeys.map((name) => (

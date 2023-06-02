@@ -1,4 +1,4 @@
-import RAW_STACK from "./rawStack";
+import RAW_STACK from "./raw-stack";
 import type { Tech, TechName } from "./types";
 
 export const ALL_STACK_KEYS = Object.keys(RAW_STACK) as TechName[];

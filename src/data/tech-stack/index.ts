@@ -4,3 +4,4 @@ export {
   ALL_STACK_KEYS,
   getFilteredStackKeys,
 } from "./stack";
+export { TECH_ATTRIBUTES } from "./techAttributes";

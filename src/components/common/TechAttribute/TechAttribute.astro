@@ -1,0 +1,26 @@
+---
+import { TECH_ATTRIBUTES } from "@data/tech-stack";
+import type { TechAttribute } from "@data/tech-stack/types";
+
+interface Props {
+  name: TechAttribute;
+  position?: "start" | "middle" | "end" | "self";
+}
+
+const { name, position = "self" } = Astro.props;
+
+const { emoji, label: configuredLabel } = TECH_ATTRIBUTES[name];
+const label = configuredLabel ?? name;
+---
+
+<li
+  class:list={[
+    "text-foreground inline-flex items-center border px-2.5 py-0.5 text-sm font-semibold",
+    position === "start" && "rounded-l-full",
+    position === "self" && "rounded-full ml-2",
+    position === "end" && "rounded-r-full",
+  ]}
+>
+  {emoji}{" "}
+  {label}
+</li>

@@ -1,4 +1,4 @@
-import type { Tech } from "@data/techStack/types";
+import type { Tech } from "@data/tech-stack/types";
 
 export const STYLING = {
   Tailwind: {
