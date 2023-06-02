@@ -20,7 +20,7 @@ const featuredStackKeys = getFilteredStackKeys(
 ---
 
 <BaseLayout gridLayout="lg">
-  <Section class="flex flex-col gap-8 py-16 lg:flex-row">
+  <Section class="flex flex-col gap-8 pt-16 lg:flex-row">
     <div class="my-auto text-center">
       <div
         class="grid justify-items-center gap-10 py-4 lg:justify-items-start lg:text-left"
@@ -134,30 +134,35 @@ const featuredStackKeys = getFilteredStackKeys(
       <li>🎵 I always need my 🎸 guitar, and I'm learning 🎹 keyboard!</li>
     </ul>
   </Section>
-  <Section asArticle>
+  <Section asArticle class="max-w-prose [&>h3]:mt-[2.5em]">
     <h2>My Projects</h2>
 
     <h3>PowerKids Kindergarten Company Website</h3>
     <p>
-      An official company website to promote registration and showcase details
-      about PowerKids Kindergarten. Developed with Jekyll, Bootstrap, SCSS, and
-      hosted on GitHub Pages whilst deployed to a custom <code>.edu.my</code> domain.
+      An official company website to promote registration and showcase PowerKids
+      Kindergarten School. Implemented intentional UI/UX decisions to boost user
+      conversion. Developed with Jekyll, Bootstrap, SCSS, and hosted on GitHub
+      Pages whilst deployed to a custom <code>.edu.my</code> domain.
     </p>
-    <p>
-      <a href="https://www.powerkids.edu.my">[site]</a>
+    <p class="flex flex-wrap gap-x-4">
+      <a href="https://www.powerkids.edu.my">www.powerkids.edu.my</a>
       <a href="https://github.com/chuangcaleb/powerkids-jekyll">[source]</a>
+      <strong>@ v2</strong>
     </p>
-    <h3>whatsthestoryabout Storywriting Blog</h3>
+
+    <h3>Chuang Caleb's Portfolio Website</h3>
     <p>
-      A static blog where I can showcase my story analyses, reviews and
-      write-ups. Developed with Jekyll, Bootstrap, SCSS, minimal Javascript, and
-      hosted on GitHub Pages.
+      A personal portfolio to showcase skills and connect opportunities.
+      Designed to be <b>ultra-lightweight</b> and <b>Lighthouse-performant!</b> Developed
+      with Typescript, Astro.js, Tailwind CSS, and hosted on Vercel. Contact Form
+      implemented with Google Recaptcha and Pipedream. WIP.
     </p>
-    <p>
-      <a href="http://chuangcaleb.github.io/wtsa/about">[site]</a>
-      <a href="https://github.com/chuangcaleb/wtsa">[source]</a>
+    <p class="flex gap-x-4">
+      <a href="http://chuangcaleb.vercel.app">chuangcaleb.vercel.app</a>
+      <a href="https://github.com/chuangcaleb/personal">[source]</a>
     </p>
-    <h3>
+
+    <!-- <h3>
       Classification of Themes and Motifs in Musical Composition with MIDI
     </h3>
     <p>
@@ -166,19 +171,37 @@ const featuredStackKeys = getFilteredStackKeys(
       Developed with Python and scikit-learn, from web-scraped MIDI data using
       beautifulsoup4.
     </p>
-    <p>
+    <p class="flex gap-x-4">
       <a href="https://github.com/chuangcaleb/music-theme-recognition"
         >[source]</a
       >
-    </p>
-    <h3>Live Points Counter System</h3>
-    <p>
+    </p> -->
+    <h3>Live Score-Counting Web App</h3>
+    <p class="flex gap-x-4">
       A live and dynamic points-tracker web app for games events with
       customizable styles and auto-sync/refresh. Developed with Django, MySQL,
-      and minimal Javascript, hosted on pythonanywhere.
+      and minimal Javascript, hosted on pythonanywhere. Until I implement a
+      security feature to protect live sessions in use, it'll be source code
+      only!
     </p>
     <p>
       <a href="https://github.com/chuangcaleb/points">[source]</a>
+    </p>
+
+    <h3>whatsthestoryabout Storywriting Blog</h3>
+    <p>
+      A static blog where I can showcase my story analyses, reviews and
+      write-ups. I write content in my local <a href="https://obsidian.md/"
+        >Obsidian</a
+      > Markdown editor, while my site gets automatically built and deployed! Developed
+      with Jekyll, Bootstrap, SCSS, minimal Javascript, Markdown, and hosted on GitHub
+      Pages.
+    </p>
+    <p class="flex gap-x-4">
+      <a href="http://chuangcaleb.github.io/wtsa/about"
+        >chuangcaleb.github.io/wtsa</a
+      >
+      <a href="https://github.com/chuangcaleb/wtsa">[source]</a>
     </p>
     <!-- <p>
       <a
