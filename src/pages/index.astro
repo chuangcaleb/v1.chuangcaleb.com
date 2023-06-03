@@ -20,29 +20,28 @@ const featuredStackKeys = getFilteredStackKeys(
 ---
 
 <BaseLayout gridLayout="lg">
-  <Section class="flex flex-col gap-8 pt-16 lg:flex-row">
-    <div class="my-auto text-center">
+  <Section class="grid gap-8 pt-16 lg:flex-row">
+    <div class="my-auto text-center [grid-column:1]">
       <div
-        class="grid justify-items-center gap-10 py-4 lg:justify-items-start lg:text-left"
+        class="grid justify-items-center py-4 lg:justify-items-start lg:text-left"
       >
-        <div class="grid gap-y-6">
-          <h1
-            class="text-5xl font-extrabold sm:text-6xl sm:tracking-wide md:text-7xl"
-          >
-            Chuang Caleb
-          </h1>
-          <p class="mx-auto max-w-lg text-2xl md:text-3xl lg:mx-0 lg:max-w-xl">
-            <strong>Software Developer</strong> based in <strong
-              >KL, Malaysia</strong
-            >—specializing in <strong>Front-End Web</strong>.<span
-              class="font-extralight"
-            >
-              Designing and creating experiences by being <em>collaborative</em
-              >, <em>calculating</em>, and <em>clever</em>.
-            </span>
-          </p>
-        </div>
-        <div class="flex flex-wrap justify-around gap-4">
+        <h1 class="text-lg font-bold uppercase tracking-widest">
+          Chuang Caleb
+        </h1>
+        <p
+          class="mx-auto mb-8 mt-4 max-w-lg text-2xl sm:text-3xl md:text-4xl lg:mx-0 lg:max-w-xl"
+        >
+          <strong>Software Dev</strong> based in <strong>KL, Malaysia</strong
+          >—specializing in <strong class="whitespace-nowrap"
+            >Front-End Web</strong
+          >.
+        </p>
+        <code class="lg:text-lg"
+          >Sometimes I write code; <span class="whitespace-nowrap"
+            >always I craft experiences.</span
+          ></code
+        >
+        <div class="mt-12 flex flex-wrap justify-around gap-4">
           <a href="#contact-form" class="no-underline">
             <IconButton
               name="mdi:connection"
@@ -91,7 +90,7 @@ const featuredStackKeys = getFilteredStackKeys(
       alt="Head profile of Chuang Caleb with a painting-like filter"
       height="400"
       width="400"
-      class="mx-auto flex max-h-min select-none place-items-center rounded-3xl md:min-h-[350px] lg:mr-0"
+      class="mx-auto flex max-h-min select-none place-items-center rounded-3xl md:min-h-[350px] lg:mr-0 lg:[grid-column:2]"
     />
   </Section>
 
@@ -153,9 +152,10 @@ const featuredStackKeys = getFilteredStackKeys(
     <h3>Chuang Caleb's Portfolio Website</h3>
     <p>
       A personal portfolio to showcase skills and connect opportunities.
-      Designed to be <b>ultra-lightweight</b> and <b>Lighthouse-performant!</b> Developed
-      with Typescript, Astro.js, Tailwind CSS, and hosted on Vercel. Contact Form
-      implemented with Google Recaptcha and Pipedream. WIP.
+      Designed to be <em>ultra-lightweight</em> and <em
+        >Lighthouse-performant!</em
+      > Developed with Typescript, Astro.js, Tailwind CSS, and hosted on Vercel.
+      Contact Form implemented with Google Recaptcha and Pipedream. WIP.
     </p>
     <p class="flex gap-x-4">
       <a href="http://chuangcaleb.vercel.app">chuangcaleb.vercel.app</a>
