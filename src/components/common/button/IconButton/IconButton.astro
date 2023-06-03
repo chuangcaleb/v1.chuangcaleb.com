@@ -5,7 +5,7 @@ import { Button, ButtonProps } from "../BaseButton";
 
 interface Props extends ButtonProps {
   name: string;
-  iconClass: string | null | undefined;
+  iconClass?: string | null | undefined;
   hasContent?: boolean;
   position?: "left" | "right";
 }
@@ -23,11 +23,14 @@ const {
 ---
 
 <Button
-  class={twMerge(hasContent && "flex gap-x-2 whitespace-nowrap", extraClass)}
+  class={twMerge(
+    hasContent && "inline-flex gap-x-2 whitespace-nowrap",
+    extraClass
+  )}
   {...attrs}
   noDefaultPadding={!hasContent}
 >
   {position === "right" && <slot />}
-  <Sprite name={name} class={twMerge("inline", iconClass)} />
+  <Sprite name={name} class={twMerge("inline h-6 aspect-square", iconClass)} />
   {position === "left" && <slot />}
 </Button>

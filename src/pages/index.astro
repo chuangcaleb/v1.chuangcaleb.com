@@ -46,7 +46,7 @@ const featuredStackKeys = getFilteredStackKeys(
           <a href="#contact-form" class="no-underline">
             <IconButton
               name="mdi:connection"
-              iconClass="h-6 aspect-square"
+              iconClass="h-6"
               hasContent
               class="max-w-fit"
             >
@@ -113,14 +113,14 @@ const featuredStackKeys = getFilteredStackKeys(
           BSc (Hons) Computer Science w/ Artificial Intelligence
         </strong> from the <a href="https://www.nottingham.ac.uk/">
           University of Nottingham</a
-        >
+        > in Aug 2022
       </li>
       <li>
         🎭 I love <strong>storywriting</strong>, I write about story in my <a
           href="https://chuangcaleb.github.io/wtsa">story blog</a
         >
       </li>
-      <li>🌱 I’m interested in NLP, Game AI Agents & Web Development</li>
+      <li>🌱 I’m interested in Web Development, NLP & Game AI Agents</li>
       <li>
         🟪 I optimize my <a href="https://obsidian.md/">Obsidian</a> workflow for
         notetaking, journalling, blogging — everything
@@ -221,6 +221,17 @@ const featuredStackKeys = getFilteredStackKeys(
     <p>
       <Button class="flex gap-x-2">My Portfolio Document</Button>
     </p> -->
+    <br />
+    <span class="mt-20 flex flex-wrap gap-4">
+      <a href={LINKS.GITHUB.href}>
+        <IconButton name="mdi:github" hasContent>View more projects</IconButton>
+      </a>
+      <a href={LINKS.RESUME.href}>
+        <IconButton name={LINKS.RESUME.icon} hasContent class="mr-2">
+          View my rêsumé
+        </IconButton>
+      </a>
+    </span>
   </Section>
   <Section asArticle>
     <h2 class="border-b pb-2 text-center">My Tech Stack</h2>

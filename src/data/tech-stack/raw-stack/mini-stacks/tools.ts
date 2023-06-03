@@ -13,20 +13,20 @@ export const TOOLS = {
     stage: "learning",
     isInterested: true,
   },
-  LaTeX: {
-    icon: "skill-icons:latex-light",
-    stage: "learning",
-  },
-  Obsidian: {
-    icon: { name: "simple-icons:obsidian", color: "SlateBlue" },
-    stage: "expert",
-    isInterested: true,
-    isFresh: true,
-  },
-  "(Advanced) Markdown": {
-    icon: { name: "mdi:language-markdown", color: "dodgerblue" },
-    stage: "expert",
-    isInterested: true,
-    isFresh: true,
-  },
+  // LaTeX: {
+  //   icon: "skill-icons:latex-light",
+  //   stage: "learning",
+  // },
+  // Obsidian: {
+  //   icon: { name: "simple-icons:obsidian", color: "SlateBlue" },
+  //   stage: "expert",
+  //   isInterested: true,
+  //   isFresh: true,
+  // },
+  // "(Advanced) Markdown": {
+  //   icon: { name: "mdi:language-markdown", color: "dodgerblue" },
+  //   stage: "expert",
+  //   isInterested: true,
+  //   isFresh: true,
+  // },
 } as const satisfies { [s: string]: Tech };
