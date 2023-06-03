@@ -61,7 +61,7 @@ const initialMessage =
     >
       <span class="submit-btn-text">Send it off to me!</span>
     </IconButton>
-    <small>
+    <small class="form-disclaimer">
       This site is protected by reCAPTCHA, and the Google
       <a href="https://policies.google.com/privacy">Privacy Policy</a> and
       <a href="https://policies.google.com/terms">Terms of Service</a> apply.
@@ -129,6 +129,10 @@ const initialMessage =
       connectHeadingText.innerText = "We've connected!";
       const headingText = document.querySelector(".connect-heading");
       headingText.classList.add("animate-bounce");
+
+      const disclaimserText = document.querySelector(".form-disclaimer");
+      disclaimserText.innerText =
+        "Give me at most a week to get back to you! Talk to you soon! :D\nMeanwhile, have you checked out my other social links?";
     } catch (e) {
       console.error(e);
       submitBtn.disabled = false;
