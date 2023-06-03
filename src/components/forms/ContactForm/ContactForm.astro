@@ -115,10 +115,10 @@ const initialMessage =
         };
 
         // Fetch
-        // await fetch(import.meta.env.PUBLIC_PIPEDREAM_URL, {
-        //   method: "POST",
-        //   body: JSON.stringify(requestBody),
-        // });
+        await fetch(import.meta.env.PUBLIC_PIPEDREAM_URL, {
+          method: "POST",
+          body: JSON.stringify(requestBody),
+        });
       });
       console.log("success!");
       submitBtnText.innerText = "Successfully sent!";
