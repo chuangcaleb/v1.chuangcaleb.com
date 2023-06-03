@@ -221,17 +221,17 @@ const featuredStackKeys = getFilteredStackKeys(
     <p>
       <Button class="flex gap-x-2">My Portfolio Document</Button>
     </p> -->
-    <br />
-    <span class="mt-20 flex flex-wrap gap-4">
+
+    <div class="mt-20 flex max-w-md flex-wrap gap-4">
       <a href={LINKS.GITHUB.href}>
         <IconButton name="mdi:github" hasContent>View more projects</IconButton>
       </a>
       <a href={LINKS.RESUME.href}>
-        <IconButton name={LINKS.RESUME.icon} hasContent class="mr-2">
+        <IconButton name={LINKS.RESUME.icon} hasContent>
           View my rêsumé
         </IconButton>
       </a>
-    </span>
+    </div>
   </Section>
   <Section asArticle>
     <h2 class="border-b pb-2 text-center">My Tech Stack</h2>

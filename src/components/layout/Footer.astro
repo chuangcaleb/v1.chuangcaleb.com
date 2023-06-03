@@ -21,7 +21,7 @@ const { class: extraClass } = Astro.props;
   <ContactForm class="col-span-full scroll-mt-12" />
   <hr class="col-span-full border-cc-white dark:border-cc-black" />
   <div class="col-span-2 space-y-4">
-    <h1>Chuang <br class="max-md:hidden" />Caleb</h1>
+    <h1>Chuang Caleb</h1>
     <button
       class="email-copy-button a-like whitespace-nowrap"
       aria-label={"Copy the " + LINKS.EMAIL.ariaLabel + " to the clipboard"}
@@ -31,11 +31,11 @@ const { class: extraClass } = Astro.props;
       }
     </button>
   </div>
-  <div>
+  <div class="col-span-2">
     <h2 class="mb-2 text-2xl">
       <Sprite name="mdi:link" class="mb-1 mr-1 inline aspect-square w-8" />Links
     </h2>
-    <ul class="ml-4 [&>li]:pb-2">
+    <ul class="ml-3 border-l border-cc-black pl-2 [&>li]:pb-2">
       <li>
         <a href={LINKS.GITHUB.href} aria-label={LINKS.GITHUB.ariaLabel}>
           <Sprite
