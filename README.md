@@ -33,3 +33,4 @@ Any static assets, like images, can be placed in the `public/` directory.
 - random tilt of tech cards
 - FAQ section
 - light/dark toggle
+- lazy load images
