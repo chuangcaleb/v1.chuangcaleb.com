@@ -34,7 +34,7 @@
 
   code {
     @apply relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm;
-    @apply bg-cc-white text-cc-night;
+    @apply bg-cc-white text-cc-black;
     @apply dark:bg-cc-black dark:text-white;
   }
 
