@@ -10,6 +10,7 @@ interface Props extends HTMLAttributes<"div"> {}
 const today = new Date();
 
 const { class: extraClass } = Astro.props;
+const email = LINKS.EMAIL.href;
 ---
 
 <footer
@@ -68,13 +69,11 @@ const { class: extraClass } = Astro.props;
   </div>
 </footer>
 
-<script defer type="module">
-  import LINKS from "@data/links";
-
+<script defer type="module" define:vars={{ email }}>
   const emailCopyButton = document.querySelector(".email-copy-button");
   if (emailCopyButton) {
     emailCopyButton.addEventListener("click", () =>
-      navigator.clipboard.writeText(LINKS.EMAIL.href)
+      navigator.clipboard.writeText(email)
     );
   }
 </script>
