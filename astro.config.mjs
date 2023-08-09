@@ -8,7 +8,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://chuangcaleb.vercel.app",
+  site: "https://www.chuangcaleb.com",
   compressHTML: true,
   integrations: [
     mdx(),

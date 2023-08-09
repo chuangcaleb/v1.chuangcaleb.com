@@ -8,6 +8,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:astro/recommended",
     "plugin:astro/jsx-a11y-recommended",
+    "plugin:@typescript-eslint/recommended",
   ],
   parserOptions: {
     ecmaVersion: "latest",
@@ -27,7 +28,6 @@ module.exports = {
     {
       files: ["*.ts"],
       parser: "@typescript-eslint/parser",
-      extends: ["plugin:@typescript-eslint/recommended"],
       rules: {
         "@typescript-eslint/no-unused-vars": [
           "warn",
