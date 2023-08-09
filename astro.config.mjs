@@ -1,7 +1,6 @@
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import compress from "astro-compress";
 import compressor from "astro-compressor";
 // import purgecss from "astro-purgecss";
 import { defineConfig } from "astro/config";
@@ -20,9 +19,6 @@ export default defineConfig({
     ...(import.meta.env.PROD
       ? [
           sitemap(),
-          compress({
-            logger: 1,
-          }),
           compressor(),
           // purgecss({
           //   keyframes: true,
