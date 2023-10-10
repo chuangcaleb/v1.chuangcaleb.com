@@ -31,14 +31,13 @@ const featuredStackKeys = getFilteredStackKeys(
         <p
           class="mx-auto mb-8 mt-4 max-w-lg text-2xl sm:text-3xl md:text-4xl lg:mx-0 lg:max-w-xl"
         >
-          <strong>Software Dev</strong> based in <strong>KL, Malaysia</strong
-          >—specializing in <strong class="whitespace-nowrap"
-            >Front-End Web</strong
+          <strong>Software Dev</strong>—specializing in <strong
+            class="whitespace-nowrap">Front-End Web</strong
           >.
         </p>
         <code class="lg:text-lg"
-          >Sometimes I write code; <span class="whitespace-nowrap"
-            >always I craft experiences.</span
+          >Sometimes writing code; <span class="whitespace-nowrap"
+            >always crafting experiences.</span
           ></code
         >
         <div class="mt-12 flex flex-wrap justify-around gap-4">
@@ -139,12 +138,30 @@ const featuredStackKeys = getFilteredStackKeys(
 
     <h3>
       <span class="mb-3 block text-sm uppercase tracking-widest">
+        Fountain Editor
+      </span>
+      Obsidian.md Plugin
+    </h3>
+    <p>
+      <a href="https://obsidian.md">Obsidian</a> plugin for <a
+        href="https://fountain.io">Fountain</a
+      > (screenplay) syntax highlighting in the editor. Designed a parser with regex
+      to tokenize and style the text with CodeMirror. Bundled with Rollup, and continuous
+      deployment through GitHub Actions for building binaries on each release.
+    </p>
+    <p class="flex flex-wrap gap-x-4">
+      <a href="https://github.com/chuangcaleb/obsidian-fountain-editor"
+        >source code</a
+      >
+    </p>
+    <h3>
+      <span class="mb-3 block text-sm uppercase tracking-widest">
         PowerKids Kindergarten
       </span>
       Company Website
     </h3>
     <p>
-      An official company website to showcase the benefits of PowerKids
+      Official company website to showcase the benefits of PowerKids
       Kindergarten School for the user conversion of parents. Developed with a
       <em>modern stack</em>: Astro.js, Typescript, <code>shadcn/ui</code> (Tailwind
       CSS + Radix UI), Utopia's responsive fluid design, Cloudinary, Cloudflare Pages;
@@ -173,7 +190,7 @@ const featuredStackKeys = getFilteredStackKeys(
       </span>Portfolio Website
     </h3>
     <p>
-      A personal portfolio site to showcase skills/experiences and to connect
+      Personal portfolio site to showcase skills/experiences and to connect
       opportunities. Designed to be <em>ultra-lightweight</em> and <em
         >Lighthouse-performant!</em
       > Developed with Typescript, Astro.js, Tailwind CSS, Vercel & Google Domains.
@@ -200,17 +217,16 @@ const featuredStackKeys = getFilteredStackKeys(
     </p> -->
     <h3>Live Score-Counting Web App</h3>
     <p class="flex gap-x-4">
-      A live and dynamic points-tracker web app for games events with
-      customizable styles and auto-sync/refresh. Developed with Django, MySQL,
-      and minimal Javascript, hosted on pythonanywhere. Until I implement a
-      security feature to protect live sessions in use, it'll be source code
-      only!
+      Live and dynamic points-tracker web app for games events with customizable
+      styles and auto-sync/refresh. Developed with Django, MySQL, and minimal
+      Javascript, hosted on pythonanywhere. Until I implement a security feature
+      to protect live sessions in use, it'll be source code only!
     </p>
     <p>
       <a href="https://github.com/chuangcaleb/points">source code</a>
     </p>
 
-    <h3>
+    <!-- <h3>
       <span class="mb-2 block text-sm uppercase tracking-widest">
         whatsthestoryabout
       </span>
@@ -229,7 +245,7 @@ const featuredStackKeys = getFilteredStackKeys(
         >chuangcaleb.github.io/wtsa</a
       >
       <a href="https://github.com/chuangcaleb/wtsa">source code</a>
-    </p>
+    </p> -->
     <!-- <p>
       <a
         href={LINKS.RESUME.href}
@@ -251,7 +267,7 @@ const featuredStackKeys = getFilteredStackKeys(
 
     <div class="mt-20 flex max-w-md flex-wrap gap-4">
       <a href={LINKS.GITHUB.href}>
-        <IconButton name="mdi:github" hasContent>View more projects</IconButton>
+        <IconButton name="mdi:github" hasContent>View all projects</IconButton>
       </a>
       <a href={LINKS.RESUME.href}>
         <IconButton name={LINKS.RESUME.icon} hasContent>
