@@ -1,5 +1,7 @@
 # Chuang Caleb's Personal Website
 
+> Succeeded by v2: [chuangcaleb/chuangcaleb.com: My Personal Website (v2). Focus on streamlining DX & using CSS Variables for component variants.](https://github.com/chuangcaleb/chuangcaleb.com)
+
 ## 🛠️ Technologies Used
 
 ## 🚀 Project Structure
